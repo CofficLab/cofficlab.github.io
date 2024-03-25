@@ -93,7 +93,7 @@ const members = [
     ]
   },
   {
-    avatar: 'https://www.github.com/nookery.png',
+    avatar: '/images/team/nookery.png',
     name: 'Nookery',
     title: '我喜欢简洁，能自己写的软件我就自己写',
     links: [
@@ -104,7 +104,7 @@ const members = [
 
 const friends = [
   {
-    avatar: 'https://www.github.com/laravel.png',
+    avatar: '/images/friends/laravel.png',
     name: 'Laravel',
     title: '搭建充满创意的网站，快速又优雅',
     links: [
@@ -112,7 +112,7 @@ const friends = [
     ]
   },
   {
-    avatar: 'https://www.github.com/flutter.png',
+    avatar: '/images/friends/flutter.png',
     name: 'Flutter',
     title: '全能型的 APP 开发选手，为所有屏幕创造精彩',
     links: [
@@ -128,7 +128,7 @@ const friends = [
     ]
   },
   {
-    avatar: 'https://github.com/vuejs.png',
+    avatar: '/images/friends/vuejs.png',
     name: 'Vue.js',
     title: '易学易用，性能出色，适用场景丰富的 Web 前端框架',
     links: [
@@ -136,7 +136,7 @@ const friends = [
     ]
   },
   {
-    avatar: 'https://github.com/golang.png',
+    avatar: '/images/friends/go.png',
     name: 'Go',
     title: '新时代的编程语言',
     links: [
@@ -144,7 +144,7 @@ const friends = [
     ]
   },
   {
-    avatar: 'https://github.com/tailwindlabs.png',
+    avatar: '/images/friends/tailwindcss.png',
     name: 'Tailwind CSS',
     title: 'CSS 从未如此简单',
     links: [
@@ -152,7 +152,7 @@ const friends = [
     ]
   },
   {
-    avatar: 'https://github.com/github.png',
+    avatar: '/images/friends/github.png',
     name: 'GitHub',
     title: '每个人都喜欢我',
     links: [

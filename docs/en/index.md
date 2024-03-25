@@ -93,7 +93,7 @@ const members = [
     ]
   },
   {
-    avatar: 'https://www.github.com/nookery.png',
+    avatar: '/images/team/nookery.png',
     name: 'Nookery',
     title: 'Creator',
     links: [
@@ -104,7 +104,7 @@ const members = [
 
 const friends = [
   {
-    avatar: 'https://www.github.com/laravel.png',
+    avatar: '/images/friends/laravel.png',
     name: 'Laravel',
     title: 'The PHP Framework for Web Artisans',
     links: [
@@ -112,7 +112,7 @@ const friends = [
     ]
   },
   {
-    avatar: 'https://www.github.com/flutter.png',
+    avatar: '/images/friends/flutter.png',
     name: 'Flutter',
     title: 'Build apps for any screens',
     links: [
@@ -128,7 +128,7 @@ const friends = [
     ]
   },
   {
-    avatar: 'https://github.com/vuejs.png',
+    avatar: '/images/friends/vuejs.png',
     name: 'Vue.js',
     title: 'Wonderful and Powerful',
     links: [
@@ -136,7 +136,7 @@ const friends = [
     ]
   },
   {
-    avatar: 'https://github.com/golang.png',
+    avatar: '/images/friends/go.png',
     name: 'Go',
     title: 'Program Language for everyone',
     links: [
@@ -144,7 +144,7 @@ const friends = [
     ]
   },
   {
-    avatar: 'https://github.com/tailwindlabs.png',
+    avatar: '/images/friends/tailwindcss.png',
     name: 'Tailwind CSS',
     title: 'Make CSS simple',
     links: [
@@ -152,7 +152,7 @@ const friends = [
     ]
   },
   {
-    avatar: 'https://github.com/github.png',
+    avatar: '/images/friends/github.png',
     name: 'GitHub',
     title: 'Everybody likes me',
     links: [
