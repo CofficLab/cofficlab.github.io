@@ -29,7 +29,7 @@ features:
 ---
 ---
 
-# Products
+## Products
 
 <!-- 简洁而强大，绝不破坏用户体验。 -->
 
@@ -37,7 +37,7 @@ features:
 
 ---
 
-# Team
+## Team
 
 <!-- 一群不甘平凡的普通人。 -->
 
@@ -45,13 +45,11 @@ features:
 
 ---
 
-# Friends
+## Friends
 
 I can't wait to introduce my good friends to you
 
 <VPTeamMembers size="small" :members="friends" />
-
-
 
 <script setup>
 import { VPTeamMembers } from 'vitepress/theme'
