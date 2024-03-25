@@ -22,5 +22,8 @@
       "tailwindcss": {},
       "autoprefixer": {}
     }
+  },
+  "dependencies": {
+    "vue": "^3.4.21"
   }
 }

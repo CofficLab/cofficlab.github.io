@@ -9,15 +9,6 @@ export default defineConfig({
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   themeConfig: {
     logo: '/images/coffic/logo4.png',
-    // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Cisum', link: 'cisum' },
-      { text: 'Kuaiyizhi', link: 'kuaiyizhi' },
-      { text: 'TravelMode', link: 'travelmode' },
-      { text: 'Documents', link: '/cisum/github_actions' }
-    ],
-
     sidebar: [
       {
         text: 'Cisum',
@@ -39,16 +30,32 @@ export default defineConfig({
     }
   },
   locales: {
-    root: {
+    en: {
       label: 'English',
-      lang: 'en'
+      lang: 'en',
+      themeConfig: {
+        nav: [
+          { text: 'Home', link: '/en/' },
+          { text: 'Cisum', link: '/en/cisum' },
+          { text: 'Kuaiyizhi', link: '/en/kuaiyizhi' },
+          { text: 'TravelMode', link: '/en/travelmode' },
+          { text: 'Documents', link: '/en/cisum/github_actions' }
+        ]
+      }
     },
-    fr: {
+    zh: {
       label: '中文',
       lang: 'zh', // 可选，将作为 `lang` 属性添加到 `html` 标签中
-      link: '/zh' // 默认 /fr/ -- 显示在导航栏翻译菜单上，可以是外部的
-
-      // 其余 locale 特定属性...
+      link: '/zh/',
+      themeConfig: {
+        nav: [
+          { text: 'Home', link: '/zh/' },
+          { text: 'Cisum-乐音', link: '/zh/cisum' },
+          { text: '快易知', link: '/zh/kuaiyizhi' },
+          { text: 'TravelMode', link: '/zh/travelmode' },
+          { text: '文档', link: '/zh/cisum/github_actions' }
+        ]
+      }
     }
   }
 })

@@ -1,5 +1,9 @@
-import './tailwind.postcss'
+import './tailwind.postcss';
 
-import DefaultTheme from 'vitepress/theme'
+import DefaultTheme from 'vitepress/theme';
+import Layout from './Layout.vue';
 
-export default { ...DefaultTheme }
+export default {
+  extends: DefaultTheme,
+  Layout,
+};
