@@ -108,6 +108,11 @@ const members = [
       { icon: 'github', link: 'https://github.com/sunrunning' }
     ]
   },
+  {
+    avatar: '/images/team/edith.min.png',
+    name: 'Edith',
+    title: "Life is 10% what happens to us and 90% how we react to it. BTW, I am the neighbor of geniuses."
+  },
 ]
 
 const friends = [

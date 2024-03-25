@@ -108,6 +108,11 @@ const members = [
       { icon: 'github', link: 'https://github.com/sunrunning' }
     ]
   },
+  {
+    avatar: '/images/team/edith.min.png',
+    name: 'Edith',
+    title: "拥有什么样的内心，就能看到什么样的世界。悄悄告诉你，我可是天才们的邻居"
+  },
 ]
 
 const friends = [
