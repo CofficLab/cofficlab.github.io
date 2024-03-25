@@ -9,16 +9,6 @@ export default defineConfig({
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   themeConfig: {
     logo: '/images/coffic/logo4.png',
-    sidebar: [
-      {
-        text: 'Cisum',
-        items: [
-          { text: 'GitHub Actions', link: '/cisum/github_actions' },
-          // { text: 'Markdown Examples', link: '/cisum/markdown-examples' },
-          // { text: 'Runtime API Examples', link: '/cisum/api-examples' }
-        ]
-      }
-    ],
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/cofficlab' }
@@ -40,6 +30,16 @@ export default defineConfig({
           { text: 'Kuaiyizhi', link: '/en/kuaiyizhi' },
           { text: 'TravelMode', link: '/en/travelmode' },
           { text: 'Documents', link: '/en/cisum/github_actions' }
+        ],
+        sidebar: [
+          {
+            text: 'Cisum',
+            items: [
+              { text: 'GitHub Actions', link: '/en/cisum/github_actions' },
+              // { text: 'Markdown Examples', link: '/cisum/markdown-examples' },
+              // { text: 'Runtime API Examples', link: '/cisum/api-examples' }
+            ]
+          }
         ]
       }
     },
@@ -54,6 +54,14 @@ export default defineConfig({
           { text: '快易知', link: '/zh/kuaiyizhi' },
           { text: 'TravelMode', link: '/zh/travelmode' },
           { text: '文档', link: '/zh/cisum/github_actions' }
+        ],
+        sidebar: [
+          {
+            text: 'Cisum',
+            items: [
+              { text: 'GitHub Actions', link: '/zh/cisum/github_actions' }
+            ]
+          }
         ]
       }
     }
