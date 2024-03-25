@@ -2,9 +2,9 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Cisum",
-  description: "简洁好用的音乐播放器",
-  base: "/Cisum/",
+  title: "YueYi Network",
+  description: "为软件做减法",
+  base: "/",
   srcDir: "docs",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
