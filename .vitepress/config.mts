@@ -14,6 +14,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Cisum', link: '/products/cisum' },
       { text: '快易知', link: '/products/kuaiyizhi' },
+      { text: 'TravelMode', link: '/products/travelmode' },
       { text: '文档', link: '/cisum/github_actions' }
     ],
 
