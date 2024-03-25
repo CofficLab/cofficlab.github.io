@@ -3,27 +3,15 @@
 layout: home
 
 hero:
-  name: "Cisum"
-  text: "听音乐本该如此简单"
-  tagline: 打造自己的音乐库
-  image: 
-    src: images/hero3.png
+  name: "一起创造简约的软件"
+  # text: "软件本该如此"
+  # tagline: 我们生产简洁强大的软件
+  # image: 
+  #   src: images/hero3.png
   actions:
-    # - theme: brand
-    #   text: Markdown Examples
-    #   link: /markdown-examples
-    # - theme: alt
-    #   text: API Examples
-    #   link: /api-examples
-    - theme: brand
-      text: macOS
-      link: https://apps.apple.com/cn/app/cisum/id6466401036
-    - theme: brand
-      text: iOS
-      link: https://apps.apple.com/cn/app/cisum/id6466401036
     - theme: alt
       text: GitHub
-      link: https://github.com/YueyiNet/Cisum
+      link: https://github.com/YueyiNet
 
 features:
   - icon: 🔕
@@ -39,9 +27,145 @@ features:
     title: 无广告、无干扰
     details: 尊重用户体验
 ---
+---
 
-<div class="flex flex-col mt-12 justify-center items-center">
-  <div class="w-3/4 shadow-2xl">
-    <img src="/images/hero.png" class="" alt="">
-  </div>
-</div>
+# 我们的产品
+
+简洁而强大，绝不破坏用户体验。
+
+<VPTeamMembers size="small" :members="products" />
+
+---
+
+# 我们的团队
+
+一群不甘平凡的普通人。
+
+<VPTeamMembers size="small" :members="members" />
+
+---
+
+# 我们的好朋友
+
+也许我们有共同的好朋友。
+
+<VPTeamMembers size="small" :members="friends" />
+
+
+
+<script setup>
+import { VPTeamMembers } from 'vitepress/theme'
+
+const products = [
+  {
+    avatar: 'https://www.github.com/cisum.png',
+    name: 'Cisum-乐音',
+    title: '音乐播放器，我们工作的时候都喜欢用',
+    links: [
+      { icon: 'github', link: 'https://github.com/yueyinet/cisum' }
+    ]
+  },
+  {
+    avatar: 'https://www.github.com/yueyinet.png',
+    name: '快易知',
+    title: '笔记软件，我们用它来记录大量文档',
+    links: [
+      { icon: 'github', link: 'https://apps.apple.com/cn/app/%E5%BF%AB%E6%98%93%E7%9F%A5/id6457892799?mt=12' }
+    ]
+  },
+  {
+    avatar: '/images/travelmode.webp',
+    name: 'TravelMode',
+    title: '阻止应用联网',
+    links: [
+      { icon: 'github', link: 'https://apps.apple.com/cn/app/travelmode/id6474899051?mt=12' }
+    ]
+  },
+]
+
+const members = [
+  {
+    avatar: 'https://www.github.com/yueyinet.png',
+    name: 'YueyiNet',
+    title: '我们的组织',
+    links: [
+      { icon: 'github', link: 'https://github.com/yueyinet' }
+    ]
+  },
+  {
+    avatar: 'https://www.github.com/nookery.png',
+    name: 'Nookery',
+    title: '我喜欢简洁，能自己写的软件我就自己写',
+    links: [
+      { icon: 'github', link: 'https://github.com/nookery' }
+    ]
+  },
+]
+
+const friends = [
+  {
+    avatar: 'https://www.github.com/laravel.png',
+    name: 'Laravel',
+    title: '搭建充满创意的网站，快速又优雅',
+    links: [
+      { icon: 'github', link: 'https://github.com/laravel' }
+    ]
+  },
+  {
+    avatar: 'https://www.github.com/flutter.png',
+    name: 'Flutter',
+    title: '全能型的 APP 开发选手，为所有屏幕创造精彩',
+    links: [
+      { icon: 'github', link: 'https://github.com/flutter' }
+    ]
+  },
+  {
+    avatar: 'https://github.com/apple.png',
+    name: 'SwiftUI',
+    title: 'Apple 平台的造梦师',
+    links: [
+      { icon: 'github', link: 'https://developer.apple.com/cn/xcode/swiftui/' }
+    ]
+  },
+  {
+    avatar: 'https://github.com/vuejs.png',
+    name: 'Vue.js',
+    title: '易学易用，性能出色，适用场景丰富的 Web 前端框架',
+    links: [
+      { icon: 'github', link: 'https://github.com/vuejs/vue' }
+    ]
+  },
+  {
+    avatar: 'https://github.com/golang.png',
+    name: 'Go',
+    title: '新时代的编程语言',
+    links: [
+      { icon: 'github', link: 'https://github.com/golang/go' }
+    ]
+  },
+  {
+    avatar: 'https://github.com/tailwindlabs.png',
+    name: 'Tailwind CSS',
+    title: 'CSS 从未如此简单',
+    links: [
+      { icon: 'github', link: 'https://github.com/tailwindlabs/tailwindcss' }
+    ]
+  },
+  {
+    avatar: 'https://github.com/github.png',
+    name: 'GitHub',
+    title: '每个人都喜欢我',
+    links: [
+      { icon: 'github', link: 'https://github.com/github' }
+    ]
+  },
+  {
+    avatar: 'https://github.com/torvalds.png',
+    name: 'Linux',
+    title: '天才',
+    links: [
+      { icon: 'github', link: 'https://github.com/torvalds/linux' }
+    ]
+  },
+]
+</script>
