@@ -12,10 +12,10 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Cisum', link: '/products/cisum' },
-      { text: '快易知', link: '/products/kuaiyizhi' },
-      { text: 'TravelMode', link: '/products/travelmode' },
-      { text: '文档', link: '/cisum/github_actions' }
+      { text: 'Cisum', link: 'cisum' },
+      { text: 'Kuaiyizhi', link: 'kuaiyizhi' },
+      { text: 'TravelMode', link: 'travelmode' },
+      { text: 'Documents', link: '/cisum/github_actions' }
     ],
 
     sidebar: [
@@ -36,6 +36,19 @@ export default defineConfig({
     footer: {
       message: 'All rights reserved.',
       copyright: 'Copyright © 2024-present Yueyi Network'
+    }
+  },
+  locales: {
+    root: {
+      label: 'English',
+      lang: 'en'
+    },
+    fr: {
+      label: '中文',
+      lang: 'zh', // 可选，将作为 `lang` 属性添加到 `html` 标签中
+      link: '/zh' // 默认 /fr/ -- 显示在导航栏翻译菜单上，可以是外部的
+
+      // 其余 locale 特定属性...
     }
   }
 })

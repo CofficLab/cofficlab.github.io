@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Let's create wonderful software together"
+  name: "一起创造简约的软件"
   # text: "软件本该如此"
   # tagline: 我们生产简洁强大的软件
   # image: 
@@ -14,40 +14,40 @@ hero:
       link: https://github.com/cofficlab
 
 features:
-  # - icon: 🔕
-  #   title: 无需注册、登录、扫码
-  #   details: 打开即用
-  # - icon: ☁️
-  #   title: iCloud 同步
-  #   details: 针对 iCloud 进行了优化
-  # - icon: 📺
-  #   title: 优雅简洁的界面
-  #   details: 简洁、明确，无心智负担
-  # - icon: 🍵
-  #   title: 无广告、无干扰
-  #   details: 尊重用户体验
+  - icon: 🔕
+    title: 无需注册、登录、扫码
+    details: 打开即用
+  - icon: ☁️
+    title: iCloud 同步
+    details: 针对 iCloud 进行了优化
+  - icon: 📺
+    title: 优雅简洁的界面
+    details: 简洁、明确，无心智负担
+  - icon: 🍵
+    title: 无广告、无干扰
+    details: 尊重用户体验
 ---
 ---
 
-# Products
+# 我们的产品
 
-<!-- 简洁而强大，绝不破坏用户体验。 -->
+简洁而强大，绝不破坏用户体验。
 
 <VPTeamMembers size="small" :members="products" />
 
 ---
 
-# Team
+# 我们的团队
 
-<!-- 一群不甘平凡的普通人。 -->
+一群不甘平凡的普通人。
 
 <VPTeamMembers size="small" :members="members" />
 
 ---
 
-# Friends
+# 我们的好朋友
 
-I can't wait to introduce my good friends to you
+也许我们有共同的好朋友。
 
 <VPTeamMembers size="small" :members="friends" />
 
@@ -59,16 +59,16 @@ import { VPTeamMembers } from 'vitepress/theme'
 const products = [
   {
     avatar: '/images/cisum/logo2.png',
-    name: 'Cisum',
-    title: 'A music player',
+    name: 'Cisum-乐音',
+    title: '音乐播放器，我们工作的时候都喜欢用',
     links: [
       { icon: 'github', link: 'https://github.com/yueyinet/cisum' }
     ]
   },
   {
     avatar: '/images/kuaiyizhi/logo.png',
-    name: 'Kuaiyizhi',
-    title: 'A note application',
+    name: '快易知',
+    title: '笔记软件，我们用它来记录大量文档',
     links: [
       { icon: 'github', link: 'https://apps.apple.com/cn/app/%E5%BF%AB%E6%98%93%E7%9F%A5/id6457892799?mt=12' }
     ]
@@ -76,7 +76,7 @@ const products = [
   {
     avatar: '/images/travelmode/logo.png',
     name: 'TravelMode',
-    title: 'Control your network',
+    title: '阻止应用联网',
     links: [
       { icon: 'github', link: 'https://apps.apple.com/cn/app/travelmode/id6474899051?mt=12' }
     ]
@@ -87,7 +87,7 @@ const members = [
   {
     avatar: '/images/coffic/logo3.png',
     name: 'Coffic Lab',
-    title: 'That\'s our team',
+    title: '我们的组织',
     links: [
       { icon: 'github', link: 'https://github.com/cofficlab' }
     ]
@@ -95,7 +95,7 @@ const members = [
   {
     avatar: 'https://www.github.com/nookery.png',
     name: 'Nookery',
-    title: 'Creator',
+    title: '我喜欢简洁，能自己写的软件我就自己写',
     links: [
       { icon: 'github', link: 'https://github.com/nookery' }
     ]
@@ -106,7 +106,7 @@ const friends = [
   {
     avatar: 'https://www.github.com/laravel.png',
     name: 'Laravel',
-    title: 'The PHP Framework for Web Artisans',
+    title: '搭建充满创意的网站，快速又优雅',
     links: [
       { icon: 'github', link: 'https://github.com/laravel' }
     ]
@@ -114,7 +114,7 @@ const friends = [
   {
     avatar: 'https://www.github.com/flutter.png',
     name: 'Flutter',
-    title: 'Build apps for any screens',
+    title: '全能型的 APP 开发选手，为所有屏幕创造精彩',
     links: [
       { icon: 'github', link: 'https://github.com/flutter' }
     ]
@@ -122,7 +122,7 @@ const friends = [
   {
     avatar: '/images/friends/swift.svg',
     name: 'SwiftUI',
-    title: 'Build apps for iOS, macOS, tvOS, and watchOS',
+    title: 'Apple 平台的造梦师',
     links: [
       { icon: 'github', link: 'https://developer.apple.com/cn/xcode/swiftui/' }
     ]
@@ -130,7 +130,7 @@ const friends = [
   {
     avatar: 'https://github.com/vuejs.png',
     name: 'Vue.js',
-    title: 'Wonderful and Powerful',
+    title: '易学易用，性能出色，适用场景丰富的 Web 前端框架',
     links: [
       { icon: 'github', link: 'https://github.com/vuejs/vue' }
     ]
@@ -138,7 +138,7 @@ const friends = [
   {
     avatar: 'https://github.com/golang.png',
     name: 'Go',
-    title: 'Program Language for everyone',
+    title: '新时代的编程语言',
     links: [
       { icon: 'github', link: 'https://github.com/golang/go' }
     ]
@@ -146,7 +146,7 @@ const friends = [
   {
     avatar: 'https://github.com/tailwindlabs.png',
     name: 'Tailwind CSS',
-    title: 'Make CSS simple',
+    title: 'CSS 从未如此简单',
     links: [
       { icon: 'github', link: 'https://github.com/tailwindlabs/tailwindcss' }
     ]
@@ -154,7 +154,7 @@ const friends = [
   {
     avatar: 'https://github.com/github.png',
     name: 'GitHub',
-    title: 'Everybody likes me',
+    title: '每个人都喜欢我',
     links: [
       { icon: 'github', link: 'https://github.com/github' }
     ]
@@ -162,7 +162,7 @@ const friends = [
   {
     avatar: 'https://github.com/torvalds.png',
     name: 'Linux',
-    title: 'Genius of the Universe',
+    title: '天才',
     links: [
       { icon: 'github', link: 'https://github.com/torvalds/linux' }
     ]
