@@ -11,7 +11,7 @@ export default defineConfig({
     ['script', { src: '/home.js' }]
   ],
   themeConfig: {
-    logo: '/images/coffic/logo4.png',
+    logo: '/images/coffic/logo4.min.png',
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/cofficlab' }

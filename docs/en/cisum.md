@@ -7,7 +7,7 @@ hero:
   text: "Listening to music should be so simple"
   tagline: Build my own music lab
   image: 
-    src: /images/cisum/hero3.png
+    src: /images/cisum/hero3.min.png
   actions:
     # - theme: brand
     #   text: Markdown Examples
@@ -42,6 +42,6 @@ features:
 
 <div class="flex flex-col my-12 justify-center items-center">
   <div class="w-3/4 shadow-2xl">
-    <img src="/images/cisum/hero.png" class="" alt="">
+    <img src="/images/cisum/hero.min.png" class="" alt="">
   </div>
 </div>

@@ -7,7 +7,7 @@ hero:
   text: "听音乐本该如此简单"
   tagline: 打造自己的音乐库
   image: 
-    src: /images/cisum/hero3.png
+    src: /images/cisum/hero3.min.png
   actions:
     # - theme: brand
     #   text: Markdown Examples
@@ -42,6 +42,6 @@ features:
 
 <div class="flex flex-col my-12 justify-center items-center">
   <div class="w-3/4 shadow-2xl">
-    <img src="/images/cisum/hero.png" class="" alt="">
+    <img src="/images/cisum/hero.min.png" class="" alt="">
   </div>
 </div>

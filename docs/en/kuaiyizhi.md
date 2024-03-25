@@ -7,7 +7,7 @@ hero:
   text: "Simple but Powerful"
   tagline: Build my own knowledge base
   image: 
-    src: /images/kuaiyizhi/1.png
+    src: /images/kuaiyizhi/1.min.png
   actions:
     # - theme: brand
     #   text: Markdown Examples

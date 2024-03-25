@@ -7,7 +7,7 @@ hero:
   # text: "软件本该如此"
   # tagline: 我们生产简洁强大的软件
   # image: 
-  #   src: images/hero3.png
+  #   src: images/hero3.min.png
   actions:
     - theme: alt
       text: GitHub
@@ -58,7 +58,7 @@ import { VPTeamMembers } from 'vitepress/theme'
 
 const products = [
   {
-    avatar: '/images/cisum/logo2.png',
+    avatar: '/images/cisum/logo.min.png',
     name: 'Cisum',
     title: 'A music player',
     links: [
@@ -66,7 +66,7 @@ const products = [
     ]
   },
   {
-    avatar: '/images/kuaiyizhi/logo.png',
+    avatar: '/images/kuaiyizhi/logo.min.png',
     name: 'Kuaiyizhi',
     title: 'A note application',
     links: [
@@ -74,7 +74,7 @@ const products = [
     ]
   },
   {
-    avatar: '/images/travelmode/logo.png',
+    avatar: '/images/travelmode/logo.min.png',
     name: 'TravelMode',
     title: 'Control your network',
     links: [
@@ -85,7 +85,7 @@ const products = [
 
 const members = [
   {
-    avatar: '/images/coffic/logo3.png',
+    avatar: '/images/coffic/logo3.min.png',
     name: 'Coffic Lab',
     title: 'That\'s our team',
     links: [
@@ -160,9 +160,9 @@ const friends = [
     ]
   },
   {
-    avatar: 'https://github.com/torvalds.png',
+    avatar: '/images/friends/linux.min.png',
     name: 'Linux',
-    title: 'Genius of the Universe',
+    title: 'Whose\'s Author is Genius of the Universe',
     links: [
       { icon: 'github', link: 'https://github.com/torvalds/linux' }
     ]

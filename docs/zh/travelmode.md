@@ -7,7 +7,7 @@ hero:
   text: "一目了然的网络控制"
   tagline: 控制 macOS APP 的连网权限
   image: 
-    src: /images/travelmode/1.png
+    src: /images/travelmode/1.min.png
   actions:
     # - theme: brand
     #   text: Markdown Examples
