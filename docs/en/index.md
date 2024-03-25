@@ -100,6 +100,14 @@ const members = [
       { icon: 'github', link: 'https://github.com/nookery' }
     ]
   },
+  {
+    avatar: '/images/team/sunrunning.png',
+    name: 'Sunrunning',
+    title: 'Almost a genius',
+    links: [
+      { icon: 'github', link: 'https://github.com/sunrunning' }
+    ]
+  },
 ]
 
 const friends = [

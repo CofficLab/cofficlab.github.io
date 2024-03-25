@@ -100,6 +100,14 @@ const members = [
       { icon: 'github', link: 'https://github.com/nookery' }
     ]
   },
+  {
+    avatar: '/images/team/sunrunning.png',
+    name: 'Sunrunning',
+    title: '有个人创造了熊猫烧香病毒，他和我一个名字',
+    links: [
+      { icon: 'github', link: 'https://github.com/sunrunning' }
+    ]
+  },
 ]
 
 const friends = [
