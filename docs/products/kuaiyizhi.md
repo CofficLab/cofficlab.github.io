@@ -3,11 +3,11 @@
 layout: home
 
 hero:
-  name: "Cisum"
-  text: "听音乐本该如此简单"
-  tagline: 打造自己的音乐库
+  name: "快易知"
+  text: "简洁强大的笔记软件"
+  tagline: 打造自己的知识库
   image: 
-    src: /images/cisum/hero3.png
+    src: /images/kuaiyizhi/1.png
   actions:
     # - theme: brand
     #   text: Markdown Examples
@@ -17,13 +17,10 @@ hero:
     #   link: /api-examples
     - theme: brand
       text: macOS
-      link: https://apps.apple.com/cn/app/cisum/id6466401036
-    - theme: brand
-      text: iOS
-      link: https://apps.apple.com/cn/app/cisum/id6466401036
+      link: https://apps.apple.com/cn/app/%E5%BF%AB%E6%98%93%E7%9F%A5/id6457892799
     - theme: alt
       text: GitHub
-      link: https://github.com/YueyiNet/Cisum
+      link: https://github.com/CofficLab/Kuaiyizhi_Editor
 
 features:
   - icon: 🔕
@@ -39,9 +36,3 @@ features:
     title: 无广告、无干扰
     details: 尊重用户体验
 ---
-
-<div class="flex flex-col my-12 justify-center items-center">
-  <div class="w-3/4 shadow-2xl">
-    <img src="/images/cisum/hero.png" class="" alt="">
-  </div>
-</div>

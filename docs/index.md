@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: alt
       text: GitHub
-      link: https://github.com/YueyiNet
+      link: https://github.com/cofficlab
 
 features:
   - icon: 🔕
@@ -58,7 +58,7 @@ import { VPTeamMembers } from 'vitepress/theme'
 
 const products = [
   {
-    avatar: 'https://www.github.com/cisum.png',
+    avatar: '/images/cisum/logo2.png',
     name: 'Cisum-乐音',
     title: '音乐播放器，我们工作的时候都喜欢用',
     links: [
@@ -66,7 +66,7 @@ const products = [
     ]
   },
   {
-    avatar: 'https://www.github.com/yueyinet.png',
+    avatar: '/images/kuaiyizhi/logo.png',
     name: '快易知',
     title: '笔记软件，我们用它来记录大量文档',
     links: [
@@ -74,7 +74,7 @@ const products = [
     ]
   },
   {
-    avatar: '/images/travelmode.webp',
+    avatar: '/images/travelmode/logo.png',
     name: 'TravelMode',
     title: '阻止应用联网',
     links: [
@@ -85,11 +85,11 @@ const products = [
 
 const members = [
   {
-    avatar: 'https://www.github.com/yueyinet.png',
-    name: 'YueyiNet',
+    avatar: '/images/coffic/logo3.png',
+    name: 'Coffic Lab',
     title: '我们的组织',
     links: [
-      { icon: 'github', link: 'https://github.com/yueyinet' }
+      { icon: 'github', link: 'https://github.com/cofficlab' }
     ]
   },
   {
@@ -120,7 +120,7 @@ const friends = [
     ]
   },
   {
-    avatar: 'https://github.com/apple.png',
+    avatar: '/images/friends/swift.svg',
     name: 'SwiftUI',
     title: 'Apple 平台的造梦师',
     links: [
