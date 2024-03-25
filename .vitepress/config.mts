@@ -6,7 +6,10 @@ export default defineConfig({
   description: "为软件做减法",
   base: "/",
   srcDir: "docs",
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['script', { src: '/home.js' }]
+  ],
   themeConfig: {
     logo: '/images/coffic/logo4.png',
 
