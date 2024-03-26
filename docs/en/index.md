@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "Let's create wonderful software together"
+  name: "Coffic Lab"
   # text: "软件本该如此"
-  # tagline: 我们生产简洁强大的软件
+  tagline: Let's create wonderful software together
   # image: 
   #   src: images/hero3.min.png
   actions:
@@ -85,7 +85,7 @@ const members = [
   {
     avatar: '/images/coffic/logo3.min.png',
     name: 'Coffic Lab',
-    title: 'That\'s our team',
+    title: 'That\'s our team, full of coffee and music',
     links: [
       { icon: 'github', link: 'https://github.com/cofficlab' }
     ]
