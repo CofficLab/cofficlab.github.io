@@ -4,10 +4,10 @@ layout: home
 
 hero:
   name: "Coffic Lab 工作室"
-  # text: "软件本该如此"
-  tagline: 精彩软件，一起创造
-  # image: 
-  #   src: images/hero3.min.png
+  text: 精彩软件，一起创造
+  tagline: with coffee and music
+  image: 
+    src: /images/coffic/logo4.png
   actions:
     - theme: alt
       text: GitHub

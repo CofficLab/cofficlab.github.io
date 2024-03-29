@@ -4,10 +4,10 @@ layout: home
 
 hero:
   name: "Coffic Lab"
-  # text: "软件本该如此"
-  tagline: Let's create wonderful software together
-  # image: 
-  #   src: images/hero3.min.png
+  text: "build wonderful softwares"
+  tagline:  with coffee and music
+  image: 
+    src: /images/coffic/logo4.png
   actions:
     - theme: alt
       text: GitHub
@@ -65,7 +65,7 @@ const members = [
   {
     avatar: '/images/team/nookery.png',
     name: 'Nookery',
-    title: 'Creator',
+    title: 'Work for Joy & Live for Love',
     links: [
       { icon: 'github', link: 'https://github.com/nookery' }
     ]

@@ -36,13 +36,13 @@ export default defineConfig({
           { text: 'Cisum', link: '/en/cisum' },
           { text: 'Kuaiyizhi', link: '/en/kuaiyizhi' },
           { text: 'TravelMode', link: '/en/travelmode' },
-          { text: 'Documents', link: '/en/cisum/github_actions' }
+          { text: 'Documents', link: '/en/coffic/github_actions' }
         ],
         sidebar: [
           {
-            text: 'Cisum',
+            text: 'Coffic',
             items: [
-              { text: 'GitHub Actions', link: '/en/cisum/github_actions' },
+              { text: 'GitHub Actions', link: '/en/coffic/github_actions' },
               // { text: 'Markdown Examples', link: '/cisum/markdown-examples' },
               // { text: 'Runtime API Examples', link: '/cisum/api-examples' }
             ]
@@ -60,13 +60,13 @@ export default defineConfig({
           { text: 'Cisum-乐音', link: '/zh/cisum' },
           { text: '快易知', link: '/zh/kuaiyizhi' },
           { text: 'TravelMode', link: '/zh/travelmode' },
-          { text: '文档', link: '/zh/cisum/github_actions' }
+          { text: '文档', link: '/zh/coffic/github_actions' }
         ],
         sidebar: [
           {
-            text: 'Cisum',
+            text: 'Coffic',
             items: [
-              { text: 'GitHub Actions', link: '/zh/cisum/github_actions' }
+              { text: 'GitHub Actions', link: '/zh/coffic/github_actions' }
             ]
           }
         ]
