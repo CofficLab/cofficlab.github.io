@@ -31,9 +31,7 @@ features:
 
 ## Products
 
-<!-- 简洁而强大，绝不破坏用户体验。 -->
-
-<VPTeamMembers size="small" :members="products" />
+<Products />
 
 ---
 
@@ -53,33 +51,7 @@ I can't wait to introduce my good friends to you
 
 <script setup>
 import { VPTeamMembers } from 'vitepress/theme'
-
-const products = [
-  {
-    avatar: '/images/cisum/logo.min.png',
-    name: 'Cisum',
-    title: 'A music player',
-    links: [
-      { icon: 'github', link: 'https://github.com/yueyinet/cisum' }
-    ]
-  },
-  {
-    avatar: '/images/kuaiyizhi/logo.min.png',
-    name: 'Kuaiyizhi',
-    title: 'A note application',
-    links: [
-      { icon: 'github', link: 'https://apps.apple.com/cn/app/%E5%BF%AB%E6%98%93%E7%9F%A5/id6457892799?mt=12' }
-    ]
-  },
-  {
-    avatar: '/images/travelmode/logo.min.png',
-    name: 'TravelMode',
-    title: 'Control your network',
-    links: [
-      { icon: 'github', link: 'https://apps.apple.com/cn/app/travelmode/id6474899051?mt=12' }
-    ]
-  },
-]
+import Products from '../components/Products.vue'
 
 const members = [
   {

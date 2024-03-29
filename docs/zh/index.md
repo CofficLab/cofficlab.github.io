@@ -33,7 +33,7 @@ features:
 
 简洁而强大，绝不破坏用户体验。
 
-<VPTeamMembers size="small" :members="products" />
+<Products />
 
 ---
 
@@ -55,33 +55,7 @@ features:
 
 <script setup>
 import { VPTeamMembers } from 'vitepress/theme'
-
-const products = [
-  {
-    avatar: '/images/cisum/logo.min.png',
-    name: 'Cisum-乐音',
-    title: '音乐播放器，我们工作的时候都喜欢用',
-    links: [
-      { icon: 'github', link: 'https://github.com/yueyinet/cisum' }
-    ]
-  },
-  {
-    avatar: '/images/kuaiyizhi/logo.min.png',
-    name: '快易知',
-    title: '笔记软件，我们用它来记录大量文档',
-    links: [
-      { icon: 'github', link: 'https://apps.apple.com/cn/app/%E5%BF%AB%E6%98%93%E7%9F%A5/id6457892799?mt=12' }
-    ]
-  },
-  {
-    avatar: '/images/travelmode/logo.min.png',
-    name: 'TravelMode',
-    title: '阻止应用联网',
-    links: [
-      { icon: 'github', link: 'https://apps.apple.com/cn/app/travelmode/id6474899051?mt=12' }
-    ]
-  },
-]
+import Products from '../components/Products.vue'
 
 const members = [
   {
