@@ -13,6 +13,10 @@ export default defineConfig({
   themeConfig: {
     logo: '/images/coffic/logo4.min.png',
 
+    search: {
+      provider: 'local'
+    },
+
     socialLinks: [
       { icon: 'github', link: 'https://github.com/cofficlab' }
     ],
