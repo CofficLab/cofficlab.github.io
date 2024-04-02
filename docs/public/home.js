@@ -24,10 +24,9 @@ if (location.pathname == '/') {
       if (cookieValue === 'zh-CN' || cookieValue === 'zh') {
         window.location.href = '/zh/';
         return;
-      } else if (cookieValue === 'en-US' || cookieValue === 'en') {
-        window.location.href = '/en/';
-        return;
-      } else {
+      }
+
+      if (cookieValue === 'en-US' || cookieValue === 'en') {
         window.location.href = '/en/';
         return;
       }
