@@ -1,0 +1,103 @@
+---
+#--------------------------------------------------
+#  发布到生产环境
+#--------------------------------------------------
+#
+
+name: Deploy
+
+env:
+  RELEASE_DIR: /www/wwwroot/coffic/${{ github.sha }}
+  DEPLOY_DIR: /www/wwwroot/coffic/production
+
+on:
+  push:
+    branches: [test]
+    # tags:
+    #   - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build with VitePress
+        run: pnpm run docs:build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: pages
+          path: .vitepress/dist
+          retention-days: 1
+
+  sync:
+    needs: [build]
+    runs-on: self-hosted
+    steps:
+      - name: 当前用户
+        run: whoami
+      - name: 确认文件夹存在
+        run: |
+          if [ ! -d $RELEASE_DIR ]; then
+            mkdir -p $RELEASE_DIR
+          fi
+      - name: 下载构件
+        uses: actions/download-artifact@v3
+        with:
+          name: pages
+          path: .
+      - name: 同步到发布文件夹
+        run: |
+          rsync -rapq \
+            --exclude '.devcontainer/' \
+            --exclude '.editorconfig' \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude '.vscode/' \
+            --exclude 'vite.config.js' \
+            --exclude 'package-lock.json' \
+            --exclude 'package.json' \
+            --exclude 'docker-compose.yml' \
+            --exclude '.env.example' \
+            --exclude '.gitignore' \
+            --exclude '.gitattributes' \
+            --exclude '.gitlab-ci.yml' \
+            --exclude 'phpunit.xml' \
+            --exclude 'postcss.config.js' \
+            --exclude 'tailwind.config.js' \
+            --exclude 'node_modules/' \
+            --exclude 'pnpm-lock.yaml' \
+            --exclude 'tests/' \
+            --exclude 'storage/' \
+            ./ $RELEASE_DIR
+
+  link:
+    needs: [sync]
+    runs-on: self-hosted
+    steps:
+      - name: 当前用户
+        run: whoami
+      - name: 设置软链接
+        run: ln -snf $RELEASE_DIR $DEPLOY_DIR
+
+  clear:
+    needs: [link]
+    runs-on: self-hosted
+    steps:
+      - name: 当前用户
+        run: whoami
+      - name: 清理发布文件夹
+        run: cd ${RELEASE_DIR}/.. && ls -lt | grep ^d | awk 'NR>2' | xargs rm -rf
