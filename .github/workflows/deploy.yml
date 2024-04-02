@@ -100,4 +100,4 @@ jobs:
       - name: 当前用户
         run: whoami
       - name: 清理发布文件夹
-        run: cd ${RELEASE_DIR}/.. && ls -lt | grep ^d | awk 'NR>2' | xargs rm -rf
+        run: cd ${RELEASE_DIR}/.. && ls -lt | grep ^d | awk 'NR>3' | xargs rm -rf
