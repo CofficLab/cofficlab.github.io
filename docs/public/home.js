@@ -7,7 +7,7 @@ if (location.pathname == '/') {
 
   // 判断cookie是否存在
   if (cookiesArray.length === 0) {
-    return (window.location.href = '/en/');
+    window.location.href = '/en/';
   }
 
   // 循环遍历每个cookie，找到需要的cookie值
@@ -20,17 +20,15 @@ if (location.pathname == '/') {
 
     if (cookieName === 'nf_lang') {
       var cookieValue = cookiePair[1];
-      console.log('Cookie值为：' + cookieValue);
-
       if (cookieValue === 'zh-CN' || cookieValue === 'zh') {
-        return (window.location.href = '/zh/');
+        window.location.href = '/zh/';
       } else if (cookieValue === 'en-US' || cookieValue === 'en') {
-        return (window.location.href = '/en/');
+        window.location.href = '/en/';
       } else {
-        return (window.location.href = '/en/');
+        window.location.href = '/en/';
       }
     }
   }
 
-  return (window.location.href = '/en/');
+  window.location.href = '/en/';
 }
