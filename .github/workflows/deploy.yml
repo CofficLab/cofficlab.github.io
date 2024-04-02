@@ -55,7 +55,7 @@ jobs:
             mkdir -p $RELEASE_DIR
           fi
       - name: 下载构件
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v3
         with:
           name: pages
           path: .
