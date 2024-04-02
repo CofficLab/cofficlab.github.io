@@ -8,6 +8,7 @@ if (location.pathname == '/') {
   // 判断cookie是否存在
   if (cookiesArray.length === 0) {
     window.location.href = '/en/';
+    return;
   }
 
   // 循环遍历每个cookie，找到需要的cookie值
@@ -22,10 +23,13 @@ if (location.pathname == '/') {
       var cookieValue = cookiePair[1];
       if (cookieValue === 'zh-CN' || cookieValue === 'zh') {
         window.location.href = '/zh/';
+        return;
       } else if (cookieValue === 'en-US' || cookieValue === 'en') {
         window.location.href = '/en/';
+        return;
       } else {
         window.location.href = '/en/';
+        return;
       }
     }
   }
