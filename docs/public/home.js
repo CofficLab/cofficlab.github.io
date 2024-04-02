@@ -5,7 +5,12 @@ if (location.pathname == '/') {
   // 将所有的cookie字符串分割成单独的cookie
   var cookiesArray = allCookies.split('; ');
 
-  // 循环遍历每个cookie，找到你需要的cookie值
+  // 判断cookie是否存在
+  if (cookiesArray.length === 0) {
+    return (window.location.href = '/en/');
+  }
+
+  // 循环遍历每个cookie，找到需要的cookie值
   for (var i = 0; i < cookiesArray.length; i++) {
     var cookie = cookiesArray[i];
     var cookiePair = cookie.split('=');
@@ -13,19 +18,19 @@ if (location.pathname == '/') {
     // 去除空格
     var cookieName = cookiePair[0].trim();
 
-    // 如果找到你需要的cookie名，获取对应的值
     if (cookieName === 'nf_lang') {
       var cookieValue = cookiePair[1];
-      // 在这里使用cookieValue来处理你的逻辑
       console.log('Cookie值为：' + cookieValue);
 
       if (cookieValue === 'zh-CN' || cookieValue === 'zh') {
-        window.location.href = '/zh/';
+        return (window.location.href = '/zh/');
       } else if (cookieValue === 'en-US' || cookieValue === 'en') {
-        window.location.href = '/en/';
+        return (window.location.href = '/en/');
       } else {
-        window.location.href = '/en/';
+        return (window.location.href = '/en/');
       }
     }
   }
+
+  return (window.location.href = '/en/');
 }
