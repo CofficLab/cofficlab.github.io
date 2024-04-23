@@ -23,7 +23,7 @@ hero:
       link: https://apps.apple.com/cn/app/cisum/id6466401036
     - theme: alt
       text: GitHub
-      link: https://github.com/YueyiNet/Cisum
+      link: https://github.com/CofficLab/Cisum_SwiftUI
     - theme: alt
       text: Community
       link: https://support.qq.com/products/647007
