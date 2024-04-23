@@ -24,6 +24,9 @@ hero:
     - theme: alt
       text: GitHub
       link: https://github.com/YueyiNet/Cisum
+    - theme: alt
+      text: 交流社区
+      link: https://support.qq.com/products/647007
 
 features:
   - icon: 🔕
@@ -40,7 +43,7 @@ features:
     details: 尊重用户体验
 ---
 
-<div class="flex flex-col my-12 justify-center items-center">
+<div class="flex flex-col items-center justify-center my-12">
   <div class="w-3/4 shadow-2xl">
     <img src="/images/cisum/hero.min.png" class="" alt="">
   </div>
