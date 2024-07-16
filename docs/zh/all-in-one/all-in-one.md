@@ -7,6 +7,8 @@
 这里记录了它运行黑苹果的情况：  
 <https://github.com/nookery/Hackintosh-DeskMini-H310>
 
+![project](./images/project.png)
+
 按照本文操作，最终的成果是：
 
 - DeskMini 可以安装多个虚拟机，如：Ubuntu、Windows、macOS(不太好用)

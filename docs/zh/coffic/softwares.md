@@ -7,6 +7,7 @@ This document is a list of softwares that we use.
 - <https://lobechat.com/chat>
 - <https://sider.ai/download>
 - <https://monica.im>
+- <https://haye.ai>
 
 ## Terminal
 
