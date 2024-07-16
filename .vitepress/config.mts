@@ -46,6 +46,13 @@ export default defineConfig({
               // { text: 'Markdown Examples', link: '/cisum/markdown-examples' },
               // { text: 'Runtime API Examples', link: '/cisum/api-examples' }
             ]
+          },
+          {
+            text: 'Learning',
+            items: [
+              { text: 'Build a website', link: '/zh/learning/steps' },
+              { text: 'Become an expert', link: '/zh/learning/become-an-expert' }
+            ]
           }
         ]
       }
@@ -67,6 +74,13 @@ export default defineConfig({
             text: 'Coffic',
             items: [
               { text: 'GitHub Actions', link: '/zh/coffic/github_actions' }
+            ]
+          },
+          {
+            text: 'Learning',
+            items: [
+              { text: 'Build a website', link: '/zh/learning/steps' },
+              { text: 'Become an expert', link: '/zh/learning/become-an-expert' }
             ]
           }
         ]
