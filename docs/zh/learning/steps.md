@@ -380,6 +380,18 @@ see the Laravel homepage.
 
 ## Build a web application with Laravel
 
+It's time to build something amazing with Laravel.  
+
+Now modify the code in `store-app` directory to build a web application
+ as shown in the following image.
+
+![APIStore](./images/project.png)
+
+🔔 If you have no idea about how to start, 
+learn the following courses first:
+
+- <https://www.imooc.com/u/3781805>
+
 ### TailwindCSS
 
 TailwindCSS is a utility-first CSS framework.  
