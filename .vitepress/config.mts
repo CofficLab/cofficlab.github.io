@@ -53,6 +53,12 @@ export default defineConfig({
               { text: 'Build a website', link: '/zh/learning/steps' },
               { text: 'Become an expert', link: '/zh/learning/become-an-expert' }
             ]
+          },
+          {
+            text: 'All in One',
+            items: [
+              { text: 'DeskMini 310', link: '/zh/all-in-one/all-in-one' },
+            ]
           }
         ]
       }
@@ -81,6 +87,12 @@ export default defineConfig({
             items: [
               { text: 'Build a website', link: '/zh/learning/steps' },
               { text: 'Become an expert', link: '/zh/learning/become-an-expert' }
+            ]
+          },
+          {
+            text: 'All in One',
+            items: [
+              { text: 'DeskMini 310', link: '/zh/all-in-one/all-in-one' },
             ]
           }
         ]
