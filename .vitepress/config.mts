@@ -43,6 +43,7 @@ export default defineConfig({
             text: 'Coffic',
             items: [
               { text: 'GitHub Actions', link: '/en/coffic/github_actions' },
+              { text: 'Softwares', link: '/zh/coffic/softwares' }
               // { text: 'Markdown Examples', link: '/cisum/markdown-examples' },
               // { text: 'Runtime API Examples', link: '/cisum/api-examples' }
             ]
@@ -79,7 +80,8 @@ export default defineConfig({
           {
             text: 'Coffic',
             items: [
-              { text: 'GitHub Actions', link: '/zh/coffic/github_actions' }
+              { text: 'GitHub Actions', link: '/zh/coffic/github_actions' },
+              { text: 'Softwares', link: '/zh/coffic/softwares' }
             ]
           },
           {
