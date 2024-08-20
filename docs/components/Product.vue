@@ -1,13 +1,13 @@
 <template>
   <article>
     <div
-      class="flex flex-col text-center gap-2 p-4 bg-gray-400/20 rounded-lg VPTeamMembersItem small">
+      class="flex flex-col gap-2 p-4 text-center rounded-lg bg-gray-400/20 VPTeamMembersItem small">
       <!-- 产品头像 -->
       <figure class="avatar">
         <img
           :src="product.avatar"
           alt="Product Avatar"
-          class="w-20 h-20 rounded-full mx-auto" />
+          class="w-20 h-20 mx-auto rounded-full" />
       </figure>
 
       <a :href="homepage" :target="target" class="product-link">
@@ -22,7 +22,7 @@
           <img
             src="/images/friends/github.png"
             alt=""
-            class="w-7 rounded-full opacity-75" />
+            class="rounded-full opacity-75 w-7" />
         </a>
         <a
           :href="product.store"
@@ -32,13 +32,17 @@
           <img
             src="/images/friends/mac_app_store.svg"
             alt=""
-            class="w-28 opacity-75" />
+            class="opacity-75 w-28" />
         </a>
-        <a :href="product.store" class="mx-2 hidden dark:flex" target="_blank">
+        <a
+          :href="product.store"
+          class="hidden mx-2 dark:flex"
+          target="_blank"
+          v-if="product.store">
           <img
             src="/images/friends/mac_app_store_dark.svg"
             alt=""
-            class="w-28 opacity-75" />
+            class="opacity-75 w-28" />
         </a>
       </div>
     </div>

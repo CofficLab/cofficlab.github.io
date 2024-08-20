@@ -37,6 +37,7 @@ export default defineConfig({
           { text: 'Cisum', link: '/en/cisum' },
           { text: 'JuiceNote', link: '/en/kuaiyizhi' },
           { text: 'TravelMode', link: '/en/travelmode' },
+          { text: 'GitOK', link: '/en/gitok/' },
           {
             text: 'Documents', items: [
               { text: 'Coffic', link: '/en/coffic/github_actions' },
@@ -114,6 +115,7 @@ export default defineConfig({
           { text: 'Cisum-乐音', link: '/zh/cisum/' },
           { text: '聚思笔记', link: '/zh/kuaiyizhi' },
           { text: 'TravelMode', link: '/zh/travelmode' },
+          { text: 'GitOK', link: '/zh/gitok/' },
           {
             text: '文档', items: [
               { text: 'Coffic', link: '/zh/coffic/github_actions' },

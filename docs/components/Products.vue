@@ -33,6 +33,13 @@
         github: 'https://github.com/CofficLab/JuiceEditor',
         homepage: 'https://cofficlab.github.io/JuiceEditor',
       }" />
+    <Product
+      :product="{
+        avatar: '/images/gitok/logo-512x512.png',
+        name: 'GitOk',
+        description: 'Simple and powerful',
+        github: 'https://github.com/CofficLab/gitok',
+      }" />
   </div>
 </template>
 
