@@ -46,9 +46,12 @@ features:
 
 <VPTeamMembers size="small" :members="friends" />
 
+<Footer></Footer>
+
 <script setup>
 import { VPTeamMembers } from 'vitepress/theme'
 import Products from '../components/Products.vue'
+import Footer from '../components/Footer.vue'
 
 const members = [
   {

@@ -30,17 +30,17 @@ features:
 
 ## Products
 
+Simple and powerful, never compromising user experience.
+
 <Products />
 
----
 
 ## Team
 
-<!-- 一群不甘平凡的普通人。 -->
+A group of ordinary people who refuse to be mediocre.
 
 <VPTeamMembers size="small" :members="members" />
 
----
 
 ## Friends
 
@@ -48,9 +48,12 @@ I can't wait to introduce my good friends to you
 
 <VPTeamMembers size="small" :members="friends" />
 
+<Footer />
+
 <script setup>
 import { VPTeamMembers } from 'vitepress/theme'
 import Products from '../components/Products.vue'
+import Footer from '../components/Footer.vue'
 
 const members = [
   {
