@@ -27,7 +27,6 @@ features:
     title: 无广告、无干扰
     details: 尊重用户体验
 ---
----
 
 ## 我们的产品
 
@@ -35,15 +34,11 @@ features:
 
 <Products />
 
----
-
 ## 我们的团队
 
 一群不甘平凡的普通人。
 
 <VPTeamMembers size="small" :members="members" />
-
----
 
 ## 我们的好朋友
 

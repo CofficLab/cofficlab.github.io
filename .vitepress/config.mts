@@ -23,7 +23,7 @@ export default defineConfig({
 
     footer: {
       message: 'All rights reserved.',
-      copyright: 'Copyright © 2024-present Yueyi Network'
+      copyright: 'Copyright © 2024-present Coffic Lab'
     }
   },
   locales: {
@@ -33,6 +33,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'Home', link: '/en/' },
+          { text: 'JuiceEditor', link: 'https://cofficlab.github.io/JuiceEditor' },
           { text: 'Cisum', link: '/en/cisum' },
           { text: 'Kuaiyizhi', link: '/en/kuaiyizhi' },
           { text: 'TravelMode', link: '/en/travelmode' },
@@ -71,6 +72,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'Home', link: '/zh/' },
+          { text: 'JuiceEditor', link: 'https://cofficlab.github.io/JuiceEditor' },
           { text: 'Cisum-乐音', link: '/zh/cisum' },
           { text: '快易知', link: '/zh/kuaiyizhi' },
           { text: 'TravelMode', link: '/zh/travelmode' },
