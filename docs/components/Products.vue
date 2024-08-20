@@ -11,7 +11,7 @@
     <Product
       :product="{
         avatar: '/images/kuaiyizhi/logo.min.png',
-        name: 'Kuaiyizhi',
+        name: 'JuiceNote',
         store:
           'https://apps.apple.com/cn/app/%E5%BF%AB%E6%98%93%E7%9F%A5/id6457892799',
         description: 'A note application',

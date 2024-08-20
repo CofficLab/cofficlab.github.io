@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Kuaiyizhi"
+  name: "Juice Note"
   text: "Simple but Powerful"
   tagline: Build my own knowledge base
   image: 

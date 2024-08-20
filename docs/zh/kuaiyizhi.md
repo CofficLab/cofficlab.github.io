@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "快易知"
+  name: "聚思笔记"
   text: "简洁强大的笔记软件"
   tagline: 打造自己的知识库
   image: 

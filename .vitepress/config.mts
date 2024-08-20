@@ -35,7 +35,7 @@ export default defineConfig({
           { text: 'Home', link: '/en/' },
           { text: 'JuiceEditor', link: '/en/juiceEditor/' },
           { text: 'Cisum', link: '/en/cisum' },
-          { text: 'Kuaiyizhi', link: '/en/kuaiyizhi' },
+          { text: 'JuiceNote', link: '/en/kuaiyizhi' },
           { text: 'TravelMode', link: '/en/travelmode' },
           {
             text: 'Documents', items: [
@@ -112,7 +112,7 @@ export default defineConfig({
           { text: 'Home', link: '/zh/' },
           { text: 'JuiceEditor', link: '/zh/juiceEditor/' },
           { text: 'Cisum-乐音', link: '/zh/cisum/' },
-          { text: '快易知', link: '/zh/kuaiyizhi' },
+          { text: '聚思笔记', link: '/zh/kuaiyizhi' },
           { text: 'TravelMode', link: '/zh/travelmode' },
           {
             text: '文档', items: [
