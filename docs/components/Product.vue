@@ -10,7 +10,7 @@
           class="w-20 h-20 rounded-full mx-auto" />
       </figure>
 
-      <a :href="homepage" class="product-link">
+      <a :href="homepage" target="_blank" class="product-link">
         <h1 class="name">{{ product.name }}</h1>
       </a>
 
