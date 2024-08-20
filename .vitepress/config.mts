@@ -64,14 +64,14 @@ export default defineConfig({
 
           '/en/juiceEditor/': [
             {
-              text: '使用',
+              text: 'Guide',
               items: [
-                { text: '介绍', link: '/en/juiceEditor/documents/guide/introduce' },
-                { text: '开始', link: '/en/juiceEditor/documents/guide/start' },
+                { text: 'introduce', link: '/en/juiceEditor/documents/guide/introduce' },
+                { text: 'start', link: '/en/juiceEditor/documents/guide/start' },
               ]
             },
             {
-              text: '富文本组件',
+              text: 'Components',
               items: [
                 { text: 'Banner', link: '/en/juiceEditor/documents/components/banner' },
                 { text: 'BlockQuote', link: '/en/juiceEditor/documents/components/blockquote' },
@@ -86,17 +86,17 @@ export default defineConfig({
               ]
             },
             {
-              text: '原理',
+              text: 'Principle',
               items: [
                 { text: 'CI/CD', link: '/en/juiceEditor/documents/principle/ci' },
                 { text: 'Web Component', link: '/en/juiceEditor/documents/principle/web-component' }
               ]
             },
             {
-              text: '案例',
+              text: 'Projects',
               items: [
-                { text: '快易知网站', link: '/en/juiceEditor/documents/projects/kuaiyizhi_web' },
-                { text: '快易知APP', link: '/en/juiceEditor/documents/projects/kuaiyizhi_app' }
+                { text: 'Kuaiyizhi Web', link: '/en/juiceEditor/documents/projects/kuaiyizhi_web' },
+                { text: 'Kuaiyizhi APP', link: '/en/juiceEditor/documents/projects/kuaiyizhi_app' }
               ]
             },
           ],

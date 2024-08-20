@@ -1,5 +1,5 @@
 # Web Component
 
-## 参考链接
+## References
 
 <https://cn.vuejs.org/guide/extras/web-components.html>

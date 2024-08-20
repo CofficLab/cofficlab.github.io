@@ -1,11 +1,11 @@
 # CI/CD
 
-## 将产物同步到其他项目
+## Synchronizing Build Artifacts to Other Projects
 
-当发布新版本后，将本项目的构建产物同步到其他使用本项目的项目。
+After releasing a new version, it's necessary to synchronize the build artifacts of this project to other projects that use it.
 
-假设需要同步到项目：Kuaiyizhi_APP，按照以下步骤：
+Taking synchronization to the Kuaiyizhi_APP project as an example, follow these steps:
 
-- 需要提供 Personal Access Token，在管理员的github设置中生成：<https://github.com/settings/tokens?type=beta>
-- Owner: Kuaiyizhi_APP 所在的组
-- Contents: Read and write
+- A Personal Access Token is required, which can be generated in the administrator's GitHub settings: <https://github.com/settings/tokens?type=beta>
+- Owner: The organization to which Kuaiyizhi_APP belongs
+- Contents: Read and write permissions

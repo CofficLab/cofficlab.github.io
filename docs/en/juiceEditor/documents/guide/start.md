@@ -1,15 +1,15 @@
-# 快速开始
+# Quick Start
 
-该项目目前仍处于开发阶段，尚不稳定，请勿用于生产环境。
+This project is currently still in the development stage and is not yet stable. Please do not use it in a production environment.
 
-## 构建
+## Build
 
 ```shell
 pnpm i
 pnpm run build
 ```
 
-## 使用
+## Usage
 
 ```html
 <!DOCTYPE html>
@@ -27,4 +27,3 @@ pnpm run build
 </body>
 
 </html>
-```
