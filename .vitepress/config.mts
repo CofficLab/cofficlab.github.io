@@ -50,13 +50,6 @@ export default defineConfig({
             ]
           },
           {
-            text: 'Learning',
-            items: [
-              { text: 'Build a website', link: '/zh/learning/steps' },
-              { text: 'Become an expert', link: '/zh/learning/become-an-expert' }
-            ]
-          },
-          {
             text: 'All in One',
             items: [
               { text: 'DeskMini 310', link: '/zh/all-in-one/all-in-one' },
@@ -84,13 +77,6 @@ export default defineConfig({
             items: [
               { text: 'GitHub Actions', link: '/zh/coffic/github_actions' },
               { text: 'Softwares', link: '/zh/coffic/softwares' }
-            ]
-          },
-          {
-            text: 'Learning',
-            items: [
-              { text: 'Build a website', link: '/zh/learning/steps' },
-              { text: 'Become an expert', link: '/zh/learning/become-an-expert' }
             ]
           },
           {
