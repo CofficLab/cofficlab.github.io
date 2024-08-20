@@ -7,7 +7,7 @@ hero:
   text: "简洁强大的富文本编辑器"
   tagline: 仅需一个标签，嵌入到任何项目中
   image: 
-    src: /images/juiceEditor/hero3.png
+    src: /images/juiceEditor/logo-512x512.png
   actions:
     - theme: brand
       text: GitHub

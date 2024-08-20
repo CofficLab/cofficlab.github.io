@@ -7,7 +7,7 @@ hero:
   text: "Control my network"
   tagline: Control my network all by myself
   image: 
-    src: /images/travelmode/1.min.png
+    src: /images/travelmode/logo-512x512.png
   actions:
     # - theme: brand
     #   text: Markdown Examples

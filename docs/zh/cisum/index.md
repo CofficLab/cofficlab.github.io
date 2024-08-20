@@ -7,7 +7,7 @@ hero:
   text: "听音乐本该如此简单"
   tagline: 打造自己的音乐库
   image: 
-    src: /images/cisum/hero3.min.png
+    src: /images/cisum/logo-512x512.png
   actions:
     # - theme: brand
     #   text: Markdown Examples

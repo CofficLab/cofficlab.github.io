@@ -7,7 +7,7 @@ hero:
   text: "Listening to music should be so simple"
   tagline: Build my own music lab
   image: 
-    src: /images/cisum/hero3.min.png
+    src: /images/cisum/logo-512x512.png
   actions:
     # - theme: brand
     #   text: Markdown Examples

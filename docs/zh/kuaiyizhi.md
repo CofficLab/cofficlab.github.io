@@ -7,7 +7,7 @@ hero:
   text: "简洁强大的笔记软件"
   tagline: 打造自己的知识库
   image: 
-    src: /images/kuaiyizhi/1.min.png
+    src: /images/kuaiyizhi/logo-512x512.png
   actions:
     # - theme: brand
     #   text: Markdown Examples
