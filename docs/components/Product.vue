@@ -10,7 +10,7 @@
           class="w-20 h-20 rounded-full mx-auto" />
       </figure>
 
-      <a :href="homepage" target="_blank" class="product-link">
+      <a :href="homepage" :target="target" class="product-link">
         <h1 class="name">{{ product.name }}</h1>
       </a>
 
@@ -59,6 +59,10 @@
     return props.product.homepage
       ? props.product.homepage
       : '/en/' + props.product.name.toLowerCase().replace(' ', '-');
+  });
+
+  const target = computed(() => {
+    return props.product.homepage ? '_blank' : '_self';
   });
 </script>
 

@@ -1,6 +1,10 @@
+window.addEventListener('load', go);
+
 go();
 
 function go() {
+  console.log(location.pathname);
+
   if (location.pathname == '/') {
     // 获取所有的cookie
     var allCookies = document.cookie;
