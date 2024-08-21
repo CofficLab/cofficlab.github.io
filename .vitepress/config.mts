@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Coffic Lab",
-  description: "为软件做减法",
+  description: "我们生产简洁无干扰的优质软件 We produce high-quality, distraction-free software",
   base: "/",
   srcDir: "docs",
   head: [
