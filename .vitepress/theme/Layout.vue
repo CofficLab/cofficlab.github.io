@@ -1,16 +1,25 @@
 <script setup lang="ts">
-import DefaultTheme from 'vitepress/theme'
-import { inBrowser, useData } from 'vitepress'
-import { watchEffect } from 'vue'
+  import DefaultTheme from 'vitepress/theme';
+  import { inBrowser, useData } from 'vitepress';
+  import { watchEffect } from 'vue';
+  import Footer from '../../docs/components/Footer.vue';
 
-const { lang } = useData()
-watchEffect(() => {
+  const { Layout } = DefaultTheme;
+  const { lang } = useData();
+  watchEffect(() => {
     if (inBrowser) {
-        document.cookie = `nf_lang=${lang.value}; expires=Mon, 1 Jan 2030 00:00:00 UTC; path=/`
+      document.cookie = `nf_lang=${lang.value}; expires=Mon, 1 Jan 2030 00:00:00 UTC; path=/`;
     }
-})
+  });
 </script>
 
 <template>
-    <DefaultTheme.Layout />
+  <Layout>
+    <template #aside-outline-before> My custom sidebar top content </template>
+
+    <template #layout-bottom>
+      <hr class="border-gray-500/30 dark:border-gray-600/50">
+      <Footer></Footer>
+    </template>
+  </Layout>
 </template>

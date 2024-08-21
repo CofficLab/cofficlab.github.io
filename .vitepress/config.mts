@@ -20,11 +20,6 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/cofficlab' }
     ],
-
-    footer: {
-      message: 'All rights reserved.',
-      copyright: 'Copyright © 2024-present Coffic Lab'
-    }
   },
   locales: {
     en: {
