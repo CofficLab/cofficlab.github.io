@@ -1,27 +1,33 @@
 # Image
 
-## Drawio 画图
+The Image component is used to display an image on the page.
 
-### 源码
+![Image Component](/images/juiceEditor/component-image.png)
+
+You can see an example here: https://www.kuaiyizhi.cn/ideas/32C93F12-DD0C-487C-83FC-967CD07CBE2A
+
+## Drawio Diagramming
+
+### Source Code
 
 <https://github.com/jgraph/drawio>
 
-如果源码有更新，将源码中的`webapp`复制到`drawio`。
+If the source code is updated, copy the `webapp` folder from the source to `drawio`.
 
 - etc
 
-### 原理
+### Principle
 
-无需修改drawio的源码，embed模式下可通过postMessage通信。具体看`SmartDraw`部分的源码。
+There's no need to modify the drawio source code. In embed mode, communication can be achieved through postMessage. See the `SmartDraw` part of the source code for details.
 
-### 问题
+### Issues
 
-- 左侧出现了“便签”  
-清空浏览器本地存储就消失了
-- 画图打不开
-检查这个文件：`src/entities/DrawAgent.ts` 中的 URL
+- "Sticky notes" appear on the left side  
+Clearing the browser's local storage will make them disappear
+- Unable to open the diagram
+Check the URL in this file: `src/entities/DrawAgent.ts`
 
-### 参考资料
+### References
 
 - <https://www.drawio.com/blog/embedding-walkthrough>  
 - <https://www.drawio.com/doc/faq/embed-mode>  

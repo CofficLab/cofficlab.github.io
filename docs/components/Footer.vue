@@ -12,16 +12,16 @@
                 <div class="flex flex-row justify-center w-full gap-2 p-0">
                     <ul class="flex flex-col gap-4">
                         <li>
-                            <a href="https://www.kuaiyc.com" class="smart-link" target="_blank">快易查</a>
+                            <a href="https://www.kuaiyc.com" class="smart-link" target="_blank">{{ lang === 'en' ? 'Kuaiyicha' : '快易查' }}</a>
                         </li>
                         <li>
-                            <a href="https://www.kuaiyizhi.cn" class="smart-link" target="_blank">快易知</a>
+                            <a href="https://www.kuaiyizhi.cn" class="smart-link" target="_blank">{{ lang === 'en' ? 'Knowledge Database' : '快易知' }}</a>
                         </li>
                         <li>
-                            <a href="https://www.kuaiyc.com/products" class="smart-link" target="_blank">API 产品</a>
+                            <a href="https://www.kuaiyc.com/products" class="smart-link" target="_blank">{{ lang === 'en' ? 'API Products' : 'API 产品' }}</a>
                         </li>
                         <li>
-                            <a href="https://www.kuaiyizhi.cn/ideas" class="smart-link" target="_blank">系列教程</a>
+                            <a href="https://www.kuaiyizhi.cn/ideas" class="smart-link" target="_blank">{{ lang === 'en' ? 'Tutorial Series' : '系列教程' }}</a>
                         </li>
                     </ul>
                     <ul class="flex flex-col gap-4">
@@ -34,7 +34,7 @@
                         </li>
                         <li>
                             <a href="https://apps.apple.com/cn/app/%E5%BF%AB%E6%98%93%E7%9F%A5/id6457892799"
-                                class="smart-link" target="_blank">聚思笔记</a>
+                                class="smart-link" target="_blank">{{ lang === 'en' ? 'Jusi Notes' : '聚思笔记' }}</a>
                         </li>
                         <li>
                             <a href="https://github.com/CofficLab/JuiceEditor" class="smart-link"
@@ -45,26 +45,15 @@
             </div>
 
             <div class="self-center mt-8 mb-4 text-xs">
-                <p>All rights reserved. &copy; 2024-present Coffic Lab</p>
+                <p>{{ lang === 'en' ? 'All rights reserved.' : '版权所有' }} &copy; 2024-present Coffic Lab</p>
             </div>
         </div>
     </div>
 </template>
 
-<style scoped>
-ul {
-    list-style: none;
-}
+<script lang="ts" setup>
+import { ref, watch, onMounted } from 'vue';
+import { useData } from 'vitepress';
 
-.smart-link {
-    @apply px-4 py-2 rounded-xl ring-white/50 no-underline hover:ring-1 hover:shadow-2xl hover:bg-green-600/10 hover:backdrop-blur transform duration-100;
-}
-
-.smart-card {
-    @apply p-4 rounded-2xl text-white dark:text-gray-500 bg-gradient-to-br from-gray-900/30 via-gray-800/40 to-gray-800/50 dark:from-gray-900/30 dark:via-gray-900/40 dark:to-gray-800/50 backdrop-blur-3xl border-r border-gray-50/30 dark:border-gray-600/50 dark:border hover:ring-0 hover:shadow-2xl transform duration-100;
-}
-
-.smart-button {
-    @apply p-4 rounded-2xl text-white/80 dark:text-gray-500 bg-gradient-to-br from-gray-900/30 via-gray-800/40 to-gray-800/50 dark:from-gray-900/30 dark:via-gray-900/40 dark:to-gray-800/50 backdrop-blur-3xl border-r border-gray-50/30 dark:border-gray-600/50 dark:border hover:ring-0 hover:shadow-2xl transform duration-100;
-}
-</style>
+const { lang } = useData();
+</script>
