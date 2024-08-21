@@ -1,5 +1,11 @@
 # Image
 
+Image 组件用于在页面中显示一张图片。
+
+![Image组件](/images/juiceEditor/component-image.png)
+
+这里可以看到例子：https://www.kuaiyizhi.cn/ideas/32C93F12-DD0C-487C-83FC-967CD07CBE2A
+
 ## Drawio 画图
 
 ### 源码
