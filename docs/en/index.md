@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "Coffic Lab"
-  text: "build wonderful softwares"
-  tagline:  with coffee and music
+  text: "build wonderful softwares with love"
+  tagline: "without distraction"
   image: 
     src: /images/coffic/logo4.png
   actions:
@@ -14,18 +14,18 @@ hero:
       link: https://github.com/cofficlab
 
 features:
-  # - icon: 🔕
-  #   title: 无需注册、登录、扫码
-  #   details: 打开即用
-  # - icon: ☁️
-  #   title: iCloud 同步
-  #   details: 针对 iCloud 进行了优化
-  # - icon: 📺
-  #   title: 优雅简洁的界面
-  #   details: 简洁、明确，无心智负担
-  # - icon: 🍵
-  #   title: 无广告、无干扰
-  #   details: 尊重用户体验
+  - icon: 🔕
+    title: No Registration, Login, or Scanning Required
+    details: Ready to use upon opening
+  - icon: ☁️
+    title: iCloud Sync
+    details: Optimized for iCloud
+  - icon: 📺
+    title: Elegant and Simple Interface
+    details: Simple and clear, no mental burden
+  - icon: 🍵
+    title: No Ads, No Distractions
+    details: Respecting user experience
 ---
 
 ## Products

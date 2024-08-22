@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Coffic Lab 工作室"
-  text: 精彩软件，一起创造
+  text: 简洁软件，用心创造
   tagline: with coffee and music
   image: 
     src: /images/coffic/logo4.png
