@@ -8,9 +8,11 @@ The author, frequently needing to take notes, tried many note-taking software bu
 - Some had too many features
 - Some had poor interaction
 
-So the author decided to develop a note-taking APP to meet his own needs.  
+So the author decided to develop a note-taking APP to meet his own needs.
 
 The rich text editor for this note-taking APP is JuiceEditor.
+
+![JuiceEditor](/images/juiceEditor/architect.png)
 
 For the author's usage requirements, JuiceEditor needs to meet the following criteria:
 
