@@ -28,14 +28,14 @@
       :product="{
         avatar: '/images/juiceEditor/logo.min.png',
         name: 'JuiceEditor',
-        description: 'Simple and powerful editor',
+        description: 'Powerful editor',
         github: 'https://github.com/CofficLab/JuiceEditor',
       }" />
     <Product
       :product="{
         avatar: '/images/gitok/logo-512x512.png',
         name: 'GitOk',
-        description: 'Simple and powerful',
+        description: 'Project management',
         github: 'https://github.com/CofficLab/gitok',
       }" />
   </div>

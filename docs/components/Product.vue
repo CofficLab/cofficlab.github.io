@@ -1,7 +1,7 @@
 <template>
   <article>
     <div
-      class="flex flex-col gap-2 p-4 text-center rounded-lg bg-gray-400/20 VPTeamMembersItem small">
+      class="flex flex-col gap-2 w-48 h-64 p-4 text-center rounded-lg bg-gray-400/20 VPTeamMembersItem small">
       <!-- 产品头像 -->
       <figure class="avatar">
         <img
