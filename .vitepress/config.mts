@@ -30,7 +30,7 @@ export default defineConfig({
           { text: 'Home', link: '/en/' },
           { text: 'JuiceEditor', link: '/en/juiceEditor/' },
           { text: 'Cisum', link: '/en/cisum' },
-          { text: 'JuiceNote', link: '/en/kuaiyizhi' },
+          { text: 'JuiceNote', link: '/en/juiceNote' },
           { text: 'TravelMode', link: '/en/travelmode' },
           { text: 'GitOK', link: '/en/gitok/' },
           {
@@ -108,7 +108,7 @@ export default defineConfig({
           { text: 'Home', link: '/zh/' },
           { text: 'JuiceEditor', link: '/zh/juiceEditor/' },
           { text: 'Cisum-乐音', link: '/zh/cisum/' },
-          { text: '聚思笔记', link: '/zh/kuaiyizhi' },
+          { text: '聚思笔记', link: '/zh/juiceNote' },
           { text: 'TravelMode', link: '/zh/travelmode' },
           { text: 'GitOK', link: '/zh/gitok/' },
           {

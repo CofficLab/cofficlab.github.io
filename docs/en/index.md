@@ -13,19 +13,19 @@ hero:
       text: GitHub
       link: https://github.com/cofficlab
 
-features:
-  - icon: 🔕
-    title: No Registration, Login, or Scanning Required
-    details: Ready to use upon opening
-  - icon: ☁️
-    title: iCloud Sync
-    details: Optimized for iCloud
-  - icon: 📺
-    title: Elegant and Simple Interface
-    details: Simple and clear, no mental burden
-  - icon: 🍵
-    title: No Ads, No Distractions
-    details: Respecting user experience
+# features:
+#   - icon: 🔕
+#     title: No Registration, Login, or Scanning Required
+#     details: Ready to use upon opening
+#   - icon: ☁️
+#     title: iCloud Sync
+#     details: Optimized for iCloud
+#   - icon: 📺
+#     title: Elegant and Simple Interface
+#     details: Simple and clear, no mental burden
+#   - icon: 🍵
+#     title: No Ads, No Distractions
+#     details: Respecting user experience
 ---
 
 ## Products

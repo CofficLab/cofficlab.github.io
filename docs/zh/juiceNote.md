@@ -3,11 +3,11 @@
 layout: home
 
 hero:
-  name: "Juice Note"
-  text: "Simple but Powerful"
-  tagline: Build my own knowledge base
+  name: "聚思笔记"
+  text: "简洁强大的笔记软件"
+  tagline: 打造自己的知识库
   image: 
-    src: /images/kuaiyizhi/logo-512x512.png
+    src: /images/juiceNote/logo-512x512.png
   actions:
     # - theme: brand
     #   text: Markdown Examples
@@ -24,15 +24,15 @@ hero:
 
 features:
   - icon: 🔕
-    title: No need to register, log in, or scan code
-    details: Open and Play
+    title: 无需注册、登录、扫码
+    details: 打开即用
   - icon: ☁️
-    title: Support iCloud Features
-    details: Adapted for iCloud
+    title: iCloud 同步
+    details: 针对 iCloud 进行了优化
   - icon: 📺
-    title: Elegant and simple interface
-    details: Simple and powerful
+    title: 优雅简洁的界面
+    details: 简洁、明确，无心智负担
   - icon: 🍵
-    title: No ads, no distractions
-    details: Respect user experience
+    title: 无广告、无干扰
+    details: 尊重用户体验
 ---

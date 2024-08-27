@@ -10,12 +10,11 @@
       }" />
     <Product
       :product="{
-        avatar: '/images/kuaiyizhi/logo.min.png',
+        avatar: '/images/juiceNote/logo.min.png',
         name: 'JuiceNote',
         store:
           'https://apps.apple.com/cn/app/%E5%BF%AB%E6%98%93%E7%9F%A5/id6457892799',
         description: 'A note application',
-        github: 'https://github.com/CofficLab/Kuaiyizhi_Editor',
       }" />
     <Product
       :product="{
@@ -31,7 +30,6 @@
         name: 'JuiceEditor',
         description: 'Simple and powerful editor',
         github: 'https://github.com/CofficLab/JuiceEditor',
-        homepage: 'https://cofficlab.github.io/JuiceEditor',
       }" />
     <Product
       :product="{

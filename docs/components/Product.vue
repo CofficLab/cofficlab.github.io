@@ -18,7 +18,11 @@
 
       <!-- 产品链接 -->
       <div class="flex justify-center mt-6">
-        <a :href="product.github" class="mx-2" target="_blank">
+        <a
+          :href="product.github"
+          class="mx-2"
+          target="_blank"
+          v-if="product.github">
           <img
             src="/images/friends/github.png"
             alt=""
