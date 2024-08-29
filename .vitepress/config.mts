@@ -62,8 +62,8 @@ export default defineConfig({
             {
               text: 'Guide',
               items: [
-                { text: 'introduce', link: '/en/juiceEditor/documents/guide/introduce' },
-                { text: 'start', link: '/en/juiceEditor/documents/guide/start' },
+                { text: 'Introduce', link: '/en/juiceEditor/documents/guide/introduce' },
+                { text: 'Start', link: '/en/juiceEditor/documents/guide/start' },
               ]
             },
             {
@@ -79,6 +79,20 @@ export default defineConfig({
                 { text: 'BulletList', link: '/en/juiceEditor/documents/components/bulletList' },
                 { text: 'TaskList', link: '/en/juiceEditor/documents/components/tasklist' },
                 { text: 'Kbd', link: '/en/juiceEditor/documents/components/keyboard' },
+              ]
+            },
+            {
+              text: 'API',
+              items: [
+                { text: 'Introduce', link: '/en/juiceEditor/documents/api/intro' },
+              ]
+            },
+            {
+              text: 'Plugins',
+              items: [
+                { text: 'Introduce', link: '/en/juiceEditor/documents/plugins/intro' },
+                { text: 'LocalDB', link: '/en/juiceEditor/documents/plugins/localDB' },
+                { text: 'Webkit', link: '/en/juiceEditor/documents/plugins/webkit' }
               ]
             },
             {
@@ -156,6 +170,20 @@ export default defineConfig({
                 { text: 'BulletList', link: '/zh/juiceEditor/documents/components/bulletList' },
                 { text: 'TaskList', link: '/zh/juiceEditor/documents/components/tasklist' },
                 { text: 'Kbd', link: '/zh/juiceEditor/documents/components/keyboard' },
+              ]
+            },
+            {
+              text: 'API',
+              items: [
+                { text: '简介', link: '/zh/juiceEditor/documents/api/intro' },
+              ]
+            },
+            {
+              text: '插件',
+              items: [
+                { text: '简介', link: '/zh/juiceEditor/documents/plugins/intro' },
+                { text: 'LocalDB', link: '/zh/juiceEditor/documents/plugins/localDB' },
+                { text: 'Webkit', link: '/zh/juiceEditor/documents/plugins/webkit' }
               ]
             },
             {
