@@ -88,6 +88,14 @@ export default defineConfig({
               ]
             },
             {
+              text: 'Data',
+              items: [
+                { text: 'Introduce', link: '/en/juiceEditor/documents/data/intro' },
+                { text: 'Node', link: '/en/juiceEditor/documents/data/node' },
+                { text: 'EditorData', link: '/en/juiceEditor/documents/data/editorData' },
+              ]
+            },
+            {
               text: 'Plugins',
               items: [
                 { text: 'Introduce', link: '/en/juiceEditor/documents/plugins/intro' },
@@ -176,6 +184,14 @@ export default defineConfig({
               text: 'API',
               items: [
                 { text: '简介', link: '/zh/juiceEditor/documents/api/intro' },
+              ]
+            },
+            {
+              text: '数据结构',
+              items: [
+                { text: '简介', link: '/zh/juiceEditor/documents/data/intro' },
+                { text: 'Node', link: '/zh/juiceEditor/documents/data/node' },
+                { text: 'EditorData', link: '/zh/juiceEditor/documents/data/editorData' },
               ]
             },
             {
