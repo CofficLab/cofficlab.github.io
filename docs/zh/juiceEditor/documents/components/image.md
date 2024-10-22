@@ -6,28 +6,28 @@ Image 组件用于在页面中显示一张图片。
 
 这里可以看到例子：https://www.kuaiyizhi.cn/ideas/32C93F12-DD0C-487C-83FC-967CD07CBE2A
 
-## Drawio 画图
+## 绘图
 
-### 源码
+![Draw a Picture](/images/juiceEditor/draw.mov)
 
-<https://github.com/jgraph/drawio>
+经过额外的配置，可以实现在页面中绘图的功能。
 
-如果源码有更新，将源码中的`webapp`复制到`drawio`。
+### 安装扩展包
 
-- etc
+```shell
+npm i @coffic/juice-editor-draw
+```
 
-### 原理
+### 复制静态文件
 
-无需修改drawio的源码，embed模式下可通过postMessage通信。具体看`SmartDraw`部分的源码。
+```shell
+cp -r node_modules/@coffic/juice-editor-draw/dist/drawio ./public/drawio
+```
 
-### 问题
+### 配置
 
-- 左侧出现了“便签”  
-清空浏览器本地存储就消失了
-- 画图打不开
-检查这个文件：`src/entities/DrawAgent.ts` 中的 URL
+你需要告诉 JuiceEditor 如何访问刚刚复制的静态文件。
 
-### 参考资料
-
-- <https://www.drawio.com/blog/embedding-walkthrough>  
-- <https://www.drawio.com/doc/faq/embed-mode>  
+```js
+window.api.config.setDrawIoLink('http://localhost:8080/drawio/webapp/index.html?')
+```

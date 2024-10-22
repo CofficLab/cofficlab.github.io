@@ -2,28 +2,24 @@
 
 This project is currently still in the development stage and is not yet stable. Please do not use it in a production environment.
 
-## Build
+## Installation
 
 ```shell
-pnpm i
-pnpm run build
+npm i @coffic/juice-editor
 ```
 
 ## Usage
 
+First, import the JuiceEditor component.
+
+```js
+import {defineJuiceEditor} from '@coffic/juice-editor'
+
+defineJuiceEditor()
+```
+
+Then, you can use it like a normal HTML tag anywhere on the page.
+
 ```html
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <script type="module" crossorigin src="./juice-editor/assets/index-23e26c6d.js"></script>
-</head>
-
-<body>
-  <juice-editor>
-    <h1>Say Hello to JuiceEditor</h1>
-    <pre><code>console.log("ABC")</code></pre>
-  </juice-editor>
-</body>
-
-</html>
+<juice-editor></juice-editor>
+```
