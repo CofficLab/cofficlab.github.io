@@ -6,6 +6,7 @@ export default defineConfig({
   description: "我们生产简洁无干扰的优质软件 We produce high-quality, distraction-free software",
   base: "/",
   srcDir: "docs",
+  lastUpdated: true,
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['script', { src: '/home.js' }]
@@ -20,6 +21,11 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/cofficlab' }
     ],
+
+    editLink: {
+      pattern: 'https://github.com/cofficlab/cofficlab.github.io/edit/main/docs/:path',
+      text: 'Edit this page on GitHub'
+    },
   },
   locales: {
     en: {
