@@ -22,7 +22,7 @@ jobs:
       - name: Update Hero Picture
         run: |
           git clone https://github.com/CofficLab/JuiceEditor
-          cp -f JuiceEditor/docs/hero.png ./docs/public/juiceEditor/hero.png
+          cp -f JuiceEditor/docs/hero.png ./docs/public/images/juiceEditor/hero.png
           rm -rf JuiceEditor
       - name: Commit
         run: |
