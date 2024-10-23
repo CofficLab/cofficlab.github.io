@@ -1,4 +1,4 @@
-# Coffic Lab 
+# Coffic Lab
 
 Coffic Lab's website, click this [link](https://cofficlab.github.io/) to view more.
 
@@ -8,3 +8,7 @@ Coffic Lab's website, click this [link](https://cofficlab.github.io/) to view mo
 pnpm install
 npm run dev
 ```
+
+## About the Author
+
+- [Nookery](https://github.com/nookery)
