@@ -1,11 +1,11 @@
-name: Deploy VitePress site to Pages
+name: 🖥️ Deploy VitePress site to Pages
 
 on:
   push:
     branches: [docs, main]
-
-  # 允许你从 Actions 选项卡手动运行此工作流程
   workflow_dispatch:
+  workflow_run:
+    workflows: [Update]
 
 permissions:
   contents: read
