@@ -12,16 +12,20 @@
                 <div class="flex flex-row justify-center w-full gap-2 p-0">
                     <ul class="flex flex-col gap-4">
                         <li>
-                            <a href="https://www.kuaiyc.com" class="smart-link" target="_blank">{{ lang === 'en' ? 'Kuaiyicha' : '快易查' }}</a>
+                            <a href="https://www.kuaiyc.com" class="smart-link" target="_blank">{{ lang === 'en' ?
+                                'Kuaiyicha' : '快易查' }}</a>
                         </li>
                         <li>
-                            <a href="https://www.kuaiyizhi.cn" class="smart-link" target="_blank">{{ lang === 'en' ? 'Knowledge Database' : '快易知' }}</a>
+                            <a href="https://www.kuaiyizhi.cn" class="smart-link" target="_blank">{{ lang === 'en' ?
+                                'Knowledge Database' : '快易知' }}</a>
                         </li>
                         <li>
-                            <a href="https://www.kuaiyc.com/products" class="smart-link" target="_blank">{{ lang === 'en' ? 'API Products' : 'API 产品' }}</a>
+                            <a href="https://www.kuaiyc.com/products" class="smart-link" target="_blank">{{ lang ===
+                                'en' ? 'API Products' : 'API 产品' }}</a>
                         </li>
                         <li>
-                            <a href="https://www.kuaiyizhi.cn/ideas" class="smart-link" target="_blank">{{ lang === 'en' ? 'Tutorial Series' : '系列教程' }}</a>
+                            <a href="https://www.kuaiyizhi.cn/ideas" class="smart-link" target="_blank">{{ lang === 'en'
+                                ? 'Tutorial Series' : '系列教程' }}</a>
                         </li>
                     </ul>
                     <ul class="flex flex-col gap-4">
@@ -34,7 +38,7 @@
                         </li>
                         <li>
                             <a href="https://apps.apple.com/cn/app/%E5%BF%AB%E6%98%93%E7%9F%A5/id6457892799"
-                                class="smart-link" target="_blank">{{ lang === 'en' ? 'Jusi Notes' : '聚思笔记' }}</a>
+                                class="smart-link" target="_blank">{{ lang === 'en' ? 'JuiceNote' : '聚思笔记' }}</a>
                         </li>
                         <li>
                             <a href="https://github.com/CofficLab/JuiceEditor" class="smart-link"
