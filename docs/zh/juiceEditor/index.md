@@ -37,7 +37,7 @@ hero:
 ---
 
 <div class="flex flex-col items-center justify-center my-2">
-  <img src="/images/juiceEditor/hero.png" class="shadow-lg rounded-2xl" alt="">
+  <img src="/images/juiceEditor/hero.png" alt="">
 </div>
 
 <style>
