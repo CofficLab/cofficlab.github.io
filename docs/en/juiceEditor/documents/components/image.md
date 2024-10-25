@@ -21,7 +21,7 @@ npm i @coffic/juice-editor-draw
 ### Copy Static Files
 
 ```shell
-cp -r node_modules/@coffic/juice-editor-draw/dist/drawio ./public/drawio
+cp -r node_modules/@coffic/juice-editor-draw/dist ./public/draw
 ```
 
 ### Configuration
@@ -29,5 +29,5 @@ cp -r node_modules/@coffic/juice-editor-draw/dist/drawio ./public/drawio
 You need to tell JuiceEditor how to access the static files you just copied.
 
 ```js
-window.api.config.setDrawIoLink('http://localhost:8080/drawio/webapp/index.html?')
+editor.setDrawLink('http://localhost:8080/draw/index.html?')
 ```

@@ -21,7 +21,7 @@ npm i @coffic/juice-editor-draw
 ### 复制静态文件
 
 ```shell
-cp -r node_modules/@coffic/juice-editor-draw/dist/drawio ./public/drawio
+cp -r node_modules/@coffic/juice-editor-draw/dist ./public/draw
 ```
 
 ### 配置
@@ -29,5 +29,5 @@ cp -r node_modules/@coffic/juice-editor-draw/dist/drawio ./public/drawio
 你需要告诉 JuiceEditor 如何访问刚刚复制的静态文件。
 
 ```js
-window.api.config.setDrawIoLink('http://localhost:8080/drawio/webapp/index.html?')
+editor.setDrawLink('http://localhost:8080/draw/index.html?')
 ```

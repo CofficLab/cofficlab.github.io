@@ -13,9 +13,11 @@ npm i @coffic/juice-editor
 先引入 JuiceEditor 组件。
 
 ```js
-import {defineJuiceEditor} from '@coffic/juice-editor'
+import editor from '@coffic/juice-editor'
 
-defineJuiceEditor()
+editor.onCreate(() => {
+    console.log('editor created')
+})
 ```
 
 你可以在页面的任何位置，像普通的HTML标签一样使用它。

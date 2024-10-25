@@ -13,9 +13,11 @@ npm i @coffic/juice-editor
 First, import the JuiceEditor component.
 
 ```js
-import {defineJuiceEditor} from '@coffic/juice-editor'
+import editor from '@coffic/juice-editor'
 
-defineJuiceEditor()
+editor.onCreate(() => {
+    console.log('editor created')
+})
 ```
 
 Then, you can use it like a normal HTML tag anywhere on the page.
