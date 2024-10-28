@@ -13,15 +13,24 @@ npm i @coffic/juice-editor
 先引入 JuiceEditor 组件。
 
 ```js
-import editor from '@coffic/juice-editor'
+import { EditorFactory, Editor } from '@coffic/juice-editor'
 
-editor.onCreate(() => {
-    console.log('editor created')
+const editor = EditorFactory.register('my-editor', {
+    onBeforeCreate: () => {
+        console.log('onBeforeCreate for label my-editor')
+    },
+    onCreate: (editor: Editor) => {
+        console.log('onCreate for label my-editor')
+
+        editor.enableLog()
+    }
 })
+
+// 当你在编辑器中输入 'editor.' 时，IDE 会提示可用的 API
 ```
 
 你可以在页面的任何位置，像普通的HTML标签一样使用它。
 
 ```html
-<juice-editor></juice-editor>
+<my-editor></my-editor>
 ```
