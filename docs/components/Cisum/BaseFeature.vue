@@ -27,7 +27,7 @@
 <script setup>
 import Player from './Player.vue';
 import Button from './Button.vue';
-import { computed, ref } from 'vue';
+import { ref } from 'vue';
 import { RiDownloadLine } from '@remixicon/vue';
 import html2canvas from 'html2canvas';
 
