@@ -62,13 +62,20 @@ const componentRef = ref(null);
 const downloadAsImage = async () => {
     try {
         const element = componentRef.value;
-        const canvas = await html2canvas(element);
+        const canvas = await html2canvas(element, {
+            scale: 2,
+            useCORS: true,
+            logging: false,
+            backgroundColor: null,
+        });
         const link = document.createElement('a');
-        link.download = 'music-library.png';
-        link.href = canvas.toDataURL();
+        link.download = 'feature.png';
+        link.href = canvas.toDataURL('image/png');
         link.click();
     } catch (error) {
         console.error('Failed to download image:', error);
     }
 };
+
+
 </script>
