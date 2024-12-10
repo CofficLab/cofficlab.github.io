@@ -43,8 +43,11 @@ features:
     details: 尊重用户体验
 ---
 
-<div class="flex flex-col items-center justify-center my-12">
-  <div class="w-3/4 shadow-2xl">
-    <img src="/images/cisum/hero.min.png" class="" alt="">
-  </div>
-</div>
+<Feature1 lang="zh" />
+
+<Feature2 lang="zh" />
+
+<script setup>
+import Feature1 from '../components/Cisum/Feature1.vue'
+import Feature2 from '../components/Cisum/Feature2.vue'
+</script>

@@ -27,6 +27,8 @@
     }
   },
   "dependencies": {
+    "@remixicon/vue": "^4.5.0",
+    "html2canvas": "^1.4.1",
     "vue": "^3.4.38"
   }
 }
