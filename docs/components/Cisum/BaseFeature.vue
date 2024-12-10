@@ -18,7 +18,7 @@
             </div>
 
             <div class="right-section">
-                <Player />
+                <Player :lang="lang" />
             </div>
         </div>
     </div>
