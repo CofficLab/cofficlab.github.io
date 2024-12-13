@@ -52,7 +52,7 @@ import { RiPlayCircleLine } from '@remixicon/vue';
 import { computed } from 'vue';
 import { RiMusic2Fill, RiSkipBackLine, RiSkipForwardLine } from '@remixicon/vue';
 import { shuffle } from 'lodash-es';
-import Button from './Button.vue'
+import Button from '../Button.vue'
 
 const props = defineProps({
     lang: {

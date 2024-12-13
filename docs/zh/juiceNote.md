@@ -36,3 +36,12 @@ features:
     title: 无广告、无干扰
     details: 尊重用户体验
 ---
+
+<Feature1 lang="zh" />
+
+<Feature2 lang="zh" />
+
+<script setup>
+import Feature1 from '../components/JuiceNote/Feature1.vue';
+import Feature2 from '../components/JuiceNote/Feature2.vue';
+</script>

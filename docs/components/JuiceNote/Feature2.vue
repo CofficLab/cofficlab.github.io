@@ -1,27 +1,26 @@
 <template>
     <BaseFeature :lang="lang" :translations="translations" gradientClass="bg-gradient-to-br from-emerald-300 to-sky-500"
         titleKey="musicLibrary" :buttons="['importable', 'offline', 'exportable', 'syncable']">
-
-        <template #right>
-            <Player :lang="lang" />
+        <template #bottom>
+            <JuiceApp />
         </template>
     </BaseFeature>
 </template>
 
 <script setup>
-import Player from './Player.vue';
 import BaseFeature from '../BaseFeature.vue';
+import JuiceApp from './JuiceApp.vue';
 
 const translations = {
     en: {
-        musicLibrary: 'Music Library',
+        musicLibrary: 'Simple and powerful',
         importable: 'Importable',
         offline: 'Offline',
         exportable: 'Exportable',
         syncable: 'Syncable'
     },
     zh: {
-        musicLibrary: '音乐仓库 - 随心随意',
+        musicLibrary: '简于形 - 强于心',
         importable: '可导入',
         offline: '可离线',
         exportable: '可导出',

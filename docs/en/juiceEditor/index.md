@@ -39,3 +39,9 @@ hero:
 <div class="flex flex-col items-center justify-center my-2">
   <img src="/images/juiceEditor/hero.png" alt="">
 </div>
+
+<Feature1 />
+
+<script setup>
+import Feature1 from '../../components/JuiceNote/Feature1.vue';
+</script>

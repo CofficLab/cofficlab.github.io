@@ -1,10 +1,15 @@
 <template>
     <BaseFeature :lang="lang" :translations="translations" gradientClass="bg-gradient-to-tr from-emerald-300 to-sky-500"
-        titleKey="subtitle" :buttons="['noAds', 'noScan', 'noMember', 'noLogin']" />
+        titleKey="subtitle" :buttons="['noAds', 'noScan', 'noMember', 'noLogin']">
+        <template #right>
+            <Player :lang="lang" />
+        </template>
+    </BaseFeature>
 </template>
 
 <script setup>
-import BaseFeature from './BaseFeature.vue';
+import Player from './Player.vue';
+import BaseFeature from '../BaseFeature.vue';
 
 const translations = {
     en: {

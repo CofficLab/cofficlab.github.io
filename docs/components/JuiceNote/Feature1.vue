@@ -1,27 +1,23 @@
 <template>
     <BaseFeature :lang="lang" :translations="translations" gradientClass="bg-gradient-to-br from-emerald-300 to-sky-500"
         titleKey="musicLibrary" :buttons="['importable', 'offline', 'exportable', 'syncable']">
-
-        <template #right>
-            <Player :lang="lang" />
-        </template>
     </BaseFeature>
 </template>
 
 <script setup>
-import Player from './Player.vue';
+import Player from '../Cisum/Player.vue';
 import BaseFeature from '../BaseFeature.vue';
 
 const translations = {
     en: {
-        musicLibrary: 'Music Library',
+        musicLibrary: 'Ad-free - Freedom for you',
         importable: 'Importable',
         offline: 'Offline',
         exportable: 'Exportable',
         syncable: 'Syncable'
     },
     zh: {
-        musicLibrary: '音乐仓库 - 随心随意',
+        musicLibrary: '广告全无 - 自在由你',
         importable: '可导入',
         offline: '可离线',
         exportable: '可导出',

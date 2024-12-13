@@ -8,24 +8,32 @@
             </button>
         </div>
 
-        <div class="flex p-8 mt-8 h-full text-white rounded-2xl" :class="gradientClass" ref="componentRef">
-            <div class="h-full p-8 flex-1 flex-col justify-center flex items-center self-center">
-                <h2 style="border: none; font-size: 3rem; margin-bottom: 6rem;">{{ t(titleKey) }}</h2>
+        <div class="flex p-8 mt-8 h-full text-white rounded-2xl w-full border-2 border-yellow-200/90"
+            :class="gradientClass" ref="componentRef">
+            <div class="flex flex-col w-full">
+                <div class="flex flex-row">
+                    <div class="h-full p-8 flex-1 flex-col justify-center flex items-center self-center">
+                        <h2 style="border: none; font-size: 3rem; margin-bottom: 6rem;">{{ t(titleKey) }}</h2>
 
-                <div class="grid grid-cols-2 gap-4">
-                    <Button v-for="button in buttons" :key="button" :title="t(button)" />
+                        <div class="grid grid-cols-2 gap-4">
+                            <Button v-for="button in buttons" :key="button" :title="t(button)" />
+                        </div>
+                    </div>
+
+                    <div class="right-section">
+                        <slot name="right"></slot>
+                    </div>
                 </div>
-            </div>
 
-            <div class="right-section">
-                <Player :lang="lang" />
+                <div class="bottom-section w-full">
+                    <slot name="bottom"></slot>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-import Player from './Player.vue';
 import Button from './Button.vue';
 import { ref } from 'vue';
 import { RiDownloadLine } from '@remixicon/vue';

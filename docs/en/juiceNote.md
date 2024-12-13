@@ -36,3 +36,12 @@ features:
     title: No ads, no distractions
     details: Respect user experience
 ---
+
+<Feature1 />
+
+<Feature2 />
+
+<script setup>
+import Feature1 from '../components/JuiceNote/Feature1.vue';
+import Feature2 from '../components/JuiceNote/Feature2.vue';
+</script>
