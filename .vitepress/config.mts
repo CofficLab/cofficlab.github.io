@@ -135,7 +135,7 @@ export default defineConfig({
         nav: [
           { text: 'Home', link: '/zh/' },
           { text: 'JuiceEditor', link: '/zh/juiceEditor/' },
-          { text: 'Cisum-乐音', link: '/zh/cisum/' },
+          { text: 'Cisum-乐音', link: '/zh/cisum' },
           { text: '聚思笔记', link: '/zh/juiceNote' },
           { text: 'TravelMode', link: '/zh/travelmode' },
           { text: 'GitOK', link: '/zh/gitok/' },

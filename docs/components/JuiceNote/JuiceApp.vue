@@ -28,11 +28,11 @@
                 <div>
                     <div class="flex items-center space-x-2 p-2 hover:bg-gray-700 rounded">
                         <RiHome2Line class="w-4 h-4" />
-                        <span>文档仓库</span>
+                        <span>{{ translations[lang].documentRepo }}</span>
                     </div>
                     <div class="flex items-center space-x-2 p-2 ml-4 hover:bg-gray-700 rounded">
                         <RiArticleLine class="w-4 h-4" />
-                        <span>春日</span>
+                        <span>{{ translations[lang].spring }}</span>
                     </div>
                 </div>
             </div>
@@ -66,13 +66,8 @@
                 <div class="space-y-0 text-center">
                     <!-- 示例内容 -->
                     <div class="p-4 rounded-lg">
-                        <h3 class="text-lg font-semibold mb-2">春日</h3>
-                        <p>
-                            春风拂柳绿如烟，<br>
-                            花落花开又一年。<br>
-                            蝴蝶纷飞春意闹，<br>
-                            小园深处好晴天。
-                        </p>
+                        <h3 class="text-lg font-semibold mb-2">{{ translations[lang].spring }}</h3>
+                        <p class="whitespace-pre-line">{{ translations[lang].poem }}</p>
                     </div>
                 </div>
             </div>
@@ -97,29 +92,32 @@
 </template>
 
 <script setup>
-import { RiMessage2Fill } from '@remixicon/vue';
-import BaseFeature from '../BaseFeature.vue';
 import { RiGitRepositoryLine } from '@remixicon/vue';
 import { RiInfoCardLine } from '@remixicon/vue';
 import { RiMessageLine } from '@remixicon/vue';
 import { RiArticleLine } from '@remixicon/vue';
-import { RiHourglass2Line } from '@remixicon/vue';
 import { RiHome2Line } from '@remixicon/vue';
 
 const translations = {
     en: {
-        musicLibrary: 'Simple and powerful',
-        importable: 'Importable',
-        offline: 'Offline',
-        exportable: 'Exportable',
-        syncable: 'Syncable'
+        documentRepo: 'Repository',
+        spring: 'Spring',
+        poem: `
+            Spring brings gentle breeze and sun,
+            Nature's dance has just begun.
+            Flowers bloom in morning light,
+            Creating such a lovely sight.
+        `
     },
     zh: {
-        musicLibrary: '简于形 - 强于心',
-        importable: '可导入',
-        offline: '可离线',
-        exportable: '可导出',
-        syncable: '可同步'
+        documentRepo: '文档仓库',
+        spring: '春日',
+        poem: `
+            春风拂柳绿如烟，
+            花落花开又一年。
+            蝴蝶纷飞春意闹，
+            小园深处好晴天。
+        `
     }
 }
 

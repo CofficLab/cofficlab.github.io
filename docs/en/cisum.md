@@ -16,10 +16,7 @@ hero:
     #   text: API Examples
     #   link: /api-examples
     - theme: brand
-      text: macOS
-      link: https://apps.apple.com/cn/app/cisum/id6466401036
-    - theme: brand
-      text: iOS
+      text: macOS & iOS
       link: https://apps.apple.com/cn/app/cisum/id6466401036
     - theme: alt
       text: GitHub

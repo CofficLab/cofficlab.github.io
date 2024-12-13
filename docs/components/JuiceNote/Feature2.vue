@@ -2,7 +2,7 @@
     <BaseFeature :lang="lang" :translations="translations" gradientClass="bg-gradient-to-br from-emerald-300 to-sky-500"
         titleKey="musicLibrary" :buttons="['importable', 'offline', 'exportable', 'syncable']">
         <template #bottom>
-            <JuiceApp />
+            <JuiceApp :lang="lang" />
         </template>
     </BaseFeature>
 </template>
