@@ -15,10 +15,9 @@
                 </div>
             </figure>
 
-            <a :href="homepage" :target="target"
-                class="product-link group-hover:text-blue-600 transition-colors duration-200">
+            <div class="product-link group-hover:text-blue-600 transition-colors duration-200">
                 <h1 class="name">{{ member.name }}</h1>
-            </a>
+            </div>
 
             <h3 class="description group-hover:text-gray-900 dark:group-hover:text-gray-100
         transition-colors duration-200">

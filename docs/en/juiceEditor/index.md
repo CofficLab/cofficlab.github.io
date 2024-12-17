@@ -36,12 +36,18 @@ hero:
 #     details: Simple to use, no complex configuration required
 ---
 
-<div class="flex flex-col items-center justify-center my-2">
-  <img src="/images/juiceEditor/hero.png" alt="">
-</div>
-
-<Feature1 />
+<ElegantFeature lang="en" />
+<ApiFeature lang="en" />
+<PlatformFeature lang="en" />
+<FrameworkFeature lang="en" />
+<AiFeature lang="en" />
+<EmbedFeature lang="en" />
 
 <script setup>
-import Feature1 from '../../components/JuiceNote/Feature1.vue';
+import ElegantFeature from '../../components/JuiceEditor/ElegantFeature.vue'
+import ApiFeature from '../../components/JuiceEditor/ApiFeature.vue'
+import PlatformFeature from '../../components/JuiceEditor/PlatformFeature.vue'
+import FrameworkFeature from '../../components/JuiceEditor/FrameworkFeature.vue'
+import AiFeature from '../../components/JuiceEditor/AiFeature.vue'
+import EmbedFeature from '../../components/JuiceEditor/EmbedFeature.vue'
 </script>
