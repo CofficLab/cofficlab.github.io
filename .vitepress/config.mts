@@ -41,7 +41,6 @@ export default defineConfig({
           { text: 'GitOK', link: '/en/gitok/' },
           {
             text: 'Documents', items: [
-              { text: 'Coffic', link: '/en/coffic/github_actions' },
               { text: 'JuiceEditor', link: '/en/juiceEditor/documents/guide/introduce' },
             ]
           }
