@@ -28,15 +28,7 @@ hero:
 #     details: 尊重用户体验
 ---
 
-## 我们的产品
-
-简洁而强大，绝不破坏用户体验。
-
 <Products lang="zh" />
-
-## 我们的团队
-
-一群不甘平凡的普通人。
 
 <Members lang="zh" />
 

@@ -34,17 +34,8 @@ features:
     details: 简单易用，无需复杂配置
 ---
 
-<GitFeature lang="zh" />
-<BannerFeature lang="zh" />
-<IconFeature lang="zh" />
-<ApiFeature lang="zh" />
-<DbFeature lang="zh" />
-
+<Features lang="zh" />
 
 <script setup>
-import GitFeature from '../components/GitOK/GitFeature.vue'
-import BannerFeature from '../components/GitOK/BannerFeature.vue'
-import IconFeature from '../components/GitOK/IconFeature.vue'
-import ApiFeature from '../components/GitOK/ApiFeature.vue'
-import DbFeature from '../components/GitOK/DbFeature.vue'
+import Features from '../components/GitOK/Features.vue'
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <div class="relative">
+    <div class="relative w-full">
         <!-- Download button that appears on hover -->
         <div class="absolute top-4 right-4 opacity-0 hover:opacity-100 transition-opacity">
             <button @click="downloadAsImage"
@@ -8,8 +8,7 @@
             </button>
         </div>
 
-        <div class="flex p-8 mt-8 h-full text-white rounded-2xl w-full border-2 border-yellow-200/90"
-            :class="gradientClass" ref="componentRef">
+        <div class="flex p-8 h-full text-white w-full" :class="gradientClass" ref="componentRef">
             <div class="flex flex-col w-full">
                 <div class="flex flex-row">
                     <div class="h-full p-8 flex-1 flex-col justify-center flex items-center self-center">

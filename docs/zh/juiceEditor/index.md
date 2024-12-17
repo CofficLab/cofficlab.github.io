@@ -36,18 +36,8 @@ hero:
 #     details: 使用简单，无需复杂的配置
 ---
 
-<ElegantFeature lang="zh" />
-<ApiFeature lang="zh" />
-<PlatformFeature lang="zh" />
-<FrameworkFeature lang="zh" />
-<AiFeature lang="zh" />
-<EmbedFeature lang="zh" />
+<Features lang="zh" />
 
 <script setup>
-import ElegantFeature from '../../components/JuiceEditor/ElegantFeature.vue'
-import ApiFeature from '../../components/JuiceEditor/ApiFeature.vue'
-import PlatformFeature from '../../components/JuiceEditor/PlatformFeature.vue'
-import FrameworkFeature from '../../components/JuiceEditor/FrameworkFeature.vue'
-import AiFeature from '../../components/JuiceEditor/AiFeature.vue'
-import EmbedFeature from '../../components/JuiceEditor/EmbedFeature.vue'
+import Features from '../../components/JuiceEditor/Features.vue'
 </script>

@@ -28,15 +28,7 @@ hero:
 #     details: Respecting user experience
 ---
 
-## Products
-
-Simple and powerful, never compromising user experience.
-
-<Products />
-
-## Team
-
-A group of ordinary people who refuse to be mediocre.
+<Products lang="en" />
 
 <Members lang="en" />
 

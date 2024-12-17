@@ -40,11 +40,8 @@ features:
     details: Respect user experience
 ---
 
-<Feature1 lang="en" />
-
-<Feature2 lang="en" />
+<Features lang="en" />
 
 <script setup>
-import Feature1 from '../components/Cisum/Feature1.vue'
-import Feature2 from '../components/Cisum/Feature2.vue'
+import Features from '../components/Cisum/Features.vue'
 </script>

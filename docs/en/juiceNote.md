@@ -37,11 +37,8 @@ features:
     details: Respect user experience
 ---
 
-<Feature1 />
-
-<Feature2 />
+<Features lang="en" />
 
 <script setup>
-import Feature1 from '../components/JuiceNote/Feature1.vue';
-import Feature2 from '../components/JuiceNote/Feature2.vue';
+import Features from '../components/JuiceNote/Features.vue'
 </script>

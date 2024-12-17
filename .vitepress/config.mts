@@ -38,7 +38,7 @@ export default defineConfig({
           { text: 'Cisum', link: '/en/cisum' },
           { text: 'JuiceNote', link: '/en/juiceNote' },
           { text: 'TravelMode', link: '/en/travelmode' },
-          { text: 'GitOK', link: '/en/gitok/' },
+          { text: 'GitOK', link: '/en/gitok' },
           {
             text: 'Documents', items: [
               { text: 'JuiceEditor', link: '/en/juiceEditor/documents/guide/introduce' },

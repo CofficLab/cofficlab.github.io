@@ -1,6 +1,9 @@
 <template>
-  <div class="flex flex-row gap-4">
-    <Product v-for="product in products" :key="product.name" :product="getLocalizedProduct(product)" />
+  <div class="flex flex-col gap-4 container mx-auto items-center my-10">
+    <h2>{{ lang === 'en' ? 'Our Products' : '我们的产品' }}</h2>
+    <div data-type="products" class="flex flex-row gap-4 container mx-auto justify-center">
+      <Product v-for="product in products" :key="product.name" :product="getLocalizedProduct(product)" />
+    </div>
   </div>
 </template>
 

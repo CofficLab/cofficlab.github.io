@@ -36,18 +36,8 @@ hero:
 #     details: Simple to use, no complex configuration required
 ---
 
-<ElegantFeature lang="en" />
-<ApiFeature lang="en" />
-<PlatformFeature lang="en" />
-<FrameworkFeature lang="en" />
-<AiFeature lang="en" />
-<EmbedFeature lang="en" />
+<Features lang="en" />  
 
 <script setup>
-import ElegantFeature from '../../components/JuiceEditor/ElegantFeature.vue'
-import ApiFeature from '../../components/JuiceEditor/ApiFeature.vue'
-import PlatformFeature from '../../components/JuiceEditor/PlatformFeature.vue'
-import FrameworkFeature from '../../components/JuiceEditor/FrameworkFeature.vue'
-import AiFeature from '../../components/JuiceEditor/AiFeature.vue'
-import EmbedFeature from '../../components/JuiceEditor/EmbedFeature.vue'
+import Features from '../../components/JuiceEditor/Features.vue'
 </script>
