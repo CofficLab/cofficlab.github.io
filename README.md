@@ -9,6 +9,6 @@ pnpm install
 npm run dev
 ```
 
-## About the Author
+## Maintainers
 
-- [Nookery](https://github.com/nookery)
+- Work for Joy & Live for Love ➡️ <https://github.com/nookery>
