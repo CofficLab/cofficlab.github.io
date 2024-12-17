@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div class="bg-gradient-to-b from-slate-900/10 via-slate-800/20 to-slate-700/30">
         <div class="flex flex-col justify-center">
             <a href="/" class="flex items-center self-center w-auto text-lg font-bold smart-link my-6">
                 <div class="flex flex-row justify-center w-full">

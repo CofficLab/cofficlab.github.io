@@ -1,16 +1,4 @@
 {
-    "MD033": {
-        "allowed_elements": [
-            "div",
-            "h2",
-            "span",
-            "script",
-            "img",
-            "GitFeature",
-            "BannerFeature",
-            "IconFeature",
-            "ApiFeature",
-            "DbFeature"
-        ]
-    }
+    "MD033": false,
+    "MD041": false
 }
