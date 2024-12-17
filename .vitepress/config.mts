@@ -137,7 +137,7 @@ export default defineConfig({
           { text: 'Cisum-乐音', link: '/zh/cisum' },
           { text: '聚思笔记', link: '/zh/juiceNote' },
           { text: 'TravelMode', link: '/zh/travelmode' },
-          { text: 'GitOK', link: '/zh/gitok/' },
+          { text: 'GitOK', link: '/zh/gitok' },
           {
             text: '文档', items: [
               { text: 'JuiceEditor', link: '/zh/juiceEditor/documents/guide/introduce' },

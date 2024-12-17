@@ -5,7 +5,12 @@
             "h2",
             "span",
             "script",
-            "img"
+            "img",
+            "GitFeature",
+            "BannerFeature",
+            "IconFeature",
+            "ApiFeature",
+            "DbFeature"
         ]
     }
 }

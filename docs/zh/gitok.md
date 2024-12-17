@@ -34,24 +34,17 @@ features:
     details: Simple to use, no complex configuration required
 ---
 
-<style>
-:root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+<GitFeature lang="zh" />
+<BannerFeature lang="zh" />
+<IconFeature lang="zh" />
+<ApiFeature lang="zh" />
+<DbFeature lang="zh" />
 
-  --vp-home-hero-image-background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
-  --vp-home-hero-image-filter: blur(44px);
-}
 
-@media (min-width: 640px) {
-  :root {
-    --vp-home-hero-image-filter: blur(56px);
-  }
-}
-
-@media (min-width: 960px) {
-  :root {
-    --vp-home-hero-image-filter: blur(68px);
-  }
-}
-</style>
+<script setup>
+import GitFeature from '../components/GitOK/GitFeature.vue'
+import BannerFeature from '../components/GitOK/BannerFeature.vue'
+import IconFeature from '../components/GitOK/IconFeature.vue'
+import ApiFeature from '../components/GitOK/ApiFeature.vue'
+import DbFeature from '../components/GitOK/DbFeature.vue'
+</script>
