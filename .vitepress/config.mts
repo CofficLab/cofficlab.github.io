@@ -140,7 +140,6 @@ export default defineConfig({
           { text: 'GitOK', link: '/zh/gitok/' },
           {
             text: '文档', items: [
-              { text: 'Coffic', link: '/zh/coffic/github_actions' },
               { text: 'JuiceEditor', link: '/zh/juiceEditor/documents/guide/introduce' },
             ]
           }
