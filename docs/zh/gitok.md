@@ -15,23 +15,23 @@ hero:
 
 features:
   - icon: 🔌
-    title: Extensible
-    details: Comes with a flexible plugin system, extensible
+    title: 可扩展
+    details: 灵活的插件系统，可扩展
   - icon: 📱
-    title: Can be embedded in apps
-    details: All APIs are open, can be embedded in apps
+    title: 可嵌入应用
+    details: 所有 API 开放，可嵌入应用
   - icon: 🌐
     title: Web Component
-    details: Built on Web Components, usable in any framework
+    details: 基于 Web Components，可在任何框架中使用
   - icon: 🕷️
-    title: SEO friendly
-    details: Based on HTML structure, naturally SEO friendly
+    title: SEO 友好
+    details: 基于 HTML 结构，自然 SEO 友好
   - icon: 📚
-    title: Rich built-in components
-    details: Comes with rich components, including images, tables, code blocks, etc.
+    title: 丰富的内置组件
+    details: 丰富的组件，包括图片、表格、代码块等
   - icon: 🎁
-    title: Simple and easy to use
-    details: Simple to use, no complex configuration required
+    title: 简单易用
+    details: 简单易用，无需复杂配置
 ---
 
 <GitFeature lang="zh" />

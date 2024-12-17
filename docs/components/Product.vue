@@ -15,7 +15,7 @@
         </div>
       </figure>
 
-      <a :href="homepage" :target="target"
+      <a :href="product.homepage" :target="target"
         class="product-link group-hover:text-blue-600 transition-colors duration-200">
         <h1 class="name">{{ product.name }}</h1>
       </a>
@@ -53,12 +53,6 @@ const props = defineProps({
     type: Object,
     required: true,
   },
-});
-
-const homepage = computed(() => {
-  return props.product.homepage
-    ? props.product.homepage
-    : '/en/' + props.product.name.toLowerCase().replace(' ', '-');
 });
 
 const target = computed(() => {

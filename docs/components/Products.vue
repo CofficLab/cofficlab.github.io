@@ -22,12 +22,14 @@ const products = [
     description: { en: 'A music player', zh: 'Apple 平台的音乐播放器' },
     store: 'https://apps.apple.com/cn/app/cisum/id6466401036',
     github: 'https://github.com/yueyinet/cisum',
+    homepage: '/' + props.lang + '/cisum',
   },
   {
     avatar: '/images/juiceNote/logo.min.png',
     name: { en: 'JuiceNote', zh: '快易知' },
     description: { en: 'A note application', zh: 'macOS 的笔记应用' },
     store: 'https://apps.apple.com/cn/app/%E5%BF%AB%E6%98%93%E7%9F%A5/id6457892799',
+    homepage: '/' + props.lang + '/juiceNote',
   },
   {
     avatar: '/images/travelmode/logo.min.png',
@@ -35,18 +37,21 @@ const products = [
     description: { en: 'Control your network', zh: 'macOS 的网络控制应用' },
     store: 'https://apps.apple.com/cn/app/travelmode/id6474899051',
     github: 'https://github.com/CofficLab/TravelMode',
+    homepage: '/' + props.lang + '/travelmode',
   },
   {
     avatar: '/images/juiceEditor/logo.min.png',
     name: 'JuiceEditor',
     description: { en: 'Powerful editor', zh: '简洁强大的富文本编辑器' },
     github: 'https://github.com/CofficLab/JuiceEditor',
+    homepage: '/' + props.lang + '/juiceEditor',
   },
   {
     avatar: '/images/gitok/logo.png',
     name: 'GitOk',
     description: { en: 'Project management', zh: 'macOS 的项目管理应用' },
     github: 'https://github.com/CofficLab/gitok',
+    homepage: '/' + props.lang + '/gitok',
   }
 ];
 
