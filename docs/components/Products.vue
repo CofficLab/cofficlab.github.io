@@ -1,41 +1,60 @@
 <template>
   <div class="flex flex-row gap-4">
-    <Product :product="{
-      avatar: '/images/cisum/logo.min.png',
-      name: 'Cisum',
-      description: 'A music player',
-      store: 'https://apps.apple.com/cn/app/cisum/id6466401036',
-      github: 'https://github.com/yueyinet/cisum',
-    }" />
-    <Product :product="{
-      avatar: '/images/juiceNote/logo.min.png',
-      name: 'JuiceNote',
-      store:
-        'https://apps.apple.com/cn/app/%E5%BF%AB%E6%98%93%E7%9F%A5/id6457892799',
-      description: 'A note application',
-    }" />
-    <Product :product="{
-      avatar: '/images/travelmode/logo.min.png',
-      name: 'TravelMode',
-      store: 'https://apps.apple.com/cn/app/travelmode/id6474899051',
-      description: 'Control your network',
-      github: 'https://github.com/CofficLab/TravelMode',
-    }" />
-    <Product :product="{
-      avatar: '/images/juiceEditor/logo.min.png',
-      name: 'JuiceEditor',
-      description: 'Powerful editor',
-      github: 'https://github.com/CofficLab/JuiceEditor',
-    }" />
-    <Product :product="{
-      avatar: '/images/gitok/logo.png',
-      name: 'GitOk',
-      description: 'Project management',
-      github: 'https://github.com/CofficLab/gitok',
-    }" />
+    <Product v-for="product in products" :key="product.name" :product="getLocalizedProduct(product)" />
   </div>
 </template>
 
 <script setup>
 import Product from './Product.vue';
+
+const props = defineProps({
+  lang: {
+    type: String,
+    default: 'en',
+    validator: (value) => ['en', 'zh'].includes(value)
+  }
+});
+
+const products = [
+  {
+    avatar: '/images/cisum/logo.min.png',
+    name: { en: 'Cisum', zh: 'Cisum' },
+    description: { en: 'A music player', zh: 'Apple 平台的音乐播放器' },
+    store: 'https://apps.apple.com/cn/app/cisum/id6466401036',
+    github: 'https://github.com/yueyinet/cisum',
+  },
+  {
+    avatar: '/images/juiceNote/logo.min.png',
+    name: { en: 'JuiceNote', zh: '快易知' },
+    description: { en: 'A note application', zh: 'macOS 的笔记应用' },
+    store: 'https://apps.apple.com/cn/app/%E5%BF%AB%E6%98%93%E7%9F%A5/id6457892799',
+  },
+  {
+    avatar: '/images/travelmode/logo.min.png',
+    name: 'TravelMode',
+    description: { en: 'Control your network', zh: 'macOS 的网络控制应用' },
+    store: 'https://apps.apple.com/cn/app/travelmode/id6474899051',
+    github: 'https://github.com/CofficLab/TravelMode',
+  },
+  {
+    avatar: '/images/juiceEditor/logo.min.png',
+    name: 'JuiceEditor',
+    description: { en: 'Powerful editor', zh: '简洁强大的富文本编辑器' },
+    github: 'https://github.com/CofficLab/JuiceEditor',
+  },
+  {
+    avatar: '/images/gitok/logo.png',
+    name: 'GitOk',
+    description: { en: 'Project management', zh: 'macOS 的项目管理应用' },
+    github: 'https://github.com/CofficLab/gitok',
+  }
+];
+
+const getLocalizedProduct = (product) => {
+  return {
+    ...product,
+    name: typeof product.name === 'object' ? product.name[props.lang] : product.name,
+    description: typeof product.description === 'object' ? product.description[props.lang] : product.description,
+  };
+};
 </script>
