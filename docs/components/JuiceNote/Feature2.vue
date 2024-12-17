@@ -1,5 +1,5 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" :extraClass="extraClass" titleKey="musicLibrary"
+    <BaseFeature :lang="lang" :translations="translations" titleKey="musicLibrary"
         :buttons="['importable', 'offline', 'exportable', 'syncable']">
         <template #bottom>
             <JuiceApp :lang="lang" />
@@ -34,9 +34,5 @@ defineProps({
         default: 'en',
         validator: (value) => ['en', 'zh'].includes(value)
     },
-    extraClass: {
-        type: String,
-        default: 'bg-gradient-to-br from-emerald-300 to-sky-500'
-    }
 })
 </script>

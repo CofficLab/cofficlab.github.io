@@ -1,5 +1,5 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" :extraClass="extraClass" titleKey="dbManager"
+    <BaseFeature :lang="lang" :translations="translations" titleKey="dbManager"
         :buttons="['multiDb', 'visualData', 'sqlQuery', 'dataIo']">
 
         <template #description>
@@ -43,9 +43,5 @@ defineProps({
         default: 'zh',
         validator: (value) => ['en', 'zh'].includes(value)
     },
-    extraClass: {
-        type: String,
-        default: 'bg-gradient-to-br from-indigo-500 to-purple-500'
-    }
 })
 </script>

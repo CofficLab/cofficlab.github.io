@@ -1,5 +1,5 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" :extraClass="extraClass" titleKey="subtitle"
+    <BaseFeature :lang="lang" :translations="translations" titleKey="subtitle"
         :buttons="['noAds', 'noScan', 'noMember', 'noLogin']">
         <template #right>
             <Player :lang="lang" />
@@ -34,9 +34,5 @@ defineProps({
         default: 'en',
         validator: (value) => ['en', 'zh'].includes(value)
     },
-    extraClass: {
-        type: String,
-        default: 'bg-gradient-to-tr from-emerald-300 to-sky-500'
-    }
 })
 </script>

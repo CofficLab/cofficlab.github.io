@@ -1,5 +1,5 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" :extraClass="extraClass" titleKey="framework"
+    <BaseFeature :lang="lang" :translations="translations" titleKey="framework"
         :buttons="['vue', 'react', 'angular', 'svelte']">
 
         <template #description>
@@ -42,10 +42,6 @@ defineProps({
         type: String,
         default: 'zh',
         validator: (value) => ['en', 'zh'].includes(value)
-    },
-    extraClass: {
-        type: String,
-        default: 'bg-gradient-to-br from-yellow-500 to-orange-500'
     }
 })
 </script>

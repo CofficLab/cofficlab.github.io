@@ -1,15 +1,10 @@
 <template>
     <FeatureGroup>
-        <GitFeature :lang="lang"
-            :extraClass="'bg-gradient-to-br from-purple-500 to-pink-500 backdrop-filter backdrop-blur-lg bg-opacity-10'" />
-        <BannerFeature :lang="lang"
-            :extraClass="'bg-gradient-to-br from-blue-500 to-cyan-500 backdrop-filter backdrop-blur-lg bg-opacity-50'" />
-        <IconFeature :lang="lang"
-            :extraClass="'bg-gradient-to-br from-emerald-500 to-teal-500 backdrop-filter backdrop-blur-lg'" />
-        <ApiFeature :lang="lang"
-            :extraClass="'bg-gradient-to-br from-orange-500 to-red-500 backdrop-filter backdrop-blur-lg'" />
-        <DbFeature :lang="lang"
-            :extraClass="'bg-gradient-to-br from-indigo-500 to-purple-500 backdrop-filter backdrop-blur-lg'" />
+        <GitFeature :lang="lang" />
+        <BannerFeature :lang="lang" />
+        <IconFeature :lang="lang" />
+        <ApiFeature :lang="lang" />
+        <DbFeature :lang="lang" />
     </FeatureGroup>
 </template>
 
@@ -20,4 +15,11 @@ import BannerFeature from './BannerFeature.vue'
 import IconFeature from './IconFeature.vue'
 import ApiFeature from './ApiFeature.vue'
 import DbFeature from './DbFeature.vue'
+
+const props = defineProps({
+    lang: {
+        type: String,
+        default: 'en'
+    }
+})
 </script>

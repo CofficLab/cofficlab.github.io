@@ -1,5 +1,5 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" :extraClass="extraClass" titleKey="bannerGenerator"
+    <BaseFeature :lang="lang" :translations="translations" titleKey="bannerGenerator"
         :buttons="['appStore', 'templates', 'customizable', 'multiFormat']">
 
         <template #description>
@@ -43,9 +43,5 @@ defineProps({
         default: 'zh',
         validator: (value) => ['en', 'zh'].includes(value)
     },
-    extraClass: {
-        type: String,
-        default: 'bg-gradient-to-br from-orange-500 to-red-500'
-    }
 })
 </script>

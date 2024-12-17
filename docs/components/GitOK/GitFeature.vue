@@ -1,5 +1,5 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" :extraClass="extraClass" titleKey="gitManagement"
+    <BaseFeature :lang="lang" :translations="translations" titleKey="gitManagement"
         :buttons="['visualHistory', 'branchManagement', 'fileTracking', 'conflictResolution']">
 
         <template #description>
@@ -42,10 +42,6 @@ defineProps({
         type: String,
         default: 'zh',
         validator: (value) => ['en', 'zh'].includes(value)
-    },
-    extraClass: {
-        type: String,
-        default: 'bg-gradient-to-br from-purple-500 to-pink-500'
     }
 })
 </script>

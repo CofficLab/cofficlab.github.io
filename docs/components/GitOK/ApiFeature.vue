@@ -1,5 +1,5 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" :extraClass="extraClass" titleKey="apiTester"
+    <BaseFeature :lang="lang" :translations="translations" titleKey="apiTester"
         :buttons="['multiMethod', 'visualResponse', 'paramManager', 'history']">
 
         <template #description>
@@ -42,10 +42,6 @@ defineProps({
         type: String,
         default: 'zh',
         validator: (value) => ['en', 'zh'].includes(value)
-    },
-    extraClass: {
-        type: String,
-        default: 'bg-gradient-to-br from-orange-500 to-red-500'
     }
 })
 </script>

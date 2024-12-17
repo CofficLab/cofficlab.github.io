@@ -16,7 +16,6 @@ watchEffect(() => {
 <template>
   <Layout>
     <template #layout-bottom>
-      <hr class="border-gray-500/30 dark:border-gray-600/50">
       <Footer></Footer>
     </template>
   </Layout>

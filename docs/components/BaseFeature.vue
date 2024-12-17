@@ -8,7 +8,7 @@
             </button>
         </div>
 
-        <div class="flex p-8 h-full text-white w-full" :class="extraClass" ref="componentRef">
+        <div class="flex p-8 h-full w-full" :class="extraClass" ref="componentRef">
             <div class="flex flex-col w-full">
                 <div class="flex flex-row">
                     <div class="h-full p-8 flex-1 flex-col justify-center flex items-center self-center">
@@ -46,10 +46,6 @@ const props = defineProps({
     },
     translations: {
         type: Object,
-        required: true
-    },
-    extraClass: {
-        type: String,
         required: true
     },
     titleKey: {

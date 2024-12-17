@@ -1,5 +1,5 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" :extraClass="extraClass" titleKey="platform"
+    <BaseFeature :lang="lang" :translations="translations" titleKey="platform"
         :buttons="['desktop', 'mobile', 'web', 'electron']">
 
         <template #description>
@@ -53,10 +53,6 @@ defineProps({
         default: 'zh',
         validator: (value) => ['en', 'zh'].includes(value)
     },
-    extraClass: {
-        type: String,
-        default: 'bg-gradient-to-br from-green-500 to-emerald-500'
-    }
 })
 </script>
 
