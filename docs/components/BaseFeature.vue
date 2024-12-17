@@ -1,7 +1,7 @@
 <template>
     <div class="relative w-full">
         <!-- Download button that appears on hover -->
-        <div class="absolute top-4 right-4 opacity-0 hover:opacity-100 transition-opacity">
+        <div class="absolute top-4 right-4 opacity-0 hover:opacity-100 transition-opacity" v-if="showDownloadButton">
             <button @click="downloadAsImage"
                 class="bg-yellow-500/30 backdrop-blur-sm p-2 rounded-lg hover:bg-yellow-500/40">
                 <RiDownloadLine class="w-6 h-6 text-white" />
@@ -55,6 +55,10 @@ const props = defineProps({
     buttons: {
         type: Array,
         required: true
+    },
+    showDownloadButton: {
+        type: Boolean,
+        default: false
     }
 })
 
