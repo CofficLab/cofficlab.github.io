@@ -1,6 +1,6 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" gradientClass="bg-gradient-to-tr from-emerald-300 to-sky-500"
-        titleKey="subtitle" :buttons="['noAds', 'noScan', 'noMember', 'noLogin']">
+    <BaseFeature :lang="lang" :translations="translations" :gradientClass="gradientClass" titleKey="subtitle"
+        :buttons="['noAds', 'noScan', 'noMember', 'noLogin']">
         <template #right>
             <Player :lang="lang" />
         </template>
@@ -33,6 +33,10 @@ defineProps({
         type: String,
         default: 'en',
         validator: (value) => ['en', 'zh'].includes(value)
+    },
+    gradientClass: {
+        type: String,
+        default: 'bg-gradient-to-tr from-emerald-300 to-sky-500'
     }
 })
 </script>

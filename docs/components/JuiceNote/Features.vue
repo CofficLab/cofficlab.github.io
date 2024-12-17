@@ -1,7 +1,7 @@
 <template>
     <FeatureGroup>
-        <Feature1 :lang="lang" />
-        <Feature2 :lang="lang" />
+        <Feature1 :lang="lang" :gradientClass="'bg-gradient-to-br from-emerald-300 to-sky-500'" />
+        <Feature2 :lang="lang" :gradientClass="'bg-gradient-to-tr from-emerald-300 to-sky-500'" />
     </FeatureGroup>
 </template>
 

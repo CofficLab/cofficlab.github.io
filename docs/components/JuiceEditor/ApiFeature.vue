@@ -1,6 +1,6 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" gradientClass="bg-gradient-to-br from-cyan-500 to-blue-500"
-        titleKey="api" :buttons="['extensible', 'documented', 'typed', 'stable']">
+    <BaseFeature :lang="lang" :translations="translations" :gradientClass="gradientClass" titleKey="api"
+        :buttons="['extensible', 'documented', 'typed', 'stable']">
 
         <template #description>
             <p>{{ translations[lang].description }}</p>
@@ -46,6 +46,10 @@ defineProps({
         type: String,
         default: 'zh',
         validator: (value) => ['en', 'zh'].includes(value)
+    },
+    gradientClass: {
+        type: String,
+        default: 'bg-gradient-to-br from-cyan-500 to-blue-500'
     }
 })
 </script>

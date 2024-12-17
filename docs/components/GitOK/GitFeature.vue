@@ -1,6 +1,6 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" gradientClass="bg-gradient-to-br from-purple-500 to-pink-500"
-        titleKey="gitManagement" :buttons="['visualHistory', 'branchManagement', 'fileTracking', 'conflictResolution']">
+    <BaseFeature :lang="lang" :translations="translations" :gradientClass="gradientClass" titleKey="gitManagement"
+        :buttons="['visualHistory', 'branchManagement', 'fileTracking', 'conflictResolution']">
 
         <template #description>
             <p>{{ translations[lang].description }}</p>
@@ -42,6 +42,10 @@ defineProps({
         type: String,
         default: 'zh',
         validator: (value) => ['en', 'zh'].includes(value)
+    },
+    gradientClass: {
+        type: String,
+        default: 'bg-gradient-to-br from-purple-500 to-pink-500'
     }
 })
 </script>

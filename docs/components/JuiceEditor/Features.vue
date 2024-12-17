@@ -1,11 +1,11 @@
 <template>
     <FeatureGroup>
-        <ElegantFeature :lang="lang" />
-        <ApiFeature :lang="lang" />
-        <PlatformFeature :lang="lang" />
-        <FrameworkFeature :lang="lang" />
-        <AiFeature :lang="lang" />
-        <EmbedFeature :lang="lang" />
+        <ElegantFeature :lang="lang" :gradientClass="'bg-gradient-to-b from-violet-400 to-indigo-400'" />
+        <ApiFeature :lang="lang" :gradientClass="'bg-gradient-to-b from-indigo-400 to-blue-400'" />
+        <PlatformFeature :lang="lang" :gradientClass="'bg-gradient-to-b from-blue-400 to-teal-400'" />
+        <FrameworkFeature :lang="lang" :gradientClass="'bg-gradient-to-b from-teal-400 to-green-400'" />
+        <AiFeature :lang="lang" :gradientClass="'bg-gradient-to-b from-green-400 to-yellow-400'" />
+        <EmbedFeature :lang="lang" :gradientClass="'bg-gradient-to-b from-yellow-400 to-orange-400'" />
     </FeatureGroup>
 </template>
 

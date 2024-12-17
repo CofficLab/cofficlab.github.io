@@ -1,6 +1,5 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations"
-        gradientClass="bg-gradient-to-br from-indigo-500 to-purple-500" titleKey="dbManager"
+    <BaseFeature :lang="lang" :translations="translations" :gradientClass="gradientClass" titleKey="dbManager"
         :buttons="['multiDb', 'visualData', 'sqlQuery', 'dataIo']">
 
         <template #description>
@@ -43,6 +42,10 @@ defineProps({
         type: String,
         default: 'zh',
         validator: (value) => ['en', 'zh'].includes(value)
+    },
+    gradientClass: {
+        type: String,
+        default: 'bg-gradient-to-br from-indigo-500 to-purple-500'
     }
 })
 </script>

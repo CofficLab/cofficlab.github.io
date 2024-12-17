@@ -1,6 +1,5 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations"
-        gradientClass="bg-gradient-to-br from-emerald-500 to-teal-500" titleKey="iconGenerator"
+    <BaseFeature :lang="lang" :translations="translations" :gradientClass="gradientClass" titleKey="iconGenerator"
         :buttons="['multiPlatform', 'autoSize', 'customDesign', 'quickExport']">
 
         <template #description>
@@ -43,6 +42,10 @@ defineProps({
         type: String,
         default: 'zh',
         validator: (value) => ['en', 'zh'].includes(value)
+    },
+    gradientClass: {
+        type: String,
+        default: 'bg-gradient-to-br from-emerald-500 to-teal-500'
     }
 })
 </script>

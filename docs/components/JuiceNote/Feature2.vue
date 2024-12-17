@@ -1,6 +1,6 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" gradientClass="bg-gradient-to-br from-emerald-300 to-sky-500"
-        titleKey="musicLibrary" :buttons="['importable', 'offline', 'exportable', 'syncable']">
+    <BaseFeature :lang="lang" :translations="translations" :gradientClass="gradientClass" titleKey="musicLibrary"
+        :buttons="['importable', 'offline', 'exportable', 'syncable']">
         <template #bottom>
             <JuiceApp :lang="lang" />
         </template>
@@ -33,6 +33,10 @@ defineProps({
         type: String,
         default: 'en',
         validator: (value) => ['en', 'zh'].includes(value)
+    },
+    gradientClass: {
+        type: String,
+        default: 'bg-gradient-to-br from-emerald-300 to-sky-500'
     }
 })
 </script>
