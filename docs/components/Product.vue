@@ -31,11 +31,11 @@
             class="rounded-full w-7 transition-all duration-200 hover:scale-105 ease-out" />
         </a>
 
-        <a :href="product.store" target="_blank" v-if="product.store" class="dark:hidden">
+        <a :href="product.store" target="_blank" v-if="product.store" class="block dark:hidden">
           <img src="/images/friends/mac_app_store.svg" alt=""
             class="w-28 transition-all duration-200 hover:scale-105 ease-out" />
         </a>
-        <a :href="product.store" target="_blank" v-if="product.store" class="hidden dark:flex">
+        <a :href="product.store" target="_blank" v-if="product.store" class="hidden dark:block">
           <img src="/images/friends/mac_app_store_dark.svg" alt=""
             class="w-28 transition-all duration-200 hover:scale-105 ease-out" />
         </a>
