@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* body {
+  @apply bg-gradient-to-br from-green-900/10 via-blue-800/10 to-yellow-900/10
+    min-h-screen;
+} */
+
+ul {
+  list-style: none;
+}
+
+.smart-link {
+  @apply px-4 py-2 rounded-xl ring-white/50 no-underline hover:ring-1 hover:shadow-2xl hover:bg-green-600/10 hover:backdrop-blur transform duration-100;
+}
+
+.smart-card {
+  @apply p-4 rounded-2xl text-white dark:text-gray-500 bg-gradient-to-br from-gray-900/30 via-gray-800/40 to-gray-800/50 dark:from-gray-900/30 dark:via-gray-900/40 dark:to-gray-800/50 backdrop-blur-3xl border-r border-gray-50/30 dark:border-gray-600/50 dark:border hover:ring-0 hover:shadow-2xl transform duration-100;
+}
+
+.smart-button {
+  @apply p-4 rounded-2xl text-white/80 dark:text-gray-500 bg-gradient-to-br from-gray-900/30 via-gray-800/40 to-gray-800/50 dark:from-gray-900/30 dark:via-gray-900/40 dark:to-gray-800/50 backdrop-blur-3xl border-r border-gray-50/30 dark:border-gray-600/50 dark:border hover:ring-0 hover:shadow-2xl transform duration-100;
+}
+
+@layer base {
+  :root {
+    --vp-home-hero-name-color: transparent;
+    --vp-home-hero-name-background: linear-gradient(
+      120deg,
+      #bd34fe 30%,
+      #41d1ff
+    );
+    --vp-home-hero-image-background-image: linear-gradient(
+      -45deg,
+      #bd34fe 50%,
+      #41d1ff 50%
+    );
+    --vp-home-hero-image-filter: blur(44px);
+  }
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(68px);
+  }
+}
+
+.VPHome {
+  @apply mb-0 pb-0 translate-y-0 !important;
+}
+
+.VPHome .VPContent {
+  @apply mb-0 !important;
+}
+
+.VPHome .VPContent .VPImage {
+  @apply mb-0 !important;
+}
+
+/* 覆盖默认容器宽度 */
+.vp-doc {
+  max-width: 100% !important;
+}
+
+.vp-doc .container {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 覆盖媒体查询中的 padding */
+@media (min-width: 960px) {
+  .container {
+    padding: 0 !important;
+  }
+}

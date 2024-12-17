@@ -2,7 +2,7 @@
 import DefaultTheme from 'vitepress/theme';
 import { inBrowser, useData } from 'vitepress';
 import { watchEffect } from 'vue';
-import Footer from '../../docs/components/Footer.vue';
+import Footer from './Footer.vue';
 
 const { Layout } = DefaultTheme;
 const { lang } = useData();

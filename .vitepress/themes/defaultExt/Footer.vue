@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <footer class="">
         <div class="flex flex-col justify-center">
             <a href="/" class="flex items-center self-center w-auto text-lg font-bold smart-link my-6">
                 <div class="flex flex-row justify-center w-full">
@@ -52,7 +52,7 @@
                 <p>{{ lang === 'en' ? 'All rights reserved.' : '版权所有' }} &copy; 2024-present Coffic Lab</p>
             </div>
         </div>
-    </div>
+    </footer>
 </template>
 
 <script lang="ts" setup>
