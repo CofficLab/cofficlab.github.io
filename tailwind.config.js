@@ -3,5 +3,7 @@ module.exports = {
     './.vitepress/**/*.{js,ts,vue}',
     './docs/**/*.md',
     './docs/**/*.vue',
+    './docs/**/*.js',
+    './docs/**/*.ts',
   ],
 };
