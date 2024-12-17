@@ -1,5 +1,5 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" :gradientClass="gradientClass" titleKey="api"
+    <BaseFeature :lang="lang" :translations="translations" :extraClass="extraClass" titleKey="api"
         :buttons="['extensible', 'documented', 'typed', 'stable']">
 
         <template #description>
@@ -47,7 +47,7 @@ defineProps({
         default: 'zh',
         validator: (value) => ['en', 'zh'].includes(value)
     },
-    gradientClass: {
+    extraClass: {
         type: String,
         default: 'bg-gradient-to-br from-cyan-500 to-blue-500'
     }

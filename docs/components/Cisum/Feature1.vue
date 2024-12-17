@@ -1,5 +1,5 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" :gradientClass="gradientClass" titleKey="musicLibrary"
+    <BaseFeature :lang="lang" :translations="translations" :extraClass="extraClass" titleKey="musicLibrary"
         :buttons="['importable', 'offline', 'exportable', 'syncable']">
 
         <template #right>
@@ -35,7 +35,7 @@ defineProps({
         default: 'en',
         validator: (value) => ['en', 'zh'].includes(value)
     },
-    gradientClass: {
+    extraClass: {
         type: String,
         default: 'bg-gradient-to-br from-emerald-300 to-sky-500'
     }
