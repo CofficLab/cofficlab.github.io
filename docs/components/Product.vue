@@ -1,6 +1,6 @@
 <template>
   <article>
-    <div class="flex flex-col gap-2 w-48 h-64 p-4 text-center rounded-lg bg-gray-400/20 
+    <div class="shadow-lg flex flex-col gap-2 w-48 h-64 p-4 text-center rounded-lg bg-gray-400/20 
       transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-gray-400/30
       group relative">
       <!-- 产品头像 -->
@@ -27,20 +27,18 @@
 
       <!-- 产品链接 -->
       <div class="flex justify-center mt-6 space-x-4">
-        <a :href="product.github" class="transform transition-transform duration-200 hover:scale-110 hover:-rotate-6"
-          target="_blank" v-if="product.github">
+        <a :href="product.github" target="_blank" v-if="product.github">
           <img src="/images/friends/github.png" alt=""
-            class="rounded-full w-7 hover:opacity-100 opacity-75 transition-opacity" />
+            class="rounded-full w-7 transition-all duration-200 hover:scale-105 ease-out" />
         </a>
-        <a :href="product.store" class="transform transition-transform duration-200 hover:scale-110 hover:rotate-6
-          dark:hidden" target="_blank" v-if="product.store">
+
+        <a :href="product.store" target="_blank" v-if="product.store" class="dark:hidden">
           <img src="/images/friends/mac_app_store.svg" alt=""
-            class="w-28 hover:opacity-100 opacity-75 transition-opacity" />
+            class="w-28 transition-all duration-200 hover:scale-105 ease-out" />
         </a>
-        <a :href="product.store" class="hidden transform transition-transform duration-200 hover:scale-110 
-          hover:rotate-6 dark:flex" target="_blank" v-if="product.store">
+        <a :href="product.store" target="_blank" v-if="product.store" class="hidden dark:flex">
           <img src="/images/friends/mac_app_store_dark.svg" alt=""
-            class="w-28 hover:opacity-100 opacity-75 transition-opacity" />
+            class="w-28 transition-all duration-200 hover:scale-105 ease-out" />
         </a>
       </div>
     </div>
