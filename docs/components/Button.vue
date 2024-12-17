@@ -2,7 +2,7 @@
     <div>
         <!-- Button with hover effects -->
         <button @click="showPopup" :class="[
-            'bg-white/20 p-4 rounded-2xl text-center backdrop-blur-lg text-2xl transition-all duration-300 hover:scale-105 hover:bg-white/30',
+            'bg-cyan-500/20 p-4 rounded-2xl text-center backdrop-blur-lg text-2xl transition-all duration-300 hover:scale-105 hover:bg-cyan-500/30',
             props.size
         ]">
             <slot></slot>

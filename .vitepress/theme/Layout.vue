@@ -20,23 +20,3 @@ watchEffect(() => {
     </template>
   </Layout>
 </template>
-
-<style>
-/* 覆盖默认容器宽度 */
-.vp-doc {
-  max-width: 100% !important;
-}
-
-.vp-doc .container {
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* 覆盖媒体查询中的 padding */
-@media (min-width: 960px) {
-  .container {
-    padding: 0 !important;
-  }
-}
-</style>

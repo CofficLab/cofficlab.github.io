@@ -19,8 +19,7 @@
                 <h1 class="name">{{ member.name }}</h1>
             </div>
 
-            <h3 class="description group-hover:text-gray-900 dark:group-hover:text-gray-100
-        transition-colors duration-200">
+            <h3 class="description group-hover:text-blue-600 transition-colors duration-200">
                 {{ member.description }}
             </h3>
 
