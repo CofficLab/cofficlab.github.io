@@ -1,5 +1,5 @@
 <template>
-    <div class="py-16 px-8 text-center w-full h-screen">
+    <div class="py-16 px-8 text-center w-full min-h-screen">
         <template v-if="image">
 
             <img :src="image.src" :alt="image.alt" class="h-1/2 mx-auto mb-8" />
