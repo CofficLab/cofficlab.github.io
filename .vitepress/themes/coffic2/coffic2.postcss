@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* body {
+  @apply bg-gradient-to-br from-green-900/10 via-blue-800/10 to-yellow-900/10
+    min-h-screen;
+} */
+
 ul {
   list-style: none;
 }
@@ -32,5 +37,47 @@ ul {
       #41d1ff 50%
     );
     --vp-home-hero-image-filter: blur(44px);
+  }
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(68px);
+  }
+}
+
+.VPHome {
+  @apply mb-0 pb-0 translate-y-0 !important;
+}
+
+.VPHome .VPContent {
+  @apply mb-0 !important;
+}
+
+.VPHome .VPContent .VPImage {
+  @apply mb-0 !important;
+}
+
+/* 覆盖默认容器宽度 */
+.vp-doc {
+  max-width: 100% !important;
+}
+
+.vp-doc .container {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 覆盖媒体查询中的 padding */
+@media (min-width: 960px) {
+  .container {
+    padding: 0 !important;
   }
 }

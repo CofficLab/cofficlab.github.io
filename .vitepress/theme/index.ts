@@ -8,4 +8,4 @@ const themes = [
   Default,
 ];
 
-export default themes[2];
+export default themes[0];
