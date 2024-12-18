@@ -49,13 +49,6 @@ export default defineConfig({
         sidebar: createSidebar('zh')
       }
     }
-  },
-  vite: {
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, '../docs/components'),
-      },
-    },
-  },
+  }
 })
 

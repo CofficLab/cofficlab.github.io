@@ -19,6 +19,13 @@
 </template>
 
 <script setup lang="ts">
+import type { PropType } from 'vue'
+
+interface Link {
+    text: string;
+    href: string;
+}
+
 defineProps({
     title: {
         type: String,
@@ -37,9 +44,9 @@ defineProps({
         }
     },
     links: {
-        type: Array,
+        type: Array as PropType<Link[]>,
         required: true,
-        default: []
+        default: () => []
     }
 })
 </script>

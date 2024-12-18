@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import CofficHero from '@/Common/CofficHero.vue';
+import CofficHero from '../Common/CofficHero.vue';
 
 const props = defineProps({
     lang: {
