@@ -2,10 +2,11 @@
 layout: page
 ---
 
-<Hero lang="zh" />
+<CisumHero lang="zh" />
+
 <Features lang="zh" />
 
 <script setup>
 import Features from '../components/Cisum/Features.vue'
-import Hero from '../components/Cisum/Hero.vue'
+import CisumHero from '../components/Cisum/CisumHero.vue'
 </script>

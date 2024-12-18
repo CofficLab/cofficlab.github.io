@@ -2,11 +2,11 @@
 layout: page
 ---
 
-<Hero lang="zh" />
+<GitOKHero lang="zh" />
 
 <Features lang="zh" />
 
 <script setup>
 import Features from '../components/GitOK/Features.vue'
-import Hero from '../components/GitOK/Hero.vue'
+import GitOKHero from '../components/GitOK/GitOKHero.vue'
 </script>

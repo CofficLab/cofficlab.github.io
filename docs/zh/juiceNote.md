@@ -2,11 +2,11 @@
 layout: page
 ---
 
-<Hero lang="zh" />
+<JuiceNoteHero lang="zh" />
 
 <Features lang="zh" />
 
 <script setup>
 import Features from '../components/JuiceNote/Features.vue'
-import Hero from '../components/JuiceNote/Hero.vue'
+import JuiceNoteHero from '../components/JuiceNote/JuiceNoteHero.vue'
 </script>
