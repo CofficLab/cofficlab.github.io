@@ -1,10 +1,14 @@
 <template>
-    <CofficHero :title="title" :description="description" :image="image" :links="links" />
+    <CofficHero :title="title" :description="description" :links="links">
+        <template #app>
+            <TravelModeApp :lang="lang" height="h-[50em]" />
+        </template>
+    </CofficHero>
 </template>
 
 <script setup>
 import CofficHero from '../Common/CofficHero.vue';
-
+import TravelModeApp from './TravelModeApp.vue';
 const props = defineProps({
     lang: {
         type: String,
@@ -13,7 +17,7 @@ const props = defineProps({
     }
 })
 
-const title = ' '
+const title = 'TravelMode'
 
 const description = props.lang === 'zh'
     ? '控制 macOS APP 的连网权限'

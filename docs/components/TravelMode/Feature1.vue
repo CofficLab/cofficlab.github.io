@@ -46,20 +46,20 @@
 <script setup>
 const translations = {
     en: {
-        musicLibrary: 'Ad-free - Freedom for you',
-        description: 'Manage your music library with complete freedom',
-        importable: 'Importable',
-        offline: 'Offline',
-        exportable: 'Exportable',
-        syncable: 'Syncable'
+        musicLibrary: 'Ad-free Experience',
+        description: 'Focus on what matters - no ads, no distractions',
+        importable: 'No Ads',
+        offline: 'No Tracking',
+        exportable: 'No Popups',
+        syncable: 'No In-app Purchases'
     },
     zh: {
-        musicLibrary: '广告全无 - 自在由你',
-        description: '完全自由地管理您的音乐库',
-        importable: '可导入',
-        offline: '可离线',
-        exportable: '可导出',
-        syncable: '可同步'
+        musicLibrary: '无广告体验',
+        description: '专注于重要的事 - 无广告，无干扰',
+        importable: '无广告',
+        offline: '无跟踪',
+        exportable: '无弹窗',
+        syncable: '无应用内购'
     }
 }
 

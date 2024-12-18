@@ -13,7 +13,7 @@ const props = defineProps({
     }
 })
 
-const title = 'Juice Note'
+const title = props.lang === 'zh' ? '聚思笔记' : 'JuiceNote'
 
 const description = props.lang === 'zh'
     ? '一个笔记应用，支持多端同步'
@@ -25,6 +25,6 @@ const image = {
 }
 
 const links = [
-    { text: 'GitHub', href: 'https://github.com/Cofficlab/JuiceNote' },
+    { text: 'macOS', href: 'https://apps.apple.com/cn/app/juice-note/id6457892799?mt=12' },
 ]
 </script>

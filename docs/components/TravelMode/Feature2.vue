@@ -36,7 +36,7 @@
         </div>
 
         <div class="mt-12">
-            <JuiceApp :lang="lang" />
+            <TravelModeApp :lang="lang" />
         </div>
     </div>
 </template>
@@ -48,24 +48,24 @@
 </style>
 
 <script setup>
-import JuiceApp from './JuiceApp.vue';
+import TravelModeApp from './TravelModeApp.vue';
 
 const translations = {
     en: {
-        musicLibrary: 'Simple and powerful',
-        description: 'Powerful features with simple interface',
-        importable: 'Importable',
-        offline: 'Offline',
-        exportable: 'Exportable',
-        syncable: 'Syncable'
+        musicLibrary: 'Simple Yet Powerful',
+        description: 'Control network access with just one click',
+        importable: 'One Click',
+        offline: 'Quick Setup',
+        exportable: 'Easy Rules',
+        syncable: 'Auto Save'
     },
     zh: {
-        musicLibrary: '简于形 - 强于心',
-        description: '强大功能，简约界面',
-        importable: '可导入',
-        offline: '可离线',
-        exportable: '可导出',
-        syncable: '可同步'
+        musicLibrary: '简单而强大',
+        description: '一键控制应用网络访问权限',
+        importable: '一键操作',
+        offline: '快速设置',
+        exportable: '简易规则',
+        syncable: '自动保存'
     }
 }
 
