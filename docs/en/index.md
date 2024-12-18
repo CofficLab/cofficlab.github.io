@@ -7,7 +7,7 @@ hero:
   text: "build wonderful softwares with love"
   tagline: "without distraction"
   image: 
-    src: ../../public/images/coffic/logo4.png
+    src: /images/coffic/logo4.png
   actions:
     - theme: alt
       text: GitHub
