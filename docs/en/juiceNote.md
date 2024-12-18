@@ -40,5 +40,5 @@ features:
 <Features lang="en" />
 
 <script setup>
-import Features from '../components/JuiceNote/Features.vue'
+import Features from '@/JuiceNote/Features.vue'
 </script>

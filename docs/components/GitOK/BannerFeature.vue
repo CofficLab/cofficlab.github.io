@@ -1,22 +1,49 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" titleKey="bannerGenerator"
-        :buttons="['appStore', 'templates', 'customizable', 'multiFormat']">
+    <div class="py-16 px-8 text-center w-full">
+        <h2 class="text-4xl mb-4">{{ translations[lang].bannerGenerator }}</h2>
+        <p class="text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+            {{ translations[lang].description }}
+        </p>
 
-        <template #description>
-            <p>{{ translations[lang].description }}</p>
-        </template>
+        <div class="flex flex-row justify-center gap-8 mx-auto w-full">
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">📱</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].appStore }}</h3>
+            </div>
 
-        <template #right>
-            <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="M20,6H4V4H20V6M20,8H4V10H20V8M4,16H20V14H4V16M4,20H20V18H4V20M3,12H21V2H3V12M5,4H19V10H5V4Z" />
-            </svg>
-        </template>
-    </BaseFeature>
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">🎨</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].templates }}</h3>
+            </div>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">⚙️</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].customizable }}</h3>
+            </div>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">📦</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].multiFormat }}</h3>
+            </div>
+        </div>
+    </div>
 </template>
 
+<style lang="postcss" scoped>
+.feature-card {
+    @apply bg-white/10 backdrop-blur-lg rounded-2xl p-8 transition-transform duration-300 hover:-translate-y-1 shadow-lg;
+}
+</style>
+
 <script setup>
-import BaseFeature from '../BaseFeature.vue'
 
 const translations = {
     en: {

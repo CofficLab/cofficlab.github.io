@@ -1,23 +1,49 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" titleKey="framework"
-        :buttons="['vue', 'react', 'angular', 'svelte']">
+    <div class="py-16 px-8 text-center w-full">
+        <h2 class="text-4xl mb-4">{{ translations[lang].framework }}</h2>
+        <p class="text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+            {{ translations[lang].description }}
+        </p>
 
-        <template #description>
-            <p>{{ translations[lang].description }}</p>
-        </template>
-
-        <template #right>
-            <div class="framework-logos">
-                <div v-for="framework in ['Vue', 'React', 'Angular', 'Svelte']" :key="framework" class="framework">{{
-                    framework }}</div>
+        <div class="flex flex-row justify-center gap-8 mx-auto w-full">
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">⚡</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].vue }}</h3>
             </div>
-        </template>
-    </BaseFeature>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">⚛️</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].react }}</h3>
+            </div>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">🅰️</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].angular }}</h3>
+            </div>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">🎯</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].svelte }}</h3>
+            </div>
+        </div>
+    </div>
 </template>
 
-<script setup>
-import BaseFeature from '../BaseFeature.vue'
+<style lang="postcss" scoped>
+.feature-card {
+    @apply bg-white/10 backdrop-blur-lg rounded-2xl p-8 transition-transform duration-300 hover:-translate-y-1 shadow-lg;
+}
+</style>
 
+<script setup>
 const translations = {
     en: {
         framework: 'Framework Support',
@@ -45,19 +71,3 @@ defineProps({
     }
 })
 </script>
-
-<style scoped>
-.framework-logos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-}
-
-.framework {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: bold;
-}
-</style>

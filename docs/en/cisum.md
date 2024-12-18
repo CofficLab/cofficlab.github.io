@@ -43,5 +43,5 @@ features:
 <Features lang="en" />
 
 <script setup>
-import Features from '../components/Cisum/Features.vue'
+import Features from '@/Cisum/Features.vue'
 </script>

@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import Product from './Product.vue';
+import Product from '../Common/Product.vue';
 
 const props = defineProps({
   lang: {

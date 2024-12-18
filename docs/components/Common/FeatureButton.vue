@@ -20,7 +20,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 
 const props = defineProps({
@@ -31,12 +31,12 @@ const props = defineProps({
     size: {
         type: String,
         default: 'w-64',
-        validator: (value) => ['w-64', 'w-32', 'w-16', 'w-12', 'w-8'].includes(value)
+        validator: (value: string) => ['w-64', 'w-32', 'w-16', 'w-12', 'w-8'].includes(value)
     },
     lang: {
         type: String,
         default: 'en',
-        validator: (value) => ['en', 'zh'].includes(value)
+        validator: (value: string) => ['en', 'zh'].includes(value)
     },
     showTips: {
         type: Boolean,

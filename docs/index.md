@@ -7,7 +7,7 @@ hero:
   text: '简洁软件，用心创造'
   tagline: 'with coffee and music'
   image:
-    src: /images/coffic/logo4.png
+    src: ../public/images/coffic/logo4.png
     alt: Coffic Lab Logo
   actions:
     - theme: brand

@@ -39,5 +39,5 @@ hero:
 <Features lang="en" />  
 
 <script setup>
-import Features from '../../components/JuiceEditor/Features.vue'
+import Features from '@/JuiceEditor/Features.vue'
 </script>

@@ -7,7 +7,7 @@ hero:
   text: "build wonderful softwares with love"
   tagline: "without distraction"
   image: 
-    src: /images/coffic/logo4.png
+    src: ../../public/images/coffic/logo4.png
   actions:
     - theme: alt
       text: GitHub
@@ -33,6 +33,6 @@ hero:
 <Members lang="en" />
 
 <script setup>
-import Products from '../components/Products.vue'
-import Members from '../components/Members.vue'
+import Products from '@/Coffic/Products.vue'
+import Members from '@/Coffic/Members.vue'
 </script>

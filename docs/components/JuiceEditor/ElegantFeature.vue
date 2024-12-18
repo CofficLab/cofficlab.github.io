@@ -1,30 +1,49 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" titleKey="elegant"
-        :buttons="['flexible', 'powerful', 'concise', 'intuitive']">
+    <div class="py-16 px-8 text-center w-full">
+        <h2 class="text-4xl mb-4">{{ translations[lang].elegant }}</h2>
+        <p class="text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+            {{ translations[lang].description }}
+        </p>
 
-        <template #description>
-            <p>{{ translations[lang].description }}</p>
-        </template>
-
-        <template #right>
-            <div class="editor-preview">
-                <div class="toolbar">
-                    <span class="tool">B</span>
-                    <span class="tool">I</span>
-                    <span class="tool">/</span>
+        <div class="flex flex-row justify-center gap-8 mx-auto w-full">
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">🎨</div>
                 </div>
-                <div class="content">
-                    <div class="text-line"></div>
-                    <div class="text-line short"></div>
-                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].flexible }}</h3>
             </div>
-        </template>
-    </BaseFeature>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">💪</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].powerful }}</h3>
+            </div>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">✨</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].concise }}</h3>
+            </div>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">👆</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].intuitive }}</h3>
+            </div>
+        </div>
+    </div>
 </template>
 
-<script setup>
-import BaseFeature from '../BaseFeature.vue'
+<style lang="postcss" scoped>
+.feature-card {
+    @apply bg-white/10 backdrop-blur-lg rounded-2xl p-8 transition-transform duration-300 hover:-translate-y-1 shadow-lg;
+}
+</style>
 
+<script setup>
 const translations = {
     en: {
         elegant: 'Elegant & Flexible',
@@ -52,38 +71,3 @@ defineProps({
     },
 })
 </script>
-
-<style scoped>
-.editor-preview {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 1rem;
-    width: 300px;
-}
-
-.toolbar {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.tool {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.9rem;
-}
-
-.text-line {
-    height: 8px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
-}
-
-.short {
-    width: 60%;
-}
-</style>

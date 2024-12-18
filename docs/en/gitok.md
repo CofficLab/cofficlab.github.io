@@ -37,5 +37,5 @@ features:
 <Features lang="en" />
 
 <script setup>
-import Features from '../components/GitOK/Features.vue'
+import Features from '@/GitOK/Features.vue'
 </script>

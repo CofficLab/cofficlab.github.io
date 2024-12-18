@@ -33,6 +33,6 @@ hero:
 <Members lang="zh" />
 
 <script setup>
-import Products from '../components/Products.vue'
-import Members from '../components/Members.vue'
+import Products from '@/Coffic/Products.vue'
+import Members from '@/Coffic/Members.vue'
 </script>

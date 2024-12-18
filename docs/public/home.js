@@ -12,7 +12,7 @@ function go() {
 
     // 判断cookie是否存在
     if (cookiesArray.length === 0) {
-      window.location.href = '/en/';
+      window.location.href = '/en';
       return;
     }
 
@@ -27,17 +27,17 @@ function go() {
       if (cookieName === 'nf_lang') {
         var cookieValue = cookiePair[1];
         if (cookieValue === 'zh-CN' || cookieValue === 'zh') {
-          window.location.href = '/zh/';
+          window.location.href = '/zh';
           return;
         }
 
         if (cookieValue === 'en-US' || cookieValue === 'en') {
-          window.location.href = '/en/';
+          window.location.href = '/en';
           return;
         }
       }
     }
 
-    window.location.href = '/en/';
+    window.location.href = '/en';
   }
 }

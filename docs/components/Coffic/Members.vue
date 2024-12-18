@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import Member from './Member.vue';
+import Member from '../Common/Member.vue';
 
 const props = defineProps({
     lang: {

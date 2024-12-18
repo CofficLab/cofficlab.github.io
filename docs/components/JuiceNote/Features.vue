@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import FeatureGroup from '../../components/FeatureGroup.vue'
+import FeatureGroup from '@/Common/FeatureGroup.vue'
 import Feature1 from './Feature1.vue'
 import Feature2 from './Feature2.vue'
 

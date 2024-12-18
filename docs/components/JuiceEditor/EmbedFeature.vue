@@ -1,31 +1,49 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" titleKey="embed"
-        :buttons="['native', 'webview', 'iframe', 'component']">
+    <div class="py-16 px-8 text-center w-full">
+        <h2 class="text-4xl mb-4">{{ translations[lang].embed }}</h2>
+        <p class="text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+            {{ translations[lang].description }}
+        </p>
 
-        <template #description>
-            <p>{{ translations[lang].description }}</p>
-        </template>
-
-        <template #right>
-            <div class="app-preview">
-                <div class="app-header">
-                    <div class="app-dots">
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                    </div>
+        <div class="flex flex-row justify-center gap-8 mx-auto w-full">
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">📱</div>
                 </div>
-                <div class="app-content">
-                    <div class="editor-area"></div>
-                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].native }}</h3>
             </div>
-        </template>
-    </BaseFeature>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">🌐</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].webview }}</h3>
+            </div>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">🖼️</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].iframe }}</h3>
+            </div>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">🧩</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].component }}</h3>
+            </div>
+        </div>
+    </div>
 </template>
 
-<script setup>
-import BaseFeature from '../BaseFeature.vue'
+<style lang="postcss" scoped>
+.feature-card {
+    @apply bg-white/10 backdrop-blur-lg rounded-2xl p-8 transition-transform duration-300 hover:-translate-y-1 shadow-lg;
+}
+</style>
 
+<script setup>
 const translations = {
     en: {
         embed: 'App Integration',
@@ -53,39 +71,3 @@ defineProps({
     },
 })
 </script>
-
-<style scoped>
-.app-preview {
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    overflow: hidden;
-    width: 300px;
-}
-
-.app-header {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0.5rem;
-}
-
-.app-dots {
-    display: flex;
-    gap: 0.25rem;
-}
-
-.dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-}
-
-.app-content {
-    padding: 1rem;
-}
-
-.editor-area {
-    height: 150px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-}
-</style>
