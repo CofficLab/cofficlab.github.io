@@ -1,15 +1,46 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" titleKey="subtitle"
-        :buttons="['noAds', 'noScan', 'noMember', 'noLogin']">
-        <template #right>
-            <Player :lang="lang" />
-        </template>
-    </BaseFeature>
+    <div class="py-16 px-8 text-center w-full">
+        <h2 class="text-4xl mb-4">{{ translations[lang].subtitle }}</h2>
+
+        <div class="flex flex-row justify-center gap-8 mx-auto w-full">
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">🚫</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].noAds }}</h3>
+            </div>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">📱</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].noScan }}</h3>
+            </div>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">👤</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].noMember }}</h3>
+            </div>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">🔑</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].noLogin }}</h3>
+            </div>
+        </div>
+    </div>
 </template>
 
+<style lang="postcss" scoped>
+.feature-card {
+    @apply bg-white/10 backdrop-blur-lg rounded-2xl p-8 transition-transform duration-300 hover:-translate-y-1 shadow-lg;
+}
+</style>
+
 <script setup>
-import Player from './Player.vue';
-import BaseFeature from '../BaseFeature.vue';
 
 const translations = {
     en: {

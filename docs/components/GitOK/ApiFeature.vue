@@ -1,23 +1,49 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" titleKey="apiTester"
-        :buttons="['multiMethod', 'visualResponse', 'paramManager', 'history']">
+    <div class="py-16 px-8 text-center w-full">
+        <h2 class="text-4xl mb-4">{{ translations[lang].apiTester }}</h2>
+        <p class="text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+            {{ translations[lang].description }}
+        </p>
 
-        <template #description>
-            <p>{{ translations[lang].description }}</p>
-        </template>
+        <div class="flex flex-row justify-center gap-8 mx-auto w-full">
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">🔄</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].multiMethod }}</h3>
+            </div>
 
-        <template #right>
-            <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24">
-                <path fill="currentColor"
-                    d="M7,7H5A2,2 0 0,0 3,9V17H5V13H7V17H9V9A2,2 0 0,0 7,7M7,11H5V9H7V11M14,7H10V17H12V13H14A2,2 0 0,0 16,11V9A2,2 0 0,0 14,7M14,11H12V9H14V11M20,9V15H21V17H17V15H18V9H17V7H21V9H20Z" />
-            </svg>
-        </template>
-    </BaseFeature>
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">📊</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].visualResponse }}</h3>
+            </div>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">⚙️</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].paramManager }}</h3>
+            </div>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">📝</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].history }}</h3>
+            </div>
+        </div>
+    </div>
 </template>
 
-<script setup>
-import BaseFeature from '../BaseFeature.vue'
+<style lang="postcss" scoped>
+.feature-card {
+    @apply bg-white/10 backdrop-blur-lg rounded-2xl p-8 transition-transform duration-300 hover:-translate-y-1 shadow-lg;
+}
+</style>
 
+<script setup>
 const translations = {
     en: {
         apiTester: 'API Tester',

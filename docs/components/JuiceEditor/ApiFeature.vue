@@ -1,27 +1,49 @@
 <template>
-    <BaseFeature :lang="lang" :translations="translations" titleKey="api"
-        :buttons="['extensible', 'documented', 'typed', 'stable']">
+    <div class="py-16 px-8 text-center w-full">
+        <h2 class="text-4xl mb-4">{{ translations[lang].api }}</h2>
+        <p class="text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+            {{ translations[lang].description }}
+        </p>
 
-        <template #description>
-            <p>{{ translations[lang].description }}</p>
-        </template>
-
-        <template #right>
-            <div class="code-preview">
-                <div class="code-line"><span class="keyword">import</span> { Editor } <span class="keyword">from</span>
-                    'juice-editor'</div>
-                <div class="code-line"><span class="keyword">const</span> editor = <span class="keyword">new</span>
-                    Editor()</div>
-                <div class="code-line">editor.on(<span class="string">'change'</span>, onChange)</div>
-                <div class="code-line">editor.command(<span class="string">'bold'</span>)</div>
+        <div class="flex flex-row justify-center gap-8 mx-auto w-full">
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">🔌</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].extensible }}</h3>
             </div>
-        </template>
-    </BaseFeature>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">📚</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].documented }}</h3>
+            </div>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">📝</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].typed }}</h3>
+            </div>
+
+            <div class="feature-card">
+                <div class="mb-4">
+                    <div class="text-4xl">🔒</div>
+                </div>
+                <h3 class="text-lg font-medium">{{ translations[lang].stable }}</h3>
+            </div>
+        </div>
+    </div>
 </template>
 
-<script setup>
-import BaseFeature from '../BaseFeature.vue'
+<style lang="postcss" scoped>
+.feature-card {
+    @apply bg-white/10 backdrop-blur-lg rounded-2xl p-8 transition-transform duration-300 hover:-translate-y-1 shadow-lg;
+}
+</style>
 
+<script setup>
 const translations = {
     en: {
         api: 'Powerful APIs',
@@ -46,28 +68,6 @@ defineProps({
         type: String,
         default: 'zh',
         validator: (value) => ['en', 'zh'].includes(value)
-    },
+    }
 })
 </script>
-
-<style scoped>
-.code-preview {
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    padding: 1rem;
-    font-family: monospace;
-    line-height: 1.5;
-}
-
-.code-line {
-    color: #e5e7eb;
-}
-
-.keyword {
-    color: #93c5fd;
-}
-
-.string {
-    color: #86efac;
-}
-</style>

@@ -10,13 +10,13 @@
 </template>
 
 <script setup>
-import FeatureGroup from '../../components/FeatureGroup.vue'
-import ElegantFeature from '../../components/JuiceEditor/ElegantFeature.vue'
-import ApiFeature from '../../components/JuiceEditor/ApiFeature.vue'
-import PlatformFeature from '../../components/JuiceEditor/PlatformFeature.vue'
-import FrameworkFeature from '../../components/JuiceEditor/FrameworkFeature.vue'
-import AiFeature from '../../components/JuiceEditor/AiFeature.vue'
-import EmbedFeature from '../../components/JuiceEditor/EmbedFeature.vue'
+import FeatureGroup from '../Common/FeatureGroup.vue'
+import ElegantFeature from './ElegantFeature.vue'
+import ApiFeature from './ApiFeature.vue'
+import PlatformFeature from './PlatformFeature.vue'
+import FrameworkFeature from './FrameworkFeature.vue'
+import AiFeature from './AiFeature.vue'
+import EmbedFeature from './EmbedFeature.vue'
 
 defineProps({
     lang: {

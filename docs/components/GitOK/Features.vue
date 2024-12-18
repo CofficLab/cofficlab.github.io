@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import FeatureGroup from '../FeatureGroup.vue'
+import FeatureGroup from '../Common/FeatureGroup.vue'
 import GitFeature from './GitFeature.vue'
 import BannerFeature from './BannerFeature.vue'
 import IconFeature from './IconFeature.vue'
