@@ -26,13 +26,13 @@ const members = [
         github: 'https://github.com/cofficlab'
     },
     {
-        avatar: '/images/team/nookery.png',
+        avatar: 'https://github.com/nookery.png',
         name: 'Nookery',
         description: { en: 'Work for joy', zh: '工作寻趣，生活有趣' },
         github: 'https://github.com/nookery'
     },
     {
-        avatar: '/images/team/sunrunning.png',
+        avatar: 'https://github.com/sunrunning.png',
         name: 'Sunrunning',
         description: { en: 'Almost a genius', zh: '几乎是个天才' },
         github: 'https://github.com/sunrunning'

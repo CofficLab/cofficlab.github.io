@@ -7,7 +7,7 @@
         </p>
 
         <div class="flex flex-row justify-center gap-8 mx-auto w-full">
-            <a v-for="link in links" :key="link.text" :href="link.href" class="px-6 py-3 rounded-lg bg-blue-600 text-white font-medium
+            <a v-for="link in links" :key="link.text" :href="link.href" target="_blank" class="px-6 py-3 rounded-lg bg-blue-600 text-white font-medium
                        transition-all duration-300 ease-in-out
                        hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5
                        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
