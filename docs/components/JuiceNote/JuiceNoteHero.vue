@@ -13,26 +13,18 @@ const props = defineProps({
     }
 })
 
-const title = 'Juice Editor'
+const title = 'Juice Note'
 
 const description = props.lang === 'zh'
-    ? '仅需一个标签，嵌入到任何项目中'
-    : 'A powerful and flexible rich text editor'
-
-const features = [
-    { key: props.lang === 'zh' ? '连续互通' : 'Continuity', emoji: '📱' },
-    { key: props.lang === 'zh' ? '工作空间' : 'Workspace', emoji: '🖥️' },
-    { key: props.lang === 'zh' ? '游戏体验' : 'Gaming', emoji: '🎮' },
-    { key: props.lang === 'zh' ? '同步互联' : 'Sync', emoji: '🔄' }
-]
+    ? '一个笔记应用，支持多端同步'
+    : 'A note app, support multi-device sync'
 
 const image = {
-    src: '/images/juiceEditor/logo-512x512.png',
-    alt: 'Juice Editor Logo'
+    src: '/images/juiceNote/logo-512x512.png',
+    alt: 'Juice Note Logo'
 }
 
 const links = [
-    { text: 'GitHub', href: 'https://github.com/Cofficlab/JuiceEditor' },
-    { text: '文档', href: `/${props.lang}/juiceEditor/documents/guide/introduce` }
+    { text: 'GitHub', href: 'https://github.com/Cofficlab/JuiceNote' },
 ]
 </script>

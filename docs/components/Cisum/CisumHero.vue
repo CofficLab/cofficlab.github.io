@@ -15,15 +15,14 @@ const props = defineProps({
 
 const title = 'Cisum'
 
-const description = props.lang === 'zh' ? '仅需一个标签，嵌入到任何项目中' : 'A powerful and flexible rich text editor'
+const description = props.lang === 'zh' ? '播放音乐，本该如此简单' : 'Play music, it should be so simple'
 
 const image = {
-    src: '/images/juiceEditor/logo-512x512.png',
-    alt: 'Juice Editor Logo'
+    src: '/images/cisum/logo-512x512.png',
+    alt: 'Cisum Logo'
 }
 
 const links = [
-    { text: 'GitHub', href: 'https://github.com/Cofficlab/JuiceEditor' },
-    { text: '文档', href: `/${props.lang}/juiceEditor/documents/guide/introduce` }
+    { text: 'GitHub', href: 'https://github.com/Cofficlab/Cisum' },
 ]
 </script>

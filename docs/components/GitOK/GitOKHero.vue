@@ -15,15 +15,14 @@ const props = defineProps({
 
 const title = 'GitOK'
 
-const description = props.lang === 'zh' ? '仅需一个标签，嵌入到任何项目中' : 'A powerful and flexible rich text editor'
+const description = props.lang === 'zh' ? '一个Git管理工具' : 'A Git management tool'
 
 const image = {
-    src: '/images/juiceEditor/logo-512x512.png',
-    alt: 'Juice Editor Logo'
+    src: '/images/gitok/logo-512x512.png',
+    alt: 'GitOK Logo'
 }
 
 const links = [
-    { text: 'GitHub', href: 'https://github.com/Cofficlab/JuiceEditor' },
-    { text: '文档', href: `/${props.lang}/juiceEditor/documents/guide/introduce` }
+    { text: 'GitHub', href: 'https://github.com/Cofficlab/GitOK' },
 ]
 </script>
