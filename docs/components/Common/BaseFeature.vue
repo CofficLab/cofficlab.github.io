@@ -1,7 +1,7 @@
 <template>
     <div class="relative w-full rounded-3xl">
         <!-- Download button with dropdown menu -->
-        <div class="absolute top-4 right-4 opacity-0 hover:opacity-100 transition-opacity" v-if="showDownloadButton">
+        <div class="absolute top-4 left-4 opacity-0 hover:opacity-100 transition-opacity" v-if="showDownloadButton">
             <div class="relative">
                 <button @click="toggleDropdown"
                     class="bg-yellow-500/30 backdrop-blur-sm p-2 rounded-lg hover:bg-yellow-500/40">
@@ -9,7 +9,17 @@
                 </button>
                 <!-- Size selection dropdown -->
                 <div v-if="isDropdownOpen"
-                    class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-2">
+                    class="absolute left-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-2 z-50">
+                    <!-- Component size presets -->
+                    <div class="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
+                        <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">Component Size:</div>
+                        <select v-model="selectedSize"
+                            class="w-full p-1 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+                            <option v-for="preset in sizePresets" :key="preset.name" :value="preset">
+                                {{ preset.name }}
+                            </option>
+                        </select>
+                    </div>
                     <!-- Background settings -->
                     <div class="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
                         <label class="flex items-center space-x-2 mb-2">
@@ -41,7 +51,11 @@
             </div>
         </div>
 
-        <div class="flex p-8 h-full w-full" ref="componentRef" :class="getBackgroundClass()">
+        <div class="flex p-8" ref="componentRef" :class="[
+            getBackgroundClass(),
+            selectedSize.width,
+            selectedSize.height
+        ]">
             <slot></slot>
         </div>
     </div>
@@ -59,6 +73,12 @@ interface ExportSize {
     description: string;
     targetWidth?: number;
     targetHeight?: number;
+}
+
+interface SizePreset {
+    name: string;
+    width: string;
+    height: string;
 }
 
 const props = defineProps({
@@ -88,6 +108,19 @@ const exportSizes: ExportSize[] = [
         targetWidth: 2560,
         targetHeight: 1600
     },
+];
+
+const sizePresets = [
+    { name: 'Default', width: 'w-full', height: 'h-full' },
+    { name: 'Square', width: 'w-[600px]', height: 'h-[600px]' },
+    { name: 'Landscape', width: 'w-[800px]', height: 'h-[450px]' },
+    { name: 'Portrait', width: 'w-[450px]', height: 'h-[800px]' },
+    { name: 'Wide', width: 'w-[1200px]', height: 'h-[675px]' },
+    { name: 'Banner', width: 'w-[1200px]', height: 'h-[300px]' },
+    { name: '1280 × 800', width: 'w-[1280px]', height: 'h-[800px]' },
+    { name: '1440 × 900', width: 'w-[1440px]', height: 'h-[900px]' },
+    { name: '2560 × 1600', width: 'w-[2560px]', height: 'h-[1600px]' },
+    { name: '2880 × 1800', width: 'w-[2880px]', height: 'h-[1800px]' },
 ];
 
 const toggleDropdown = () => {
@@ -170,5 +203,7 @@ const getBackgroundClass = (): string => {
 }
 
 const includeBackground = ref(true);
+
+const selectedSize = ref(sizePresets[0]);
 
 </script>
