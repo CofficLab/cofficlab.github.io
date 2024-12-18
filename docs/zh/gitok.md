@@ -2,11 +2,8 @@
 layout: page
 ---
 
-<GitOKHero lang="zh" />
-
-<Features lang="zh" />
+<GitOKPage lang="zh" />
 
 <script setup>
-import Features from '../components/GitOK/Features.vue'
-import GitOKHero from '../components/GitOK/GitOKHero.vue'
+import GitOKPage from '../components/GitOK/GitOKPage.vue'
 </script>

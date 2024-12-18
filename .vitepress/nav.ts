@@ -10,7 +10,7 @@ export const createNav = (lang: string): DefaultTheme.NavItem[] => [
     {
         text: lang === 'zh' ? '文档' : 'Documents',
         items: [
-            { text: 'JuiceEditor', link: `/${lang}/juiceEditor/guide/introduce` },
+            { text: 'JuiceEditor', link: `/${lang}/juiceEditor/guide/introduce`, },
         ]
     }
 ] 

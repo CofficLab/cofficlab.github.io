@@ -1,10 +1,6 @@
 import { defineConfig } from 'vitepress'
-import path from 'path'
-import { fileURLToPath } from 'url'
 import { createSidebar } from './sidebar'
 import { createNav } from './nav'
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   title: "Coffic Lab",
@@ -30,6 +26,8 @@ export default defineConfig({
       pattern: 'https://github.com/cofficlab/cofficlab.github.io/edit/main/docs/:path',
       text: 'Edit this page on GitHub'
     },
+
+    nav: createNav('en'),
   },
   locales: {
     en: {

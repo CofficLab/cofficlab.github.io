@@ -2,11 +2,8 @@
 layout: page
 ---
 
-<JuiceEditorHero lang="zh" />
-
-<Features lang="zh" />
+<JuiceEditorPage lang="zh" />
 
 <script setup>
-import Features from '../components/JuiceEditor/Features.vue'
-import JuiceEditorHero from '../components/JuiceEditor/JuiceEditorHero.vue'
+import JuiceEditorPage from '../components/JuiceEditor/JuiceEditorPage.vue'
 </script>

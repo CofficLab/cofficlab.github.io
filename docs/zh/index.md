@@ -19,6 +19,6 @@ hero:
 <Members lang="zh" />
 
 <script setup>
-import Products from '@/Coffic/Products.vue'
-import Members from '@/Coffic/Members.vue'
+import Products from '../components/Coffic/Products.vue'
+import Members from '../components/Coffic/Members.vue'
 </script>

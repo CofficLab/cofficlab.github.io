@@ -2,11 +2,8 @@
 layout: page
 ---
 
-<CisumHero lang="en" />
-
-<Features lang="en" />
+<CisumPage lang="en" />
 
 <script setup>
-import Features from '@/Cisum/Features.vue'
-import CisumHero from '@/Cisum/CisumHero.vue'
+import CisumPage from '../components/Cisum/CisumPage.vue'
 </script>

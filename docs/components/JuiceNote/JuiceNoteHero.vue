@@ -1,9 +1,9 @@
 <template>
-    <CofficHero :title="title" :description="description" :features="features" :image="image" :links="links" />
+    <CofficHero :title="title" :description="description" :image="image" :links="links" />
 </template>
 
 <script setup>
-import CofficHero from '@/Common/CofficHero.vue';
+import CofficHero from '../Common/CofficHero.vue';
 
 const props = defineProps({
     lang: {

@@ -2,11 +2,8 @@
 layout: page
 ---
 
-<JuiceNoteHero lang="en" />
-
-<Features lang="en" />
+<JuiceNotePage lang="en" />
 
 <script setup>
-import Features from '@/JuiceNote/Features.vue'
-import JuiceNoteHero from '@/JuiceNote/JuiceNoteHero.vue'
+import JuiceNotePage from '../components/JuiceNote/JuiceNotePage.vue'
 </script>
