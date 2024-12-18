@@ -1,7 +1,7 @@
 import DefaultTheme from 'vitepress/theme';
 import Layout from './Layout.vue';
 
-import './tailwind.postcss';
+import './coffic2.postcss';
 
 export default {
   extends: DefaultTheme,

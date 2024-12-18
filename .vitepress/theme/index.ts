@@ -1,11 +1,11 @@
 import Coffic from '../themes/coffic/index';
-import DefaultExt from '../themes/defaultExt/index';
+import Coffic2 from '../themes/coffic2/index';
 import Default from 'vitepress/theme';
 
 const themes = [
-  // Coffic,
-  DefaultExt,
+  Coffic2,
+  Coffic,
   Default,
 ];
 
-export default themes[0];
+export default themes[2];
