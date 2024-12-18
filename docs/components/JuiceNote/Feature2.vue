@@ -36,7 +36,7 @@
         </div>
 
         <div class="mt-12">
-            <JuiceApp :lang="lang" />
+            <JuiceNoteApp :lang="lang" />
         </div>
     </div>
 </template>
@@ -48,7 +48,7 @@
 </style>
 
 <script setup>
-import JuiceApp from './JuiceApp.vue';
+import JuiceNoteApp from './JuiceNoteApp.vue';
 
 const translations = {
     en: {

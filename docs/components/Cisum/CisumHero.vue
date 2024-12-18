@@ -1,10 +1,14 @@
 <template>
-    <CofficHero :title="title" :description="description" :image="image" :links="links" />
+    <CofficHero :title="title" :description="description" :links="links">
+        <template #app>
+            <CisumApp :lang="lang" />
+        </template>
+    </CofficHero>
 </template>
 
 <script setup lang="ts">
 import CofficHero from '../Common/CofficHero.vue';
-
+import CisumApp from './CisumApp.vue';
 const props = defineProps({
     lang: {
         type: String,
