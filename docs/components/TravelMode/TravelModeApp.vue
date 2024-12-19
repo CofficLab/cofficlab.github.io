@@ -1,5 +1,5 @@
 <template>
-    <div class="flex bg-white/90 dark:bg-gray-800 relative rounded-2xl overflow-hidden max-w-5xl self-center mx-auto shadow-xl"
+    <div class="flex bg-white/90 dark:bg-gray-800 relative rounded-2xl overflow-hidden max-w-5xl self-center mx-auto shadow"
         :class="height">
         <!-- 窗口控制按钮 -->
         <div
