@@ -1,48 +1,81 @@
 <template>
-    <div class="flex bg-white/90 dark:bg-gray-800 relative rounded-2xl overflow-hidden max-w-5xl self-center mx-auto shadow"
-        :class="height">
-        <!-- 窗口控制按钮 -->
-        <div
-            class="absolute top-0 left-0 right-0 flex items-center h-12 px-4 bg-gray-100 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
-            <div class="flex items-center space-x-2">
-                <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div class="w-3 h-3 rounded-full bg-green-500"></div>
-            </div>
-            <div class="ml-6 text-sm font-medium text-gray-700 dark:text-gray-200">TravelMode</div>
-        </div>
-
-        <!-- 主要内容区域 -->
-        <div class="flex-1 flex flex-col pt-12">
-            <!-- 应用列表 -->
-            <div class="flex-1 p-4 overflow-y-auto custom-scrollbar">
-                <div class="space-y-2 ">
-                    <div v-for="app in apps" :key="app.name"
-                        class="flex items-center p-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
-                        <div class="w-8 h-8 flex items-center justify-center text-xl">{{ app.icon }}</div>
-                        <div class="ml-3 flex-1">
-                            <div class="flex items-center justify-between">
-                                <div class="flex flex-col">
-                                    <div class="font-medium text-gray-900 dark:text-gray-100 text-start">{{ app.name }}
-                                    </div>
+    <MacWindow :height="height" title="TravelMode" @close="handleCloseWindow" @minimize="handleMinimizeWindow"
+        @maximize="handleMaximizeWindow">
+        <!-- 应用列表 -->
+        <div class="flex-1 p-4 overflow-y-auto custom-scrollbar">
+            <div class="space-y-2">
+                <div v-for="app in apps.slice(0, appsCount)" :key="app.name"
+                    class="flex items-center p-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors group"
+                    :class="{
+                        'bg-red-100 dark:bg-red-900/30': blockedApps.has(app.bundleId)
+                    }">
+                    <div class="w-8 h-8 flex items-center justify-center text-xl">{{ app.icon }}</div>
+                    <div class="ml-3 flex-1">
+                        <div class="flex items-center justify-between">
+                            <div class="flex flex-col">
+                                <div class="font-medium text-gray-900 dark:text-gray-100 text-start">{{ app.name }}
+                                </div>
+                                <div class="flex flex-row gap-2">
+                                    <div class="text-sm text-gray-500">{{ app.pid }}</div>
                                     <div class="text-sm text-gray-500">{{ app.bundleId }}</div>
                                 </div>
-                                <div class="text-sm text-gray-500">{{ app.pid }}</div>
+                            </div>
+                            <div class="flex items-center space-x-2" v-if="showActionButtons">
+                                <!-- 新增的按钮组，默认隐，group-hover时显示 -->
+                                <div class="hidden group-hover:flex space-x-2">
+                                    <button @click="handleBlockNetwork(app)"
+                                        class="p-1.5 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 disabled:opacity-50 disabled:cursor-not-allowed"
+                                        :disabled="blockedApps.has(app.bundleId)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                    <button @click="handleAllowNetwork(app)"
+                                        class="p-1.5 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/30 text-green-600 dark:text-green-400 disabled:opacity-50 disabled:cursor-not-allowed"
+                                        :disabled="!blockedApps.has(app.bundleId)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <!-- 对话框组件 -->
+        <ConfirmDialog v-model="showConfirmDialog" :title="confirmDialogTitle" :message="confirmDialogMessage"
+            @confirm="handleDialogConfirm" />
+        <AlertDialog v-model="showAlertDialog" :message="alertMessage" />
+    </MacWindow>
 </template>
 
 <script setup>
+import { ref } from 'vue'
+import MacWindow from '../Common/MacWindow.vue'
+import ConfirmDialog from '../Common/ConfirmDialog.vue'
+import AlertDialog from '../Common/AlertDialog.vue'
 
 const props = defineProps({
     height: {
         type: String,
         default: 'h-96'
+    },
+    showActionButtons: {
+        type: Boolean,
+        default: true
+    },
+    appsCount: {
+        type: Number,
+        default: 10
     }
 })
 
@@ -168,6 +201,48 @@ const apps = [
         icon: '⬜'
     }
 ]
+
+// 对话框状态
+const showConfirmDialog = ref(false)
+const confirmDialogTitle = ref('')
+const confirmDialogMessage = ref('')
+const pendingAction = ref(null)
+
+// 添加 Alert 对话框状态
+const showAlertDialog = ref(false)
+const alertMessage = ref('')
+
+// 添加一个新的 ref 来跟踪被禁止的应用
+const blockedApps = ref(new Set(['com.apple.Safari']))
+
+const handleBlockNetwork = (app) => {
+    confirmDialogTitle.value = '确认禁止联网'
+    confirmDialogMessage.value = `确定要禁止 ${app.name} 联网吗？（演示）`
+    pendingAction.value = () => {
+        blockedApps.value.add(app.bundleId)
+        alertMessage.value = '操作已确认（演示）'
+        showAlertDialog.value = true
+    }
+    showConfirmDialog.value = true
+}
+
+const handleAllowNetwork = (app) => {
+    confirmDialogTitle.value = '确认允许联网'
+    confirmDialogMessage.value = `确定要允许 ${app.name} 联网吗？（这是演示）`
+    pendingAction.value = () => {
+        blockedApps.value.delete(app.bundleId)
+        alertMessage.value = '操作已确认（演示）'
+        showAlertDialog.value = true
+    }
+    showConfirmDialog.value = true
+}
+
+const handleDialogConfirm = () => {
+    if (pendingAction.value) {
+        pendingAction.value()
+        pendingAction.value = null
+    }
+}
 </script>
 
 <style scoped>

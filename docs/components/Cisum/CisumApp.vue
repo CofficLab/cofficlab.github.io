@@ -1,20 +1,9 @@
 <template>
-    <div class="flex bg-emerald-500 relative rounded-2xl overflow-hidden max-w-5xl self-center mx-auto shadow-xl"
-        :class="height">
-        <!-- 窗口控制按钮 -->
-        <div class="absolute top-0 left-0 right-0 flex items-center h-12 px-4">
-            <div class="flex items-center space-x-2">
-                <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div class="w-3 h-3 rounded-full bg-green-500"></div>
-            </div>
-            <div class="ml-6 text-sm font-medium text-white">Cisum Player</div>
-        </div>
-
+    <MacWindow class="bg-emerald-500" :height="height" title="Cisum Player">
         <!-- 主要内容区域 -->
         <div class="flex-1 flex flex-col">
             <!-- 播放器区域 -->
-            <div class="flex-none pt-12 px-8 pb-4 text-white">
+            <div class="flex-none px-8 pb-4 text-white">
                 <div class="text-2xl font-medium mb-4">{{ songs[0].name }}</div>
                 <!-- 进度条 -->
                 <div class="flex items-center space-x-4">
@@ -69,10 +58,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </MacWindow>
 </template>
 
 <script setup>
+import MacWindow from '../Common/MacWindow.vue'
 import { RiPlayCircleLine } from '@remixicon/vue';
 import { RiShuffleLine } from '@remixicon/vue';
 import { RiSkipForwardLine } from '@remixicon/vue';

@@ -204,7 +204,7 @@ const bgClasses = [
     'bg-gradient-to-b from-pink-900 to-red-200 dark:from-pink-900 dark:to-red-200',
     'bg-gradient-to-b from-red-900 to-orange-200 dark:from-red-900 dark:to-orange-200',
     'bg-gradient-to-b from-orange-900 to-yellow-200 dark:from-orange-900 dark:to-yellow-200',
-    'bg-gradient-to-b from-green-900/80 to-teal-900/80 dark:from-green-900/80 dark:to-teal-900/80',
+    'bg-gradient-to-b from-green-900 to-teal-900 dark:from-green-900 dark:to-teal-900',
 ]
 
 const selectedBgIndex = ref(props.backgroundClassIndex);

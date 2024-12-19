@@ -1,4 +1,5 @@
 import Feature from './Feature';
+import { Component } from 'vue';
 
 class Banner {
     private translations: Map<string, {
@@ -6,10 +7,14 @@ class Banner {
         description: string
     }>;
     private features: Feature[];
+    private component: Component | null;
+    private componentProps: Record<string, any>;
 
     constructor() {
         this.translations = new Map();
         this.features = [];
+        this.component = null;
+        this.componentProps = {};
         // Initialize empty entries for both languages
         this.translations.set('zh', { title: '', description: '' });
         this.translations.set('en', { title: '', description: '' });
@@ -76,6 +81,24 @@ class Banner {
     // 获取所有支持的语言
     public getSupportedLanguages(): string[] {
         return Array.from(this.translations.keys());
+    }
+
+    public setComponent(component: Component): Banner {
+        this.component = component;
+        return this;
+    }
+
+    public getComponent(): Component | null {
+        return this.component;
+    }
+
+    public setComponentProps(props: Record<string, any>): Banner {
+        this.componentProps = props;
+        return this;
+    }
+
+    public getComponentProps(): Record<string, any> {
+        return this.componentProps;
     }
 }
 

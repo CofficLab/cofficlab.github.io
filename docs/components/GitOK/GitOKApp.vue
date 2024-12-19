@@ -1,69 +1,32 @@
 <template>
-    <div class="flex bg-white/90 dark:bg-gray-800 relative rounded-2xl overflow-hidden max-w-5xl self-center mx-auto shadow-xl"
-        :class="height">
-        <!-- 窗口控制按钮和工具栏 -->
-        <div
-            class="absolute top-0 left-0 right-0 flex items-center justify-between h-12 px-4 bg-gray-100 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
-            <!-- 左侧控制按钮和基础工具栏 -->
-            <div class="flex items-center">
-                <div class="flex items-center space-x-2">
-                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                </div>
-                <!-- 工具栏 -->
-                <div class="flex items-center ml-6 space-x-4">
-                    <div class="flex items-center space-x-2">
-                        <select
-                            class="text-sm bg-transparent border-none focus:outline-none text-gray-700 dark:text-gray-200">
-                            <option>GitOK</option>
-                        </select>
-                    </div>
-                    <div class="flex items-center space-x-2 text-sm text-gray-700 dark:text-gray-200">
-                        <button class="px-2 py-1 hover:bg-gray-200 dark:hover:bg-gray-600 rounded">Git</button>
-                        <button class="px-2 py-1 hover:bg-gray-200 dark:hover:bg-gray-600 rounded">Banner</button>
-                        <button class="px-2 py-1 hover:bg-gray-200 dark:hover:bg-gray-600 rounded">Icon</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 右侧工具栏 -->
-            <div class="flex items-center space-x-2 text-sm text-gray-700 dark:text-gray-200">
-                <!-- 分支选择器 -->
-                <select
-                    class="px-2 py-1 bg-transparent border border-gray-300 dark:border-gray-600 rounded text-sm focus:outline-none">
-                    <option>dev</option>
-                    <option>main</option>
-                    <option>feature/new-ui</option>
-                </select>
-
-                <!-- 工具按钮组 -->
-                <div class="flex items-center space-x-1">
-                    <button class="p-1.5 hover:bg-gray-200 dark:hover:bg-gray-600 rounded">
-                        <RiTerminalBoxLine class="w-4 h-4" />
-                    </button>
-                    <button class="p-1.5 hover:bg-gray-200 dark:hover:bg-gray-600 rounded">
-                        <RiGitBranchLine class="w-4 h-4" />
-                    </button>
-                    <button class="p-1.5 hover:bg-gray-200 dark:hover:bg-gray-600 rounded">
-                        <RiDatabase2Line class="w-4 h-4" />
-                    </button>
-                    <button class="p-1.5 hover:bg-gray-200 dark:hover:bg-gray-600 rounded">
-                        <RiPlayCircleLine class="w-4 h-4" />
-                    </button>
-                    <button class="p-1.5 hover:bg-gray-200 dark:hover:bg-gray-600 rounded">
-                        <RiSettings4Line class="w-4 h-4" />
-                    </button>
-                    <button class="p-1.5 hover:bg-gray-200 dark:hover:bg-gray-600 rounded">
-                        <RiRefreshLine class="w-4 h-4" />
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 主要内容区域 -->
-        <div class="flex h-full pt-12 w-full">
-            <!-- 左侧项目列表 -->
+    <MacWindow :height="height" title="GitOK" :toolbarButtons="[
+        {
+            icon: RiTerminalBoxLine,
+            onClick: () => handleTerminal()
+        },
+        {
+            icon: RiGitBranchLine,
+            onClick: () => handleBranch()
+        },
+        {
+            icon: RiDatabase2Line,
+            onClick: () => handleDatabase()
+        },
+        {
+            icon: RiPlayCircleLine,
+            onClick: () => handlePlay()
+        },
+        {
+            icon: RiSettings4Line,
+            onClick: () => handleSettings()
+        },
+        {
+            icon: RiRefreshLine,
+            onClick: () => handleRefresh()
+        }
+    ]">
+        <!-- 左侧边栏 -->
+        <template #sidebar>
             <div class="w-64 bg-gray-50 dark:bg-gray-700/90 border-r border-gray-200 dark:border-gray-600">
                 <div class="p-2">
                     <div v-for="project in projects" :key="project"
@@ -72,9 +35,12 @@
                     </div>
                 </div>
             </div>
+        </template>
 
+        <!-- 主要内容区域 -->
+        <div class="flex h-full w-full">
             <!-- 中间提交列表 -->
-            <div class="w-96 border-r border-gray-200 dark:border-gray-600">
+            <div class="w-96 border-r border-gray-200 dark:border-gray-600 relative">
                 <div class="flex-1 overflow-y-auto custom-scrollbar h-full">
                     <div class="p-2">
                         <div v-for="commit in commits" :key="commit.id"
@@ -89,7 +55,7 @@
                 </div>
                 <!-- 底部提交框 -->
                 <div
-                    class="absolute bottom-0 left-64 right-0 p-4 bg-gray-50 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-600">
+                    class="absolute bottom-0 left-0 right-0 p-4 bg-gray-50 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-600">
                     <div class="flex items-center space-x-2">
                         <div class="flex-1">
                             <input type="text" placeholder="Minor adjustments"
@@ -103,40 +69,16 @@
             </div>
 
             <!-- 右侧代码预览 -->
-            <div class="flex-1 bg-gray-900  text-gray-300 p-4 font-mono text-sm overflow-y-auto custom-scrollbar">
+            <div class="flex-1 bg-gray-900 text-gray-300 p-4 font-mono text-sm overflow-y-auto custom-scrollbar w-full">
                 <div class="space-y-1">
-                    <div class="flex">
-                        <span class="w-8 text-gray-500 text-right pr-2">12</span>
-                        <span class="text-left">Text("Select a table")</span>
-                    </div>
-                    <div class="flex">
-                        <span class="w-8 text-gray-500 text-right pr-2">13</span>
-                        <span class="text-left">.foregroundColor(.secondary)</span>
-                    </div>
-                    <div class="flex">
-                        <span class="w-8 text-gray-500 text-right pr-2">14</span>
-                        <span class="text-left">}</span>
-                    </div>
-                    <div class="flex">
-                        <span class="w-8 text-gray-500 text-right pr-2">15</span>
-                        <span class="text-left"></span>
-                    </div>
-                    <div class="flex">
-                        <span class="w-8 text-gray-500 text-right pr-2">16</span>
-                        <span class="text-left">Spacer()</span>
-                    </div>
-                    <div class="flex">
-                        <span class="w-8 text-gray-500 text-right pr-2">17</span>
-                        <span class="text-left">}</span>
-                    </div>
-                    <div class="flex">
-                        <span class="w-8 text-gray-500 text-right pr-2">18</span>
-                        <span class="text-left">.frame(maxWidth: .infinity)</span>
+                    <div class="flex" v-for="line in codeLines" :key="line.number">
+                        <span class="w-8 text-gray-500 text-right pr-2">{{ line.number }}</span>
+                        <span class="text-left">{{ line.content }}</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </MacWindow>
 </template>
 
 <script setup>
@@ -148,6 +90,7 @@ import {
     RiSettings4Line,
     RiRefreshLine
 } from '@remixicon/vue'
+import MacWindow from '../Common/MacWindow.vue'
 
 defineProps({
     height: {
@@ -183,6 +126,23 @@ const commits = [
     { id: 7, icon: '✨', title: 'Feature: API Runner', type: 'Feature: New API functionality' },
     { id: 8, icon: '🐛', title: 'Bugfix: Fix a bug', type: 'Fix: Performance issue' }
 ]
+
+const codeLines = [
+    { number: 12, content: 'Text("Select a table")' },
+    { number: 13, content: '.foregroundColor(.secondary)' },
+    { number: 14, content: '}' },
+    { number: 15, content: '' },
+    { number: 16, content: 'Spacer()' },
+    { number: 17, content: '}' },
+    { number: 18, content: '.frame(maxWidth: .infinity)' }
+]
+
+const handleTerminal = () => console.log('Terminal clicked')
+const handleBranch = () => console.log('Branch clicked')
+const handleDatabase = () => console.log('Database clicked')
+const handlePlay = () => console.log('Play clicked')
+const handleSettings = () => console.log('Settings clicked')
+const handleRefresh = () => console.log('Refresh clicked')
 </script>
 
 <style scoped>

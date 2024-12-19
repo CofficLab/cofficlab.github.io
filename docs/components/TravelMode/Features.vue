@@ -8,6 +8,7 @@
 import SmartBanner from '../Common/SmartBanner.vue';
 import Banner from '../Model/Banner';
 import Feature from '../Model/Feature';
+import TravelModeApp from './TravelModeApp.vue';
 
 const props = defineProps({
     lang: {
@@ -21,6 +22,11 @@ const banners = [
     Banner.create()
         .setZhTitle('简约强大 - 干净利落')
         .setEnTitle('Clean and Powerful')
+        .setComponent(TravelModeApp)
+        .setComponentProps({
+            height: 'h-[29rem]',
+            appsCount: 5
+        })
         .withFeatures([
             Feature.createWithIcon('🖱️').setZh('一键操作').setEn('One-click Operation'),
             Feature.createWithIcon('⚙️').setZh('快速设置').setEn('Quick Settings'),
@@ -31,6 +37,12 @@ const banners = [
     Banner.create()
         .setZhTitle('广告全无 - 清新轻松')
         .setEnTitle('Ad-free Experience')
+        .setComponent(TravelModeApp)
+        .setComponentProps({
+            height: 'h-[24rem]',
+            showActionButtons: false,
+            appsCount: 4
+        })
         .withFeatures([
             Feature.createWithIcon('🪧').setZh('无广告').setEn('No Ads'),
             Feature.createWithIcon('🔍').setZh('无跟踪').setEn('No Tracking'),
