@@ -1,7 +1,7 @@
 <template>
     <div class="py-16 px-8 text-center w-full">
         <h2 class="text-4xl mb-4">{{ translations[lang].musicLibrary }}</h2>
-        <p class="text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+        <p class="text-lg mb-12 text-center max-w-2xl mx-auto">
             {{ translations[lang].description }}
         </p>
 

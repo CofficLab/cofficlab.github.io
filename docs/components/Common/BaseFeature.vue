@@ -64,7 +64,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { RiDownloadLine } from '@remixicon/vue';
-import html2canvas from 'html2canvas';
+import { toPng } from 'html-to-image';
 
 // 添加接口定义
 interface ExportSize {
@@ -146,28 +146,29 @@ const downloadAsImage = async (scale: number | null = 2) => {
             return;
         }
 
-        let finalScale = scale;
+        let pixelRatio = scale || 1;
         if (scale === null) {
             const size = exportSizes.find(s => s.targetWidth === 2560);
             if (size?.targetWidth) {
-                const elementWidth = element.offsetWidth;
-                finalScale = size.targetWidth / elementWidth;
+                pixelRatio = size.targetWidth / element.offsetWidth;
             }
         }
 
-        const canvas = await html2canvas(element, {
-            scale: finalScale || 1,
-            useCORS: true,
-            logging: false,
+        const dataUrl = await toPng(element, {
+            pixelRatio: pixelRatio,
             backgroundColor: includeBackground.value ? undefined : 'transparent',
+            style: {
+                transform: 'scale(1)', // 确保正确的缩放
+                transformOrigin: 'top left'
+            }
         });
 
         const link = document.createElement('a');
         const fileName = scale === null ?
-            `feature-${canvas.width}x${canvas.height}.png` :
+            `feature-${element.offsetWidth * pixelRatio}x${element.offsetHeight * pixelRatio}.png` :
             `feature-${scale}x.png`;
         link.download = fileName;
-        link.href = canvas.toDataURL('image/png');
+        link.href = dataUrl;
         link.click();
         isDropdownOpen.value = false;
     } catch (error) {
@@ -194,6 +195,16 @@ const bgClasses = [
     'bg-gradient-to-b from-red-200  to-orange-200 dark:from-red-500 dark:to-orange-200',
     'bg-gradient-to-b from-orange-200  to-yellow-200 dark:from-orange-500 dark:to-yellow-200',
     'bg-gradient-to-b from-green-200  to-teal-200 dark:from-green-500 dark:to-teal-200',
+
+    // 不透明的深色背景
+    'bg-gradient-to-b from-blue-900 to-blue-200 dark:from-blue-900 dark:to-blue-200',
+    'bg-gradient-to-b from-blue-900 to-purple-200 dark:from-blue-900 dark:to-purple-200',
+    'bg-gradient-to-b from-yellow-900 to-green-200 dark:from-yellow-900 dark:to-green-200',
+    'bg-gradient-to-b from-teal-900 to-blue-200 dark:from-teal-900 dark:to-blue-200',
+    'bg-gradient-to-b from-pink-900 to-red-200 dark:from-pink-900 dark:to-red-200',
+    'bg-gradient-to-b from-red-900 to-orange-200 dark:from-red-900 dark:to-orange-200',
+    'bg-gradient-to-b from-orange-900 to-yellow-200 dark:from-orange-900 dark:to-yellow-200',
+    'bg-gradient-to-b from-green-900/80 to-teal-900/80 dark:from-green-900/80 dark:to-teal-900/80',
 ]
 
 const selectedBgIndex = ref(props.backgroundClassIndex);
