@@ -5,7 +5,6 @@
 </template>
 
 <script setup lang="ts">
-import FeatureGroup from '../Common/FeatureGroup.vue'
 import SmartBanner from '../Common/SmartBanner.vue';
 import Banner from '../Model/Banner';
 import Feature from '../Model/Feature';
