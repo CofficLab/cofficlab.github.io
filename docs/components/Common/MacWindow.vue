@@ -12,7 +12,21 @@
                 <div class="w-3 h-3 rounded-full bg-green-500 cursor-pointer" @click="handleMaximizeWindow"></div>
             </div>
             <div class="ml-6 text-sm font-medium text-gray-700 dark:text-gray-200">{{ props.title }}</div>
-            <!-- 添加右侧按钮 -->
+
+            <!-- 添加标签选择器 -->
+            <div v-if="props.tabs?.length" class="flex-1 flex justify-center">
+                <div class="inline-flex rounded-lg bg-gray-200 dark:bg-gray-600 p-1">
+                    <button v-for="(tab, index) in props.tabs" :key="index" @click="handleTabClick(tab.value)" :class="[
+                        'px-3 py-1 text-sm rounded-md transition-colors',
+                        modelValue === tab.value
+                            ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow'
+                            : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
+                    ]">
+                        {{ tab.label }}
+                    </button>
+                </div>
+            </div>
+
             <div class="ml-auto flex items-center space-x-2">
                 <template v-for="(button, index) in props.toolbarButtons" :key="index">
                     <button
@@ -76,10 +90,18 @@ const props = defineProps({
     withShadow: {
         type: Boolean,
         default: true
+    },
+    tabs: {
+        type: Array,
+        default: () => []
+    },
+    modelValue: {
+        type: String,
+        default: ''
     }
 })
 
-const emit = defineEmits(['close', 'minimize', 'maximize'])
+const emit = defineEmits(['close', 'minimize', 'maximize', 'update:modelValue'])
 
 const showAlertDialog = ref(false)
 const alertMessage = ref('')
@@ -100,5 +122,9 @@ const handleMaximizeWindow = () => {
     alertMessage.value = '最大化窗口（这是演示，不会真实操作）'
     showAlertDialog.value = true
     emit('maximize')
+}
+
+const handleTabClick = (value) => {
+    emit('update:modelValue', value)
 }
 </script>

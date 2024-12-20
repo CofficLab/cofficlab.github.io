@@ -1,6 +1,7 @@
 <template>
     <div class="flex flex-col gap-8">
-        <SmartBanner v-for="banner in banners" :key="banner.getTitle(props.lang)" :banner="banner" :lang="props.lang" />
+        <SmartBanner :background-class-index="index + 1" v-for="(banner, index) in banners"
+            :key="banner.getTitle(props.lang)" :banner="banner" :lang="props.lang" />
     </div>
 </template>
 
@@ -8,7 +9,6 @@
 import SmartBanner from '../Common/SmartBanner.vue';
 import Banner from '../Model/Banner';
 import Feature from '../Model/Feature';
-import JuiceEditorApp from './JuiceEditorApp.vue';
 
 const props = defineProps({
     lang: {
@@ -77,6 +77,15 @@ const banners = [
             Feature.createWithIcon('🎵').setZh('音频嵌入').setEn('Audio Embed'),
             Feature.createWithIcon('📊').setZh('图表嵌入').setEn('Chart Embed'),
             Feature.createWithIcon('🎮').setZh('交互嵌入').setEn('Interactive Embed'),
+        ]),
+
+    Banner.create()
+        .setZhTitle('让我们一起开启美妙旅程')
+        .setEnTitle('Don\'t Miss the Beauty')
+        .setZhDescription("别忘了点亮🌟")
+        .setEnDescription("Don't forget to light up the 🌟")
+        .withFeatures([
+            Feature.createWithIcon('🐈').setZh('GitHub').setEn('GitHub').setLink('https://github.com/CofficLab/JuiceEditor'),
         ]),
 ];
 </script>

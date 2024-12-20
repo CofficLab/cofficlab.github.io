@@ -89,6 +89,8 @@ const banners = [
     Banner.create()
         .setZhTitle('美好不容错过')
         .setEnTitle('Don\'t Miss the Beauty')
+        .setZhDescription("别忘了点亮🌟")
+        .setEnDescription("Don't forget to light up the 🌟")
         .withFeatures([
             Feature.createWithIcon('🐈').setZh('GitHub').setEn('GitHub').setLink('https://github.com/CofficLab/Netto'),
             Feature.createWithIcon('🍎').setZh('App Store').setEn('App Store').setLink('https://apps.apple.com/cn/app/travelmode/id6474899051?mt=12')

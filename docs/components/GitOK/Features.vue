@@ -36,7 +36,10 @@ const banners = [
         .setZhTitle('Banner 生成器')
         .setEnTitle('Banner Generator')
         .setComponent(GitOKApp)
-        .setComponentProps({ height: 'h-[32rem]' })
+        .setComponentProps({
+            height: 'h-[32rem]',
+            defaultTab: 'banner'
+        })
         .withFeatures([
             Feature.createWithIcon('📱').setZh('App Store 适配').setEn('App Store Ready'),
             Feature.createWithIcon('🎨').setZh('多种模板').setEn('Multiple Templates'),
@@ -48,7 +51,7 @@ const banners = [
         .setZhTitle('Icon 生成器')
         .setEnTitle('Icon Generator')
         .setComponent(GitOKApp)
-        .setComponentProps({ height: 'h-[32rem]' })
+        .setComponentProps({ height: 'h-[32rem]', defaultTab: 'icon' })
         .withFeatures([
             Feature.createWithIcon('💻').setZh('多平台支持').setEn('Multi-Platform'),
             Feature.createWithIcon('📏').setZh('自动尺寸').setEn('Auto-Size'),
@@ -60,7 +63,7 @@ const banners = [
         .setZhTitle('API 测试工具')
         .setEnTitle('API Tester')
         .setComponent(GitOKApp)
-        .setComponentProps({ height: 'h-[32rem]' })
+        .setComponentProps({ height: 'h-[32rem]', defaultTab: 'api' })
         .withFeatures([
             Feature.createWithIcon('🔄').setZh('多种请求方法').setEn('Multiple Methods'),
             Feature.createWithIcon('📊').setZh('可视化响应').setEn('Visual Response'),
@@ -72,12 +75,21 @@ const banners = [
         .setZhTitle('数据库管理器')
         .setEnTitle('Database Manager')
         .setComponent(GitOKApp)
-        .setComponentProps({ height: 'h-[32rem]' })
+        .setComponentProps({ height: 'h-[32rem]', defaultTab: 'database' })
         .withFeatures([
             Feature.createWithIcon('💾').setZh('MySQL 和 SQLite').setEn('MySQL & SQLite'),
             Feature.createWithIcon('📊').setZh('可视化数据').setEn('Visual Data'),
             Feature.createWithIcon('📝').setZh('SQL 查询').setEn('SQL Query'),
             Feature.createWithIcon('🔄').setZh('数据导入导出').setEn('Data I/O'),
+        ]),
+
+    Banner.create()
+        .setZhTitle('美好源于第一次尝试')
+        .setEnTitle('Beauty Comes from the First Try')
+        .setZhDescription("别忘了点亮🌟")
+        .setEnDescription("Don't forget to light up the 🌟")
+        .withFeatures([
+            Feature.createWithIcon('🐈').setZh('GitHub').setEn('GitHub').setLink('https://github.com/CofficLab/GitOK'),
         ]),
 ];
 </script>

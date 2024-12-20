@@ -1,6 +1,7 @@
 <template>
     <div class="flex flex-col gap-8">
-        <SmartBanner v-for="banner in banners" :key="banner.getTitle(props.lang)" :banner="banner" :lang="props.lang" />
+        <SmartBanner :background-class-index="index + 2" v-for="(banner, index) in banners"
+            :key="banner.getTitle(props.lang)" :banner="banner" :lang="props.lang" />
     </div>
 </template>
 
@@ -42,6 +43,16 @@ const banners = [
             Feature.createWithIcon('🔌').setZh('可离线').setEn('Offline'),
             Feature.createWithIcon('📤').setZh('可导出').setEn('Exportable'),
             Feature.createWithIcon('🔄').setZh('可同步').setEn('Syncable'),
+        ]),
+
+    Banner.create()
+        .setZhTitle('开始享受美好')
+        .setEnTitle('Start Enjoying the Beauty')
+        .setZhDescription("别忘了点亮🌟")
+        .setEnDescription("Don't forget to light up the 🌟")
+        .withFeatures([
+            Feature.createWithIcon('🐈').setZh('GitHub').setEn('GitHub').setLink('https://github.com/CofficLab/Cisum_SwiftUI'),
+            Feature.createWithIcon('🍎').setZh('App Store').setEn('App Store').setLink('https://apps.apple.com/cn/app/cisum/id6466401036')
         ]),
 ];
 </script>

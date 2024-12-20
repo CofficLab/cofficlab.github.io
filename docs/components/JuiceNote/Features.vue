@@ -1,6 +1,7 @@
 <template>
     <div class="flex flex-col gap-8">
-        <SmartBanner v-for="banner in banners" :key="banner.getTitle(props.lang)" :banner="banner" :lang="props.lang" />
+        <SmartBanner :background-class-index="index + 2" v-for="(banner, index) in banners"
+            :key="banner.getTitle(props.lang)" :banner="banner" :lang="props.lang" />
     </div>
 </template>
 
@@ -41,6 +42,13 @@ const banners = [
             Feature.createWithIcon('🔌').setZh('可离线').setEn('Offline'),
             Feature.createWithIcon('📤').setZh('可导出').setEn('Exportable'),
             Feature.createWithIcon('🔄').setZh('可同步').setEn('Syncable'),
+        ]),
+
+    Banner.create()
+        .setZhTitle('开始记录美好')
+        .setEnTitle('Start Recording the Beauty')
+        .withFeatures([
+            Feature.createWithIcon('🍎').setZh('App Store').setEn('App Store').setLink('https://apps.apple.com/cn/app/juice-note/id6457892799?mt=12'),
         ]),
 ];
 </script>
