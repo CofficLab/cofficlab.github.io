@@ -51,6 +51,7 @@ const banners = [
         .setZhDescription("别忘了点亮🌟")
         .setEnDescription("Don't forget to light up the 🌟")
         .withFeatures([
+            Feature.createWithIcon('💬').setZh('反馈问题').setEn('Feedback').setLink('https://github.com/CofficLab/Cisum_SwiftUI/issues'),
             Feature.createWithIcon('🐈').setZh('GitHub').setEn('GitHub').setLink('https://github.com/CofficLab/Cisum_SwiftUI'),
             Feature.createWithIcon('🍎').setZh('App Store').setEn('App Store').setLink('https://apps.apple.com/cn/app/cisum/id6466401036')
         ]),

@@ -26,5 +26,6 @@ const description = props.lang === 'zh'
 const links = [
     { text: 'macOS', href: 'https://apps.apple.com/cn/app/travelmode/id6474899051?mt=12' },
     { text: 'GitHub', href: 'https://github.com/CofficLab/TravelMode' },
+    { text: 'Issues', href: 'https://github.com/CofficLab/TravelMode/issues' },
 ]
 </script>

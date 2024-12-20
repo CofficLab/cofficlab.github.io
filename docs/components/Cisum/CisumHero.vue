@@ -29,5 +29,6 @@ const image = {
 const links = [
     { text: 'GitHub', href: 'https://github.com/Cofficlab/Cisum_SwiftUI' },
     { text: 'macOS & iOS', href: 'https://apps.apple.com/cn/app/cisum/id6466401036' },
+    { text: 'Issues', href: 'https://github.com/Cofficlab/Cisum_SwiftUI/issues' },
 ]
 </script>

@@ -29,5 +29,6 @@ const image = {
 
 const links = [
     { text: 'GitHub', href: 'https://github.com/Cofficlab/GitOK' },
+    { text: 'Issues', href: 'https://github.com/Cofficlab/GitOK/issues' },
 ]
 </script>

@@ -29,6 +29,7 @@ const image = {
 
 const links = [
     { text: 'GitHub', href: 'https://github.com/Cofficlab/JuiceEditor' },
-    { text: '文档', href: `/${props.lang}/juiceEditor/guide/introduce` }
+    { text: 'Documents', href: `/${props.lang}/juiceEditor/guide/introduce` },
+    { text: 'Issues', href: 'https://github.com/Cofficlab/JuiceEditor/issues' },
 ]
 </script>

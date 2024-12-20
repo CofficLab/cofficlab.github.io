@@ -89,6 +89,7 @@ const banners = [
         .setZhDescription("别忘了点亮🌟")
         .setEnDescription("Don't forget to light up the 🌟")
         .withFeatures([
+            Feature.createWithIcon('💬').setZh('反馈问题').setEn('Feedback').setLink('https://github.com/CofficLab/GitOK/issues'),
             Feature.createWithIcon('🐈').setZh('GitHub').setEn('GitHub').setLink('https://github.com/CofficLab/GitOK'),
         ]),
 ];
