@@ -3,10 +3,10 @@
         <!-- 主要内容区域 -->
         <div class="flex-1 flex flex-col">
             <!-- 播放器区域 -->
-            <div class="flex-none px-8 pb-4 text-white">
+            <div class="flex-none px-8 pb-4 mx-8 mt-8 bg-red-300/0">
                 <div class="text-2xl font-medium mb-4">{{ songs[0].name }}</div>
                 <!-- 进度条 -->
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-4 mt-12 w-3/4 mx-auto">
                     <span class="text-sm">00:00</span>
                     <div class="flex-1 h-1 bg-white/30 rounded-full">
                         <div class="w-1/4 h-full bg-white rounded-full"></div>
@@ -14,7 +14,7 @@
                     <span class="text-sm">04:32</span>
                 </div>
                 <!-- 控制按钮 -->
-                <div class="flex items-center justify-center space-x-8 mt-4">
+                <div class="flex items-center justify-center space-x-8 mt-12">
                     <button class="text-2xl">
                         <RiShuffleLine class="w-8 h-8" />
                     </button>
@@ -34,14 +34,9 @@
             </div>
 
             <!-- 歌曲列表 -->
-            <div class="flex-1 bg-white dark:bg-gray-800 p-4 overflow-y-auto custom-scrollbar">
-                <!-- 标签页 -->
-                <div class="flex justify-center space-x-4 mb-4 text-gray-600">
-                    <button class="px-4 py-1 rounded-full bg-gray-100">仓库</button>
-                    <button class="px-4 py-1 rounded-full">设置</button>
-                    <button class="px-4 py-1 rounded-full">订阅</button>
-                </div>
-                <div class="text-sm text-gray-500 mb-2">共 2918</div>
+            <div v-if="showDBView"
+                class="flex-1 bg-white dark:bg-gray-800 p-4 overflow-y-auto border-t border-gray-200 dark:border-gray-700">
+                <div class="text-sm text-gray-500 mb-2 text-start pl-4">共 2918</div>
                 <!-- 歌曲列表 -->
                 <div class="space-y-2">
                     <div v-for="song in songs" :key="song.name"
@@ -81,6 +76,10 @@ const props = defineProps({
                 'h-[56rem]'
             ].includes(value)
         }
+    },
+    showDBView: {
+        type: Boolean,
+        default: false
     }
 })
 
@@ -97,28 +96,3 @@ const songs = [
     { name: '孙燕姿-星期一天气晴我离开你.mp3', size: '10.5MB', cover: '☀️' }
 ]
 </script>
-
-<style scoped>
-/* 自定义滚动条样式 */
-.custom-scrollbar {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
-}
-
-.custom-scrollbar::-webkit-scrollbar {
-    width: 8px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: rgba(156, 163, 175, 0.5);
-    border-radius: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(156, 163, 175, 0.7);
-}
-</style>
