@@ -22,27 +22,50 @@ const props = defineProps({
 
 const banners = [
     Banner.create()
-        .setZhTitle('广告全无 - 自在由你')
-        .setEnTitle('Ad-free - Freedom for you')
+        .setZhTitle('播放音乐 - 简简单单')
+        .setEnTitle('Play music - Simple and easy')
         .setComponent(CisumApp)
-        .setComponentProps({ height: 'h-[32rem]' })
+        .setComponentProps({ height: 'h-[20rem]' })
         .withFeatures([
-            Feature.createWithIcon('📥').setZh('可导入').setEn('Importable'),
-            Feature.createWithIcon('🔌').setZh('可离线').setEn('Offline'),
-            Feature.createWithIcon('📤').setZh('可导出').setEn('Exportable'),
-            Feature.createWithIcon('🔄').setZh('可同步').setEn('Syncable'),
+            Feature.createWithIcon('💡').setZh('一键操作').setEn('One-click operation'),
+            Feature.createWithIcon('💣').setZh('没有负担').setEn('No burden'),
         ]),
 
     Banner.create()
-        .setZhTitle('简于形 - 强于心')
-        .setEnTitle('Simple and powerful')
+        .setZhTitle('干扰全无 - 清新轻松')
+        .setEnTitle('Ad-free - Fresh and easy')
         .setComponent(CisumApp)
-        .setComponentProps({ height: 'h-[32rem]' })
+        .setComponentProps({ height: 'h-[20rem]' })
         .withFeatures([
-            Feature.createWithIcon('📥').setZh('可导入').setEn('Importable'),
-            Feature.createWithIcon('🔌').setZh('可离线').setEn('Offline'),
-            Feature.createWithIcon('📤').setZh('可导出').setEn('Exportable'),
-            Feature.createWithIcon('🔄').setZh('可同步').setEn('Syncable'),
+            Feature.createWithIcon('🪧').setZh('无广告').setEn('No ads'),
+            Feature.createWithIcon('📺').setZh('无弹窗').setEn('No pop-ups'),
+            Feature.createWithIcon('🔑').setZh('无注册').setEn('No registration'),
+            Feature.createWithIcon('📱').setZh('无登录').setEn('No login'),
+            Feature.createWithIcon('🔍').setZh('无扫码').setEn('No scan code'),
+        ]),
+
+    Banner.create()
+        .setZhTitle('音乐仓库 - 随心随意')
+        .setEnTitle('Music library - Simple and powerful')
+        .setComponent(CisumApp)
+        .setComponentProps({ height: 'h-[32rem]', showDBView: true })
+        .withFeatures([
+            Feature.createWithIcon('🎁').setZh('支持本地音乐').setEn('Local music'),
+            Feature.createWithIcon('☁️').setZh('支持 iCloud 云盘').setEn('iCloud music'),
+            Feature.createWithIcon('🔄').setZh('支持播放列表').setEn('Playlists'),
+            Feature.createWithIcon('📥').setZh('支持导入').setEn('Import'),
+            Feature.createWithIcon('📤').setZh('支持导出').setEn('Export'),
+        ]),
+
+    Banner.create()
+        .setZhTitle('各个平台 - 尽享美好')
+        .setEnTitle('All platforms - Enjoy the beauty')
+        .setComponent(CisumApp)
+        .setComponentProps({ height: 'h-[32rem]', showDBView: true })
+        .withFeatures([
+            Feature.createWithIcon('🔄').setZh('多平台同步').setEn('Multi-platform synchronization'),
+            Feature.createWithIcon('📱').setZh('支持 iOS').setEn('iOS'),
+            Feature.createWithIcon('🖥️').setZh('支持 macOS').setEn('macOS'),
         ]),
 
     Banner.create()

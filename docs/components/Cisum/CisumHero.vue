@@ -1,7 +1,7 @@
 <template>
     <CofficHero :title="title" :description="description" :links="links">
         <template #app>
-            <CisumApp :lang="lang" />
+            <CisumApp :lang="lang" :height="'h-[20rem]'" />
         </template>
     </CofficHero>
 </template>
