@@ -52,7 +52,7 @@
     </MacWindow>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { RiGitRepositoryLine, RiInfoCardLine, RiMessageLine, RiArticleLine, RiHome2Line, RiNotificationLine, RiSettings3Line } from '@remixicon/vue'
 import MacWindow from '../Common/MacWindow.vue'
 
@@ -60,7 +60,7 @@ defineProps({
     height: {
         type: String,
         default: 'h-[40rem]',
-        validator: (value) => {
+        validator: (value: string) => {
             return [
                 'h-64',
                 'h-96',
@@ -74,7 +74,7 @@ defineProps({
     lang: {
         type: String,
         default: 'en',
-        validator: (value) => ['en', 'zh'].includes(value)
+        validator: (value: string) => ['en', 'zh'].includes(value)
     }
 })
 

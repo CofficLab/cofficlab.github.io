@@ -1,6 +1,6 @@
 <template>
     <BannerBox :backgroundClassIndex="backgroundClassIndex">
-        <div class="py-16 px-8 text-center w-full" data-type="smart-banner">
+        <div class="py-16 px-8 text-center w-full rounded-2xl" data-type="smart-banner">
             <h2 class="text-4xl mb-4">{{ banner.getTitle(lang) }}</h2>
 
             <p class="text-lg mb-12 text-center max-w-2xl mx-auto" v-if="banner.getDescription(lang).length > 0">

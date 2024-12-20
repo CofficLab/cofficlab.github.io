@@ -1,5 +1,5 @@
 <template>
-    <div class="relative w-full rounded-3xl">
+    <div class="relative w-full rounded-2xl max-w-7xl mx-auto">
         <!-- Download button with dropdown menu -->
         <div class="absolute top-4 left-4 opacity-0 hover:opacity-100 transition-opacity" v-if="showDownloadButton">
             <div class="relative">
@@ -51,7 +51,7 @@
             </div>
         </div>
 
-        <div class="flex p-8" ref="componentRef" :class="[
+        <div class="flex p-8 rounded-2xl shadow" ref="componentRef" :class="[
             getBackgroundClass(),
             selectedSize.width,
             selectedSize.height
@@ -177,7 +177,7 @@ const downloadAsImage = async (scale: number | null = 2) => {
 };
 
 const bgClasses = [
-    'bg-gradient-to-b from-blue-100/95 to-blue-200/95 dark:from-blue-500/10 dark:to-blue-200/10',
+    'bg-gradient-to-b from-blue-100/50 to-blue-200/50 dark:from-blue-500/10 dark:to-blue-200/10',
     'bg-gradient-to-b from-blue-200/50  to-purple-200/50 dark:from-blue-500/10 dark:to-purple-200/10',
     'bg-gradient-to-b from-yellow-200/50  to-green-200/50 dark:from-yellow-500/10 dark:to-green-200/10',
     'bg-gradient-to-b from-teal-200/50  to-blue-200/50 dark:from-teal-500/10 dark:to-blue-200/10',

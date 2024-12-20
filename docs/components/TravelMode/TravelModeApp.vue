@@ -90,7 +90,8 @@
                                         }}</span>
                                 </td>
                                 <td class="px-4 py-2">
-                                    <span class="text-green-500">{{ log.status }}</span>
+                                    <span :class="log.status === '允许' ? 'text-green-500' : 'text-red-500'">{{ log.status
+                                        }}</span>
                                 </td>
                             </tr>
                         </tbody>
