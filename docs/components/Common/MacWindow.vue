@@ -1,6 +1,8 @@
 <template>
-    <div class="flex max-w-5xl mx-auto bg-white/90 dark:bg-gray-800 relative rounded-2xl overflow-hidden shadow"
-        :class="props.height">
+    <div class="flex max-w-5xl mx-auto bg-white/90 dark:bg-gray-800 relative rounded-2xl overflow-hidden shadow" :class="[
+        props.height,
+        props.withShadow ? 'shadow' : ''
+    ]">
         <!-- 窗口控制按钮 -->
         <div
             class="absolute top-0 left-0 right-0 flex items-center h-12 px-4 bg-gray-100 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
@@ -70,6 +72,10 @@ const props = defineProps({
     statusBarButtons: {
         type: Array,
         default: () => []
+    },
+    withShadow: {
+        type: Boolean,
+        default: true
     }
 })
 
