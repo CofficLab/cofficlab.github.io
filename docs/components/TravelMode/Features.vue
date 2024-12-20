@@ -25,7 +25,9 @@ const banners = [
         .setComponent(TravelModeApp)
         .setComponentProps({
             height: 'h-[29rem]',
-            appsCount: 5
+            appsCount: 5,
+            showActionButtons: true,
+            showNetworkLogs: false,
         })
         .withFeatures([
             Feature.createWithIcon('🖱️').setZh('一键操作').setEn('One-click Operation'),
@@ -41,13 +43,46 @@ const banners = [
         .setComponentProps({
             height: 'h-[24rem]',
             showActionButtons: false,
-            appsCount: 4
+            appsCount: 4,
+            showNetworkLogs: false,
         })
         .withFeatures([
             Feature.createWithIcon('🪧').setZh('无广告').setEn('No Ads'),
             Feature.createWithIcon('🔍').setZh('无跟踪').setEn('No Tracking'),
             Feature.createWithIcon('🪤').setZh('无弹窗').setEn('No Popups'),
             Feature.createWithIcon('💰').setZh('无内购').setEn('No In-App Purchases')
+        ]),
+
+    Banner.create()
+        .setZhTitle('网络日志 - 透明清晰')
+        .setEnTitle('Network Logs')
+        .setComponent(TravelModeApp)
+        .setComponentProps({
+            height: 'h-[24rem]',
+            showActionButtons: false,
+            appsCount: 4,
+            showNetworkLogs: true,
+            showToolbarIcons: false,
+            showAppList: false,
+        }),
+
+    Banner.create()
+        .setZhTitle('原生开发 - 性能卓越')
+        .setEnTitle('Native Development')
+        .setComponent(TravelModeApp)
+        .withFeatures([
+            Feature.createWithIcon('💻').setZh('原生风格').setEn('Native Style'),
+            Feature.createWithIcon('🚀').setZh('性能卓越').setEn('High Performance'),
+            Feature.createWithIcon('🔥').setZh('稳定性强').setEn('High Stability'),
+            Feature.createWithIcon('💾').setZh('体积小巧').setEn('Small Size'),
         ])
+        .setComponentProps({
+            height: 'h-[24rem]',
+            showActionButtons: false,
+            appsCount: 4,
+            showNetworkLogs: false,
+            showToolbarIcons: false,
+            showAppList: true,
+        }),
 ];
 </script>

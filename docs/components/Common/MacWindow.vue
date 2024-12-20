@@ -23,8 +23,8 @@
         </div>
 
         <!-- 主要内容区域 -->
-        <div class="flex-1 flex flex-col pt-12">
-            <div class="flex flex-1">
+        <div class="flex-1 flex flex-col pt-12 h-full">
+            <div class="flex flex-1 h-full overflow-hidden">
                 <!-- 左侧栏插槽 -->
                 <slot name="sidebar"></slot>
 

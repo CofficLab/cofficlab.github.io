@@ -20,13 +20,8 @@ const props = defineProps({
 const title = 'TravelMode'
 
 const description = props.lang === 'zh'
-    ? '控制 macOS APP 的连网权限'
+    ? '控制 macOS APP 的联网权限'
     : 'Control the network permission of macOS APP'
-
-const image = {
-    src: '/images/travelmode/logo-512x512.png',
-    alt: 'TravelMode Logo'
-}
 
 const links = [
     { text: 'macOS', href: 'https://apps.apple.com/cn/app/travelmode/id6474899051?mt=12' },
