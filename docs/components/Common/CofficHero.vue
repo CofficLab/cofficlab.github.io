@@ -7,7 +7,7 @@
         </template>
 
         <h2 class="text-4xl mb-4">{{ title }}</h2>
-        <p class="text-lg text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+        <p class="text-lg mb-12 text-center max-w-2xl mx-auto">
             {{ description }}
         </p>
 
