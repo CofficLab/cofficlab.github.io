@@ -1,5 +1,5 @@
 <template>
-    <BannerBox>
+    <BannerBox :backgroundClassIndex="backgroundClassIndex">
         <div class="py-16 px-8 text-center w-full" data-type="smart-banner">
             <h2 class="text-4xl mb-4">{{ banner.getTitle(lang) }}</h2>
 
@@ -9,7 +9,7 @@
 
             <div class="flex flex-row justify-center gap-8 mx-auto w-full mt-24">
                 <FeatureCard v-for="feature in banner.getFeatures()" :key="feature.getTitle(lang)"
-                    :emoji="feature.emoji" :title="feature.getTitle(lang)" />
+                    :emoji="feature.emoji" :title="feature.getTitle(lang)" :link="feature.link" />
             </div>
 
             <div class="mt-12">
@@ -34,6 +34,10 @@ defineProps({
     banner: {
         type: Banner,
         required: true
+    },
+    backgroundClassIndex: {
+        type: Number,
+        default: 0
     }
 })
 </script>

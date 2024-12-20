@@ -1,6 +1,7 @@
 <template>
     <div class="flex flex-col gap-8">
-        <SmartBanner v-for="banner in banners" :key="banner.getTitle(props.lang)" :banner="banner" :lang="props.lang" />
+        <SmartBanner v-for="(banner, index) in banners" :key="banner.getTitle(props.lang)" :backgroundClassIndex="index"
+            :banner="banner" :lang="props.lang" />
     </div>
 </template>
 

@@ -1,6 +1,7 @@
 class Feature {
     private translations: Map<string, string>;
     public emoji: string = '';
+    public link: string = '';
 
     private constructor() {
         this.translations = new Map();
@@ -16,6 +17,11 @@ class Feature {
 
     public setTitle(title: string, lang: string): Feature {
         this.translations.set(lang, title);
+        return this;
+    }
+
+    public setLink(link: string): Feature {
+        this.link = link;
         return this;
     }
 

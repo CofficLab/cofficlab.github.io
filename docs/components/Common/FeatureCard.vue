@@ -1,10 +1,12 @@
 <template>
-    <div class="feature-card">
+    <component :is="link.length > 0 ? 'a' : 'div'" :href="link.length > 0 ? link : undefined"
+        :target="link.length > 0 ? '_blank' : undefined" :rel="link.length > 0 ? 'noopener noreferrer' : undefined"
+        class="feature-card">
         <div class="mb-4">
             <div class="text-4xl">{{ emoji }}</div>
         </div>
         <h3 class="text-lg font-medium">{{ title }}</h3>
-    </div>
+    </component>
 </template>
 
 <style lang="postcss" scoped>
@@ -22,6 +24,10 @@ defineProps({
     title: {
         type: String,
         required: true
+    },
+    link: {
+        type: String,
+        default: ''
     }
 })
 </script>

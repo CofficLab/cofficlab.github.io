@@ -1,6 +1,7 @@
 <template>
     <div class="flex flex-col gap-8">
-        <SmartBanner v-for="banner in banners" :key="banner.getTitle(props.lang)" :banner="banner" :lang="props.lang" />
+        <SmartBanner v-for="(banner, index) in banners" :key="banner.getTitle(props.lang)" :backgroundClassIndex="index"
+            :banner="banner" :lang="props.lang" />
     </div>
 </template>
 
@@ -84,5 +85,13 @@ const banners = [
             showToolbarIcons: false,
             showAppList: true,
         }),
+
+    Banner.create()
+        .setZhTitle('美好不容错过')
+        .setEnTitle('Don\'t Miss the Beauty')
+        .withFeatures([
+            Feature.createWithIcon('🐈').setZh('GitHub').setEn('GitHub').setLink('https://github.com/CofficLab/Netto'),
+            Feature.createWithIcon('🍎').setZh('App Store').setEn('App Store').setLink('https://apps.apple.com/cn/app/travelmode/id6474899051?mt=12')
+        ]),
 ];
 </script>
