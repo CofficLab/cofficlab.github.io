@@ -25,7 +25,7 @@ const banners = [
         .setZhTitle('播放音乐 - 简简单单')
         .setEnTitle('Play music - Simple and easy')
         .setComponent(CisumApp)
-        .setComponentProps({ height: 'h-[20rem]' })
+        .setComponentProps({ height: 'h-[20rem]', songIndex: 1, lang: props.lang })
         .withFeatures([
             Feature.createWithIcon('💡').setZh('一键操作').setEn('One-click operation'),
             Feature.createWithIcon('💣').setZh('没有负担').setEn('No burden'),
@@ -35,7 +35,7 @@ const banners = [
         .setZhTitle('干扰全无 - 清新轻松')
         .setEnTitle('Ad-free - Fresh and easy')
         .setComponent(CisumApp)
-        .setComponentProps({ height: 'h-[20rem]' })
+        .setComponentProps({ height: 'h-[20rem]', songIndex: 2, lang: props.lang })
         .withFeatures([
             Feature.createWithIcon('🪧').setZh('无广告').setEn('No ads'),
             Feature.createWithIcon('📺').setZh('无弹窗').setEn('No pop-ups'),
@@ -48,7 +48,7 @@ const banners = [
         .setZhTitle('音乐仓库 - 随心随意')
         .setEnTitle('Music library - Simple and powerful')
         .setComponent(CisumApp)
-        .setComponentProps({ height: 'h-[32rem]', showDBView: true })
+        .setComponentProps({ height: 'h-[32rem]', showDBView: true, songIndex: 3, lang: props.lang })
         .withFeatures([
             Feature.createWithIcon('🎁').setZh('支持本地音乐').setEn('Local music'),
             Feature.createWithIcon('☁️').setZh('支持 iCloud 云盘').setEn('iCloud music'),
@@ -61,7 +61,7 @@ const banners = [
         .setZhTitle('各个平台 - 尽享美好')
         .setEnTitle('All platforms - Enjoy the beauty')
         .setComponent(CisumApp)
-        .setComponentProps({ height: 'h-[32rem]', showDBView: true })
+        .setComponentProps({ height: 'h-[32rem]', showDBView: true, songIndex: 4, lang: props.lang })
         .withFeatures([
             Feature.createWithIcon('🔄').setZh('多平台同步').setEn('Multi-platform synchronization'),
             Feature.createWithIcon('📱').setZh('支持 iOS').setEn('iOS'),

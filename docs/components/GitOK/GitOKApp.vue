@@ -123,38 +123,3 @@ const handlePlay = () => console.log('Play clicked')
 const handleSettings = () => console.log('Settings clicked')
 const handleRefresh = () => console.log('Refresh clicked')
 </script>
-<style scoped>
-.custom-scrollbar {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
-}
-
-.custom-scrollbar::-webkit-scrollbar {
-    width: 8px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: rgba(156, 163, 175, 0.5);
-    border-radius: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(156, 163, 175, 0.7);
-}
-
-:dark .custom-scrollbar {
-    scrollbar-color: rgba(156, 163, 175, 0.3) transparent;
-}
-
-:dark .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: rgba(156, 163, 175, 0.3);
-}
-
-:dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(156, 163, 175, 0.5);
-}
-</style>

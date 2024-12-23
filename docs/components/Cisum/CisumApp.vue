@@ -4,7 +4,7 @@
         <div class="flex-1 flex flex-col">
             <!-- 播放器区域 -->
             <div class="flex-none px-8 pb-4 mx-8 mt-8 bg-red-300/0">
-                <div class="text-2xl font-medium mb-4">{{ songs[0].name }}</div>
+                <div class="text-2xl font-medium mb-4">{{ currentSong.name }}</div>
                 <!-- 进度条 -->
                 <div class="flex items-center space-x-4 mt-12 w-3/4 mx-auto">
                     <span class="text-sm">00:00</span>
@@ -62,6 +62,8 @@ import { RiPlayCircleLine } from '@remixicon/vue';
 import { RiShuffleLine } from '@remixicon/vue';
 import { RiSkipForwardLine } from '@remixicon/vue';
 import { RiRepeatLine } from '@remixicon/vue';
+import { computed } from 'vue';
+
 const props = defineProps({
     height: {
         type: String,
@@ -80,11 +82,21 @@ const props = defineProps({
     showDBView: {
         type: Boolean,
         default: false
+    },
+    lang: {
+        type: String,
+        default: 'zh',
+        validator: (value) => ['zh', 'en'].includes(value)
+    },
+    songIndex: {
+        type: Number,
+        default: 0
     }
 })
 
-const songs = [
-    { name: 'Various Artists - 那年的情书.wav', size: '48.1MB', cover: '💌' },
+const currentSong = computed(() => songs.value[props.songIndex])
+
+const songs = computed(() => props.lang === 'zh' ? [
     { name: '林俊杰-生生.mp3', size: '10.4MB', cover: '🌱' },
     { name: '林俊杰-不为谁而作的歌.wav', size: '46.9MB', cover: '🎸' },
     { name: '光良-每一次喊你 (Live)-6.mp3', size: '4.8MB', cover: '🎤' },
@@ -94,5 +106,17 @@ const songs = [
     { name: '伍佰-那威威的森林.wav', size: '69.1MB', cover: '🌳' },
     { name: 'ai mini - 遇.wav', size: '65.8MB', cover: '🤖' },
     { name: '孙燕姿-星期一天气晴我离开你.mp3', size: '10.5MB', cover: '☀️' }
-]
+] : [
+    { name: 'Various Artists - The Way I Am.wav', size: '48.1MB', cover: '💌' },
+    { name: 'Ed Sheeran - Shape of You.mp3', size: '9.2MB', cover: '🎸' },
+    { name: 'Adele - Rolling in the Deep.wav', size: '25.3MB', cover: '🎤' },
+    { name: 'Bruno Mars - Uptown Funk.mp3', size: '8.7MB', cover: '🎺' },
+    { name: 'Taylor Swift - Blank Space.wav', size: '30.1MB', cover: '📝' },
+    { name: 'Maroon 5 - Sugar.mp3', size: '7.8MB', cover: '🍬' },
+    { name: 'The Weeknd - Blinding Lights.wav', size: '32.4MB', cover: '💡' },
+    { name: 'Billie Eilish - Bad Guy.mp3', size: '9.1MB', cover: '😈' },
+    { name: 'Dua Lipa - Levitating.wav', size: '28.5MB', cover: '🌌' },
+    { name: 'Shawn Mendes - Stitches.mp3', size: '8.3MB', cover: '🧵' },
+    { name: 'Imagine Dragons - Believer.wav', size: '35.2MB', cover: '🔥' }
+])
 </script>
