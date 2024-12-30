@@ -33,6 +33,22 @@ const banners = [
         ]),
 
     Banner.create()
+        .setZhTitle('各个平台 - 尽享美好')
+        .setEnTitle('All platforms - Enjoy the beauty')
+        .setComponent(CisumApps)
+        .setComponentProps({
+            height: 'h-[32rem]',
+            showDBView: true,
+            songIndex: 4,
+            lang: props.lang
+        })
+        .withFeatures([
+            Feature.createWithIcon('🔄').setZh('多平台同步').setEn('Multi-platform synchronization'),
+            Feature.createWithIcon('📱').setZh('支持 iOS').setEn('iOS'),
+            Feature.createWithIcon('🖥️').setZh('支持 macOS').setEn('macOS'),
+        ]),
+
+    Banner.create()
         .setZhTitle('干扰全无 - 清新轻松')
         .setEnTitle('Ad-free - Fresh and easy')
         .setComponent(CisumApp)
@@ -56,22 +72,6 @@ const banners = [
             Feature.createWithIcon('🔄').setZh('支持播放列表').setEn('Playlists'),
             Feature.createWithIcon('📥').setZh('支持导入').setEn('Import'),
             Feature.createWithIcon('📤').setZh('支持导出').setEn('Export'),
-        ]),
-
-    Banner.create()
-        .setZhTitle('各个平台 - 尽享美好')
-        .setEnTitle('All platforms - Enjoy the beauty')
-        .setComponent(CisumApps)
-        .setComponentProps({
-            height: 'h-[32rem]',
-            showDBView: true,
-            songIndex: 4,
-            lang: props.lang
-        })
-        .withFeatures([
-            Feature.createWithIcon('🔄').setZh('多平台同步').setEn('Multi-platform synchronization'),
-            Feature.createWithIcon('📱').setZh('支持 iOS').setEn('iOS'),
-            Feature.createWithIcon('🖥️').setZh('支持 macOS').setEn('macOS'),
         ]),
 
     Banner.create()

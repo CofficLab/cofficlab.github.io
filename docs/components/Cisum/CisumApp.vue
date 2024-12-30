@@ -1,12 +1,22 @@
 <template>
-    <component :is="windowComponent" class="bg-emerald-500" :height="height" title="Cisum Player">
+    <component :is="windowComponent" class="bg-emerald-500" :backgroundColor="backgroundColor"
+        :height="deviceType === 'iphone' ? '' : height" :showFrame="deviceType === 'iphone'" title="Cisum Player">
         <!-- 主要内容区域 -->
-        <div class="flex-1 flex flex-col bg-gradient-to-br from-emerald-500/60 to-blue-900/60">
+        <div class="flex-1 flex flex-col"
+            :class="deviceType === 'mac' ? 'bg-gradient-to-br from-emerald-500/60 to-blue-900/60' : ''">
             <!-- 播放器区域 -->
-            <div class="flex-none px-8 pb-4 mx-8 mt-8 bg-red-300/0">
+            <div :class="{
+                'flex-none pb-4 mx-8 mt-8 bg-red-300/0': true,
+                'mx-8': deviceType === 'mac',
+                'mx-auto': deviceType === 'iphone'
+            }">
                 <div class="text-2xl font-medium mb-4">{{ currentSong.name }}</div>
                 <!-- 进度条 -->
-                <div class="flex items-center space-x-4 mt-12 w-3/4 mx-auto">
+                <div :class="{
+                    'flex items-center mt-12 mx-auto': true,
+                    'w-3/4 space-x-4': deviceType === 'mac',
+                    'w-full space-x-4': deviceType === 'iphone'
+                }">
                     <span class="text-sm">00:00</span>
                     <div class="flex-1 h-1 bg-white/30 rounded-full">
                         <div class="w-1/4 h-full bg-white rounded-full"></div>
