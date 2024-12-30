@@ -5,7 +5,7 @@
         <div class="flex-1 flex flex-col"
             :class="deviceType === 'mac' ? 'bg-gradient-to-br from-emerald-500/60 to-blue-900/60' : ''">
             <!-- 播放器区域 -->
-            <div :class="{
+            <div v-if="showPlayerView" :class="{
                 'flex-none pb-4 mx-8 mt-8 bg-red-300/0': true,
                 'mx-8': deviceType === 'mac',
                 'mx-auto': deviceType === 'iphone'
@@ -86,6 +86,10 @@ const props = defineProps({
                 'h-[56rem]'
             ].includes(value)
         }
+    },
+    showPlayerView: {
+        type: Boolean,
+        default: true
     },
     showDBView: {
         type: Boolean,

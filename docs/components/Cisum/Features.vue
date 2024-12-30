@@ -65,7 +65,7 @@ const banners = [
         .setZhTitle('音乐仓库 - 随心随意')
         .setEnTitle('Music library - Simple and powerful')
         .setComponent(CisumApp)
-        .setComponentProps({ height: 'h-[32rem]', showDBView: true, songIndex: 3, lang: props.lang })
+        .setComponentProps({ height: 'h-[28rem]', showDBView: true, songIndex: 3, lang: props.lang, showPlayerView: false })
         .withFeatures([
             Feature.createWithIcon('🎁').setZh('支持本地音乐').setEn('Local music'),
             Feature.createWithIcon('☁️').setZh('支持 iCloud 云盘').setEn('iCloud music'),
