@@ -1,7 +1,7 @@
 <template>
     <MacWindow class="bg-emerald-500" :height="height" title="Cisum Player">
         <!-- 主要内容区域 -->
-        <div class="flex-1 flex flex-col">
+        <div class="flex-1 flex flex-col bg-gradient-to-br from-emerald-500/60 to-blue-900/60">
             <!-- 播放器区域 -->
             <div class="flex-none px-8 pb-4 mx-8 mt-8 bg-red-300/0">
                 <div class="text-2xl font-medium mb-4">{{ currentSong.name }}</div>
