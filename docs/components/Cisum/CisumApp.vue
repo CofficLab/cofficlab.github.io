@@ -1,5 +1,5 @@
 <template>
-    <MacWindow class="bg-emerald-500" :height="height" title="Cisum Player">
+    <component :is="windowComponent" class="bg-emerald-500" :height="height" title="Cisum Player">
         <!-- 主要内容区域 -->
         <div class="flex-1 flex flex-col bg-gradient-to-br from-emerald-500/60 to-blue-900/60">
             <!-- 播放器区域 -->
@@ -53,15 +53,13 @@
                 </div>
             </div>
         </div>
-    </MacWindow>
+    </component>
 </template>
 
 <script setup>
 import MacWindow from '../Common/MacWindow.vue'
-import { RiPlayCircleLine } from '@remixicon/vue';
-import { RiShuffleLine } from '@remixicon/vue';
-import { RiSkipForwardLine } from '@remixicon/vue';
-import { RiRepeatLine } from '@remixicon/vue';
+import iPhoneWindow from '../Common/iPhoneWindow.vue'
+import { RiPlayCircleLine, RiShuffleLine, RiSkipForwardLine, RiRepeatLine } from '@remixicon/vue';
 import { computed } from 'vue';
 
 const props = defineProps({
@@ -91,8 +89,15 @@ const props = defineProps({
     songIndex: {
         type: Number,
         default: 0
+    },
+    deviceType: {
+        type: String,
+        default: 'mac',
+        validator: (value) => ['mac', 'iphone'].includes(value)
     }
 })
+
+const windowComponent = computed(() => props.deviceType === 'mac' ? MacWindow : iPhoneWindow)
 
 const currentSong = computed(() => songs.value[props.songIndex])
 

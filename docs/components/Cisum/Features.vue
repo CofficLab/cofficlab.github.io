@@ -11,6 +11,7 @@ import SmartBanner from '../Common/SmartBanner.vue';
 import Banner from '../Model/Banner';
 import Feature from '../Model/Feature';
 import CisumApp from './CisumApp.vue';
+import CisumApps from './CisumApps.vue';
 
 const props = defineProps({
     lang: {
@@ -60,8 +61,13 @@ const banners = [
     Banner.create()
         .setZhTitle('各个平台 - 尽享美好')
         .setEnTitle('All platforms - Enjoy the beauty')
-        .setComponent(CisumApp)
-        .setComponentProps({ height: 'h-[32rem]', showDBView: true, songIndex: 4, lang: props.lang })
+        .setComponent(CisumApps)
+        .setComponentProps({
+            height: 'h-[32rem]',
+            showDBView: true,
+            songIndex: 4,
+            lang: props.lang
+        })
         .withFeatures([
             Feature.createWithIcon('🔄').setZh('多平台同步').setEn('Multi-platform synchronization'),
             Feature.createWithIcon('📱').setZh('支持 iOS').setEn('iOS'),
