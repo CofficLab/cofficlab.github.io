@@ -15,27 +15,38 @@
                 </button>
                 <!-- Size selection dropdown -->
                 <div v-if="isDropdownOpen"
-                    class="absolute left-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-2 z-50">
+                    class="absolute left-0 mt-2 w-96 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-2 z-50">
                     <!-- Component size presets -->
                     <div class="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
-                        <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">Component Size:</div>
-                        <select v-model="selectedSize"
-                            class="w-full p-1 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
-                            <option v-for="preset in sizePresets" :key="preset.name" :value="preset">
-                                {{ preset.name }}
-                            </option>
-                        </select>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button v-for="preset in sizePresets" :key="preset.name" @click="selectedSize = preset"
+                                :class="[
+                                    'p-2 text-left rounded text-sm',
+                                    selectedSize.name === preset.name
+                                        ? 'bg-yellow-500/30 text-yellow-900 dark:text-yellow-100'
+                                        : 'hover:bg-gray-100 dark:hover:bg-gray-700'
+                                ]">
+                                <div class="flex flex-col">
+                                    <span class="font-medium">{{ preset.name }}</span>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">
+                                        {{ preset.width.replace('w-[', '').replace(']', '') }}
+                                    </span>
+                                </div>
+                            </button>
+                            <!-- Clear size button -->
+                            <button @click="clearStoredSize"
+                                class="p-2 text-left rounded text-sm hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <div class="flex flex-col">
+                                    <span class="font-medium text-red-600 dark:text-red-400">清除记住的尺寸</span>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">重置为默认尺寸</span>
+                                </div>
+                            </button>
+                        </div>
                     </div>
                     <!-- Background settings -->
                     <div class="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
-                        <label class="flex items-center space-x-2 mb-2">
-                            <input type="checkbox" v-model="includeBackground" class="rounded">
-                            <span>Include Background</span>
-                        </label>
-                        <!-- Background color selection -->
-                        <div v-if="includeBackground" class="mt-2">
-                            <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">Background Style:</div>
-                            <div class="grid grid-cols-4 gap-2">
+                        <div class="mt-2">
+                            <div class="grid grid-cols-8 gap-2">
                                 <button v-for="(_, index) in bgClasses" :key="index" @click="selectedBgIndex = index"
                                     :class="[
                                         bgClasses[index],
@@ -46,23 +57,15 @@
                         </div>
                     </div>
                     <!-- Size options -->
-                    <button v-for="size in exportSizes" :key="size.name" @click="downloadAsImage(size.scale)"
-                        class="w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <div class="flex flex-col">
-                            <span class="font-medium">{{ size.name }}</span>
-                            <span class="text-sm text-gray-500 dark:text-gray-400">{{ size.description }}</span>
-                        </div>
-                    </button>
-
-                    <!-- Add divider and clear storage option -->
-                    <div class="border-t border-gray-200 dark:border-gray-700 mt-2"></div>
-                    <button @click="clearStoredSize"
-                        class="w-full px-4 py-2 text-left text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <div class="flex flex-col">
-                            <span class="font-medium">清除记住的尺寸</span>
-                            <span class="text-sm text-gray-500 dark:text-gray-400">重置为默认尺寸</span>
-                        </div>
-                    </button>
+                    <div class="p-4">
+                        <button @click="downloadAsImage()"
+                            class="w-full p-2 text-center rounded hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <div class="flex items-center justify-center gap-2">
+                                <RiDownloadLine class="w-4 h-4" />
+                                <span class="font-medium">下载图片</span>
+                            </div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,8 +88,6 @@ import { toPng } from 'html-to-image';
 // 添加接口定义
 interface ExportSize {
     name: string;
-    scale: number | null;
-    description: string;
     targetWidth?: number;
     targetHeight?: number;
 }
@@ -106,17 +107,9 @@ const componentRef = ref<HTMLElement | null>(null);
 
 const isDropdownOpen = ref(false);
 
-const includeBackground = ref(true);
-
 const exportSizes: ExportSize[] = [
-    { name: '1x (Original)', scale: 1, description: 'Original Size' },
-    { name: '2x', scale: 2, description: '2x Larger' },
-    { name: '3x', scale: 3, description: '3x Larger' },
-    { name: '4x', scale: 4, description: '4x Larger' },
     {
         name: '2560x1600',
-        scale: null, // 将在下载时动态计算
-        description: 'Desktop Wallpaper',
         targetWidth: 2560,
         targetHeight: 1600
     },
@@ -191,7 +184,7 @@ onMounted(() => {
 });
 
 // Update downloadAsImage function to accept scale parameter
-const downloadAsImage = async (scale: number | null = 2) => {
+const downloadAsImage = async () => {
     try {
         const element = componentRef.value;
         if (!element) {
@@ -199,27 +192,16 @@ const downloadAsImage = async (scale: number | null = 2) => {
             return;
         }
 
-        let pixelRatio = scale || 1;
-        if (scale === null) {
-            const size = exportSizes.find(s => s.targetWidth === 2560);
-            if (size?.targetWidth) {
-                pixelRatio = size.targetWidth / element.offsetWidth;
-            }
-        }
-
         const dataUrl = await toPng(element, {
-            pixelRatio: pixelRatio,
-            backgroundColor: includeBackground.value ? undefined : 'transparent',
+            backgroundColor: undefined,
             style: {
-                transform: 'scale(1)', // 确保正确的缩放
+                transform: 'scale(1)',
                 transformOrigin: 'top left'
             }
         });
 
         const link = document.createElement('a');
-        const fileName = scale === null ?
-            `feature-${element.offsetWidth * pixelRatio}x${element.offsetHeight * pixelRatio}.png` :
-            `feature-${scale}x.png`;
+        const fileName = `feature-${element.offsetWidth}x${element.offsetHeight}.png`;
         link.download = fileName;
         link.href = dataUrl;
         link.click();
