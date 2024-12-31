@@ -107,14 +107,6 @@ const componentRef = ref<HTMLElement | null>(null);
 
 const isDropdownOpen = ref(false);
 
-const exportSizes: ExportSize[] = [
-    {
-        name: '2560x1600',
-        targetWidth: 2560,
-        targetHeight: 1600
-    },
-];
-
 const sizePresets = [
     { name: 'Default', width: 'w-full', height: 'h-full' },
     { name: '1280 × 800', width: 'w-[1280px]', height: 'h-[800px]' },
