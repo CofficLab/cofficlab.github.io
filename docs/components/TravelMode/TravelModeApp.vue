@@ -1,212 +1,205 @@
 <template>
-    <div class="flex bg-white/90 dark:bg-gray-800 relative rounded-2xl overflow-hidden max-w-5xl self-center mx-auto shadow-xl"
-        :class="height">
-        <!-- 窗口控制按钮 -->
-        <div
-            class="absolute top-0 left-0 right-0 flex items-center h-12 px-4 bg-gray-100 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
-            <div class="flex items-center space-x-2">
-                <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div class="w-3 h-3 rounded-full bg-green-500"></div>
-            </div>
-            <div class="ml-6 text-sm font-medium text-gray-700 dark:text-gray-200">TravelMode</div>
-        </div>
-
-        <!-- 主要内容区域 -->
-        <div class="flex-1 flex flex-col pt-12">
+    <MacWindow :height="height" title="TravelMode" :toolbarButtons="toolbarButtons">
+        <div class="flex flex-col w-full h-full">
             <!-- 应用列表 -->
-            <div class="flex-1 p-4 overflow-y-auto custom-scrollbar">
-                <div class="space-y-2 ">
-                    <div v-for="app in apps" :key="app.name"
-                        class="flex items-center p-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
-                        <div class="w-8 h-8 flex items-center justify-center text-xl">{{ app.icon }}</div>
-                        <div class="ml-3 flex-1">
-                            <div class="flex items-center justify-between">
-                                <div class="flex flex-col">
-                                    <div class="font-medium text-gray-900 dark:text-gray-100 text-start">{{ app.name }}
+            <div v-if="showAppList" class="flex-1 basis-1/2 min-h-0">
+                <div class="h-full overflow-y-auto">
+                    <div class="p-4 space-y-2">
+                        <div v-for="app in apps.slice(0, appsCount)" :key="app.name"
+                            class="flex items-center p-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors group"
+                            :class="{
+                                'bg-red-100 dark:bg-red-900/30': blockedApps.has(app.bundleId)
+                            }">
+                            <div class="w-8 h-8 flex items-center justify-center text-xl">{{ app.icon }}</div>
+                            <div class="ml-3 flex-1">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col">
+                                        <div class="font-medium text-gray-900 dark:text-gray-100 text-start">{{ app.name
+                                            }}
+                                        </div>
+                                        <div class="flex flex-row gap-2">
+                                            <div class="text-sm text-gray-500">{{ app.pid }}</div>
+                                            <div class="text-sm text-gray-500">{{ app.bundleId }}</div>
+                                        </div>
                                     </div>
-                                    <div class="text-sm text-gray-500">{{ app.bundleId }}</div>
+                                    <div class="flex items-center space-x-2" v-if="showActionButtons">
+                                        <!-- 新增的按钮组，默认隐，group-hover时显示 -->
+                                        <div class="hidden group-hover:flex space-x-2">
+                                            <button @click="handleBlockNetwork(app)"
+                                                class="p-1.5 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 disabled:opacity-50 disabled:cursor-not-allowed"
+                                                :disabled="blockedApps.has(app.bundleId)">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                                                    viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd"
+                                                        d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                            <button @click="handleAllowNetwork(app)"
+                                                class="p-1.5 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/30 text-green-600 dark:text-green-400 disabled:opacity-50 disabled:cursor-not-allowed"
+                                                :disabled="!blockedApps.has(app.bundleId)">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                                                    viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd"
+                                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="text-sm text-gray-500">{{ app.pid }}</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- 日志表格 -->
+            <div v-if="isNetworkLogsVisible"
+                class="flex-1 basis-1/2 min-h-0 shadow border-t border-gray-200 dark:border-gray-700">
+                <div class="h-full overflow-y-auto pb-4 w-full">
+                    <table class="w-full text-sm">
+                        <thead class="bg-gray-50 dark:bg-gray-700/50 w-full">
+                            <tr>
+                                <th class="px-4 py-2 text-left text-gray-500 dark:text-gray-400">时间</th>
+                                <th class="px-4 py-2 text-left text-gray-500 dark:text-gray-400">APP</th>
+                                <th class="px-4 py-2 text-left text-gray-500 dark:text-gray-400">ID</th>
+                                <th class="px-4 py-2 text-left text-gray-500 dark:text-gray-400">地址</th>
+                                <th class="px-4 py-2 text-left text-gray-500 dark:text-gray-400">端口</th>
+                                <th class="px-4 py-2 text-left text-gray-500 dark:text-gray-400">方向</th>
+                                <th class="px-4 py-2 text-left text-gray-500 dark:text-gray-400">状态</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                            <tr v-for="(log, index) in networkLogs" :key="index"
+                                class="hover:bg-gray-50 dark:hover:bg-gray-700/50">
+                                <td class="px-4 py-2 text-gray-600 dark:text-gray-300">{{ log.time }}</td>
+                                <td class="px-4 py-2">
+                                    <div class="flex items-center">
+                                        <div class="w-5 h-5 mr-2">{{ log.icon }}</div>
+                                        <span class="text-gray-600 dark:text-gray-300">{{ log.app }}</span>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-2 text-gray-600 dark:text-gray-300 font-mono text-xs">{{ log.id }}
+                                </td>
+                                <td class="px-4 py-2 text-gray-600 dark:text-gray-300">{{ log.address }}</td>
+                                <td class="px-4 py-2 text-gray-600 dark:text-gray-300">{{ log.port }}</td>
+                                <td class="px-4 py-2">
+                                    <span class="text-gray-600 dark:text-gray-300">{{ log.direction === '出' ? '出站' :
+                                        '入站'
+                                        }}</span>
+                                </td>
+                                <td class="px-4 py-2">
+                                    <span :class="log.status === '允许' ? 'text-green-500' : 'text-red-500'">{{ log.status
+                                        }}</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-    </div>
+
+        <!-- 对话框组件 -->
+        <ConfirmDialog v-model="showConfirmDialog" :title="confirmDialogTitle" :message="confirmDialogMessage"
+            @confirm="handleDialogConfirm" />
+        <AlertDialog v-model="showAlertDialog" :message="alertMessage" />
+    </MacWindow>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { ref } from 'vue'
+import MacWindow from '../Common/MacWindow.vue'
+import ConfirmDialog from '../Common/ConfirmDialog.vue'
+import AlertDialog from '../Common/AlertDialog.vue'
+import { apps } from './data/apps'
+import { networkLogs } from './data/networkLogs'
+import { RiListView } from '@remixicon/vue'
 
 const props = defineProps({
     height: {
         type: String,
         default: 'h-96'
+    },
+    showActionButtons: {
+        type: Boolean,
+        default: true
+    },
+    showAppList: {
+        type: Boolean,
+        default: true
+    },
+    showNetworkLogs: {
+        type: Boolean,
+        default: true
+    },
+    showToolbarIcons: {
+        type: Boolean,
+        default: true
+    },
+    appsCount: {
+        type: Number,
+        default: 10
     }
 })
 
-const apps = [
+// 对话框状态
+const showConfirmDialog = ref(false)
+const confirmDialogTitle = ref('')
+const confirmDialogMessage = ref('')
+
+// 添加类型定义
+type ActionFunction = () => void;
+
+// 修改 ref 的类型声明
+const pendingAction = ref<ActionFunction | null>(null);
+
+// 添加 Alert 对话框状态
+const showAlertDialog = ref(false)
+const alertMessage = ref('')
+
+// 添加一个新的 ref 来跟踪被禁止的应用
+const blockedApps = ref(new Set(['com.apple.Safari']))
+
+// 添加日志显示状态控制
+const isNetworkLogsVisible = ref(props.showNetworkLogs)
+
+// 添加工具栏按钮配置
+const toolbarButtons = props.showToolbarIcons ? [
     {
-        name: 'Google Chrome',
-        bundleId: 'com.google.Chrome',
-        pid: '122',
-        icon: '🌐'
-    },
-    {
-        name: 'ClashX Pro',
-        bundleId: 'com.west2online.ClashXPro',
-        pid: '87',
-        icon: '🔰'
-    },
-    {
-        name: 'Cursor',
-        bundleId: 'com.todesktop.230313mzl4w4u92',
-        pid: '7',
-        icon: '📝'
-    },
-    {
-        name: 'OrbStack',
-        bundleId: 'dev.kdrag0n.MacVirt',
-        pid: '2',
-        icon: '🔄'
-    },
-    {
-        name: 'Safari',
-        bundleId: 'com.apple.Safari',
-        pid: '1',
-        icon: '🧭'
-    },
-    {
-        name: 'Visual Studio Code',
-        bundleId: 'com.microsoft.VSCode',
-        pid: '156',
-        icon: '💻'
-    },
-    {
-        name: 'Spotify',
-        bundleId: 'com.spotify.client',
-        pid: '203',
-        icon: '🎵'
-    },
-    {
-        name: 'Discord',
-        bundleId: 'com.discord.app',
-        pid: '189',
-        icon: '💬'
-    },
-    {
-        name: 'Docker Desktop',
-        bundleId: 'com.docker.docker',
-        pid: '167',
-        icon: '🐳'
-    },
-    {
-        name: 'Slack',
-        bundleId: 'com.slack.Slack',
-        pid: '145',
-        icon: '💼'
-    },
-    {
-        name: 'Notion',
-        bundleId: 'notion.id',
-        pid: '134',
-        icon: '📔'
-    },
-    {
-        name: 'WeChat',
-        bundleId: 'com.tencent.xinWeChat',
-        pid: '178',
-        icon: '💭'
-    },
-    {
-        name: 'Postman',
-        bundleId: 'com.postman.app',
-        pid: '198',
-        icon: '📮'
-    },
-    {
-        name: 'Microsoft Teams',
-        bundleId: 'com.microsoft.teams',
-        pid: '167',
-        icon: '👥'
-    },
-    {
-        name: 'Figma',
-        bundleId: 'com.figma.Desktop',
-        pid: '143',
-        icon: '🎨'
-    },
-    {
-        name: 'iTerm',
-        bundleId: 'com.googlecode.iterm2',
-        pid: '129',
-        icon: '⌨️'
-    },
-    {
-        name: 'Alfred',
-        bundleId: 'com.runningwithcrayons.Alfred',
-        pid: '112',
-        icon: '🎩'
-    },
-    {
-        name: 'Telegram',
-        bundleId: 'org.telegram.desktop',
-        pid: '156',
-        icon: '✈️'
-    },
-    {
-        name: 'Zoom',
-        bundleId: 'us.zoom.xos',
-        pid: '187',
-        icon: '🎥'
-    },
-    {
-        name: 'Rectangle',
-        bundleId: 'com.knollsoft.Rectangle',
-        pid: '89',
-        icon: '⬜'
+        icon: RiListView,
+        onClick: () => {
+            isNetworkLogsVisible.value = !isNetworkLogsVisible.value
+        }
     }
-]
+] : []
+
+const handleBlockNetwork = (app) => {
+    confirmDialogTitle.value = '确认禁止联网'
+    confirmDialogMessage.value = `确定要禁止 ${app.name} 联网吗？（演示）`
+    pendingAction.value = () => {
+        blockedApps.value.add(app.bundleId)
+        alertMessage.value = '操作已确认（演示）'
+        showAlertDialog.value = true
+    }
+    showConfirmDialog.value = true
+}
+
+const handleAllowNetwork = (app) => {
+    confirmDialogTitle.value = '确认允许联网'
+    confirmDialogMessage.value = `确定要允许 ${app.name} 联网吗？（这是演示）`
+    pendingAction.value = () => {
+        blockedApps.value.delete(app.bundleId)
+        alertMessage.value = '操作已确认（演示）'
+        showAlertDialog.value = true
+    }
+    showConfirmDialog.value = true
+}
+
+const handleDialogConfirm = () => {
+    if (pendingAction.value) {
+        pendingAction.value()
+        pendingAction.value = null
+    }
+}
 </script>
-
-<style scoped>
-/* 自定义滚动条样式 */
-.custom-scrollbar {
-    scrollbar-width: thin;
-    /* Firefox */
-    scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
-    /* Firefox */
-}
-
-/* Webkit (Chrome, Safari, Edge) 滚动条样式 */
-.custom-scrollbar::-webkit-scrollbar {
-    width: 8px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: rgba(156, 163, 175, 0.5);
-    border-radius: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(156, 163, 175, 0.7);
-}
-
-/* 暗色模式滚动条 */
-:dark .custom-scrollbar {
-    scrollbar-color: rgba(156, 163, 175, 0.3) transparent;
-}
-
-:dark .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: rgba(156, 163, 175, 0.3);
-}
-
-:dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(156, 163, 175, 0.5);
-}
-</style>

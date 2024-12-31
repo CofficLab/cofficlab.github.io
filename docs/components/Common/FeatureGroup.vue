@@ -12,5 +12,5 @@
 </template>
 
 <script setup>
-import BaseFeature from './BaseFeature.vue'
+import BaseFeature from './BannerBox.vue'
 </script>

@@ -1,9 +1,14 @@
 <template>
-    <CofficHero :title="title" :description="description" :image="image" :links="links" />
+    <CofficHero :title="title" :description="description" :links="links">
+        <template #app>
+            <GitOKApp />
+        </template>
+    </CofficHero>
 </template>
 
 <script setup lang="ts">
 import CofficHero from '../Common/CofficHero.vue';
+import GitOKApp from './GitOKApp.vue';
 
 const props = defineProps({
     lang: {
@@ -24,5 +29,6 @@ const image = {
 
 const links = [
     { text: 'GitHub', href: 'https://github.com/Cofficlab/GitOK' },
+    { text: 'Issues', href: 'https://github.com/Cofficlab/GitOK/issues' },
 ]
 </script>

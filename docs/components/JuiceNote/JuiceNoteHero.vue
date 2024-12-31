@@ -1,9 +1,14 @@
 <template>
-    <CofficHero :title="title" :description="description" :image="image" :links="links" />
+    <CofficHero :title="title" :description="description" :links="links">
+        <template #app>
+            <JuiceNoteApp :lang="lang" />
+        </template>
+    </CofficHero>
 </template>
 
 <script setup>
 import CofficHero from '../Common/CofficHero.vue';
+import JuiceNoteApp from './JuiceNoteApp.vue';
 
 const props = defineProps({
     lang: {

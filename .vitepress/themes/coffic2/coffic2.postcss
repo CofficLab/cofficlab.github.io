@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-  @apply bg-gradient-to-br from-green-900/10 via-blue-800/10 to-yellow-900/10
-    min-h-screen;
-} */
+.VPPage {
+  @apply bg-gradient-to-br from-blue-50 to-indigo-100
+                dark:from-blue-950 dark:to-indigo-900
+                bg-[linear-gradient(#e5e7eb33_1px,transparent_1px),linear-gradient(to_right,#e5e7eb33_1px,transparent_1px)] [background-size:24px_24px]
+                dark:bg-[linear-gradient(#1f293733_1px,transparent_1px),linear-gradient(to_right,#1f293733_1px,transparent_1px)];
+}
+
+.VPPage {
+  @apply pb-96;
+}
 
 ul {
   list-style: none;
