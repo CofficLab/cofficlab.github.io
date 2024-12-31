@@ -1,5 +1,5 @@
 <template>
-    <div class="relative w-full rounded-2xl max-w-7xl mx-auto">
+    <div class="relative rounded-2xl w-11/12 mx-auto 2xl:w-3/5">
         <!-- Add size indicator -->
         <div v-if="isLoadedFromStorage"
             class="absolute top-4 right-4 bg-yellow-500/30 backdrop-blur-sm px-3 py-1 rounded-lg text-sm text-white">
