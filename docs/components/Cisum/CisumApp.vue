@@ -1,6 +1,5 @@
 <template>
-    <component :is="windowComponent" class="bg-emerald-500" :backgroundColor="backgroundColor"
-        :height="deviceType === 'iphone' ? '' : height" :showFrame="deviceType === 'iphone'" title="Cisum Player">
+    <component :is="windowComponent" v-bind="windowProps" title="Cisum Player">
         <!-- 主要内容区域 -->
         <div class="flex-1 flex flex-col"
             :class="deviceType === 'mac' ? 'bg-gradient-to-br from-emerald-500/60 to-blue-900/60' : ''">
@@ -76,16 +75,6 @@ const props = defineProps({
     height: {
         type: String,
         default: 'h-[40rem]',
-        validator: (value) => {
-            return [
-                'h-64',
-                'h-96',
-                'h-[32rem]',
-                'h-[40rem]',
-                'h-[48rem]',
-                'h-[56rem]'
-            ].includes(value)
-        }
     },
     showPlayerView: {
         type: Boolean,
@@ -138,4 +127,16 @@ const songs = computed(() => props.lang === 'zh' ? [
     { name: 'Shawn Mendes - Stitches.mp3', size: '8.3MB', cover: '🧵' },
     { name: 'Imagine Dragons - Believer.wav', size: '35.2MB', cover: '🔥' }
 ])
+
+const windowProps = computed(() => {
+    const base = {
+        height: props.deviceType === 'iphone' ? '' : props.height
+    }
+
+    if (props.deviceType === 'iphone') {
+        base.showFrame = true
+    }
+
+    return base
+})
 </script>
