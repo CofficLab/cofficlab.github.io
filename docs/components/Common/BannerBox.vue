@@ -117,11 +117,6 @@ const exportSizes: ExportSize[] = [
 
 const sizePresets = [
     { name: 'Default', width: 'w-full', height: 'h-full' },
-    { name: 'Square', width: 'w-[600px]', height: 'h-[600px]' },
-    { name: 'Landscape', width: 'w-[800px]', height: 'h-[450px]' },
-    { name: 'Portrait', width: 'w-[450px]', height: 'h-[800px]' },
-    { name: 'Wide', width: 'w-[1200px]', height: 'h-[675px]' },
-    { name: 'Banner', width: 'w-[1200px]', height: 'h-[300px]' },
     { name: '1280 × 800', width: 'w-[1280px]', height: 'h-[800px]' },
     { name: '1440 × 900', width: 'w-[1440px]', height: 'h-[900px]' },
     { name: '2560 × 1600', width: 'w-[2560px]', height: 'h-[1600px]' },
