@@ -21,9 +21,11 @@ const props = defineProps({
     lang: {
         type: String,
         default: 'en',
-        validator: (value: string) => ['en', 'zh'].includes(value)
+        validator: (value: string) => ['en', 'zh', 'zh-cn'].includes(value)
     }
 });
+
+const lang = props.lang === 'zh-cn' ? 'zh' : props.lang
 
 interface Member {
     avatar: string;

@@ -56,7 +56,7 @@
 import { RiGitRepositoryLine, RiInfoCardLine, RiMessageLine, RiArticleLine, RiHome2Line, RiNotificationLine, RiSettings3Line } from '@remixicon/vue'
 import MacWindow from '../Common/MacWindow.vue'
 
-defineProps({
+const props = defineProps({
     height: {
         type: String,
         default: 'h-[40rem]',
@@ -74,9 +74,11 @@ defineProps({
     lang: {
         type: String,
         default: 'en',
-        validator: (value: string) => ['en', 'zh'].includes(value)
+        validator: (value: string) => ['en', 'zh', 'zh-cn'].includes(value)
     }
 })
+
+const lang = (props.lang === 'zh-cn' ? 'zh' : props.lang) as 'en' | 'zh'
 
 const translations = {
     en: {

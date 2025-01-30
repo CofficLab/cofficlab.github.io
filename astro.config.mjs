@@ -15,7 +15,7 @@ export default defineConfig({
     starlight({
       customCss: ['./src/styles/custom.css'],
       title: 'Coffic',
-      defaultLocale: 'zh-cn',
+      defaultLocale: 'en',
       locales: {
         // 英文文档在 `src/content/docs/en/` 中。
         en: {
