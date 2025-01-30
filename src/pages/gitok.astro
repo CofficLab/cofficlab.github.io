@@ -1,27 +1,30 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import GitOKPage from '../components/GitOK/GitOKPage.vue';
+import FooterVue from '../components/Footer.vue';
 ---
 
 <StarlightPage
   frontmatter={{
-    title: '我的自定义页面',
-    description: '我的自定义页面',
+    title: 'GitOK',
+    description: 'GitOK',
     template: 'splash',
     hero: {
-      title: '我的自定义页面',
+      title: 'GitOK',
       image: {
         file: {
           src: '/images/coffic/logo4.png',
-          width: 100,
-          height: 100,
+          width: 8,
+          height: 7,
           format: 'png',
         },
       },
     },
   }}
   hasSidebar={false}
-  headings={[]}>
-  <p>这是一个有自定义组件的自定义页面：</p>
-</StarlightPage>
+  headings={[]}
+/>
+
 <GitOKPage lang="zh" />
+
+<FooterVue lang="en" />

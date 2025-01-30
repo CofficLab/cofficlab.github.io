@@ -1,0 +1,37 @@
+---
+import FooterVue from '../components/Footer.vue';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import JuiceEditorPage from '../components/JuiceEditor/JuiceEditorPage.vue';
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'JuiceEditor',
+    description: '简洁编辑器',
+    template: 'splash',
+    draft: false,
+    hero: {
+      title: 'JuiceEditor',
+      image: {
+        file: {
+          src: '/images/coffic/logo4.png',
+          width: 8,
+          height: 7,
+          format: 'png',
+        },
+      },
+      actions: [
+        {
+          text: 'Get Started',
+          link: '/juiceeditor/guide/introduce',
+        },
+      ],
+    },
+  }}
+  hasSidebar={false}
+  headings={[]}
+/>
+
+<JuiceEditorPage lang="zh" />
+
+<FooterVue lang="en" />

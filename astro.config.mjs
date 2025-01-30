@@ -15,7 +15,9 @@ export default defineConfig({
         dark: './src/assets/coffic/logo3.min.png',
       },
       components: {
-        Header: './src/components/Header.astro',
+        Header: './src/custom/Header.astro',
+        PageFrame: './src/custom/PageFrame.astro',
+        ContentPanel: './src/custom/ContentPanel.astro',
       },
       social: {
         github: 'https://github.com/cofficlab',
