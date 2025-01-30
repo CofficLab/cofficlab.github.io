@@ -2,6 +2,7 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import GitOKPage from '../components/GitOK/GitOKPage.vue';
 import FooterVue from '../components/Footer.vue';
+import '../styles/hide_main.css';
 ---
 
 <StarlightPage
@@ -9,17 +10,6 @@ import FooterVue from '../components/Footer.vue';
     title: 'GitOK',
     description: 'GitOK',
     template: 'splash',
-    hero: {
-      title: 'GitOK',
-      image: {
-        file: {
-          src: '/images/coffic/logo4.png',
-          width: 8,
-          height: 7,
-          format: 'png',
-        },
-      },
-    },
   }}
   hasSidebar={false}
   headings={[]}

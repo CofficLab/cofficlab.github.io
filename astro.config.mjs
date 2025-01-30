@@ -10,10 +10,11 @@ export default defineConfig({
   site: 'https://cofficlab.github.io',
   integrations: [
     starlight({
+      customCss: ['./src/styles/custom.css'],
       title: 'Coffic',
       logo: {
-        light: './src/assets/coffic/logo3.min.png',
-        dark: './src/assets/coffic/logo3.min.png',
+        light: './src/assets/coffic/logo4.min.png',
+        dark: './src/assets/coffic/logo4.min.png',
       },
       components: {
         Header: './src/custom/Header.astro',
