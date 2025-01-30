@@ -1,6 +1,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import vue from '@astrojs/vue';
+
+import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
@@ -28,5 +31,9 @@ export default defineConfig({
         },
       ],
     }),
+    vue({
+      include: ['**/*.vue'], // 明确包含Vue组件
+    }),
+    tailwind(),
   ],
 });

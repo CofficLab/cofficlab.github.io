@@ -7,16 +7,23 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Member from '../Common/Member.vue';
 
 const props = defineProps({
     lang: {
         type: String,
         default: 'en',
-        validator: (value) => ['en', 'zh'].includes(value)
+        validator: (value: string) => ['en', 'zh'].includes(value)
     }
 });
+
+interface Member {
+    avatar: string;
+    name: string | { en: string; zh: string };
+    description: string | { en: string; zh: string };
+    github?: string;
+}
 
 const members = [
     {
@@ -44,11 +51,11 @@ const members = [
     },
 ]
 
-const getLocalizedMember = (member) => {
+const getLocalizedMember = (member: Member) => {
     return {
         ...member,
-        name: typeof member.name === 'object' ? member.name[props.lang] : member.name,
-        description: typeof member.description === 'object' ? member.description[props.lang] : member.description,
+        name: typeof member.name === 'object' ? member.name[props.lang as keyof typeof member.name] : member.name,
+        description: typeof member.description === 'object' ? member.description[props.lang as keyof typeof member.description] : member.description,
     };
 };
 </script>

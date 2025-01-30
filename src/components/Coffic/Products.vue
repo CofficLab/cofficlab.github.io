@@ -2,21 +2,31 @@
   <div class="flex flex-col gap-4 container mx-auto items-center my-10">
     <h2>{{ lang === 'en' ? 'Our Products' : '我们的产品' }}</h2>
     <div data-type="products" class="flex flex-row gap-4 container mx-auto justify-center">
-      <Product v-for="product in products" :key="product.name" :product="getLocalizedProduct(product)" />
+      <Product v-for="product in products" :key="typeof product.name === 'string' ? product.name : product.name.en"
+        :product="getLocalizedProduct(product)" />
     </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Product from '../Common/Product.vue';
 
 const props = defineProps({
   lang: {
     type: String,
     default: 'en',
-    validator: (value) => ['en', 'zh'].includes(value)
+    validator: (value: string) => ['en', 'zh'].includes(value)
   }
 });
+
+interface Product {
+  avatar: string;
+  name: string | { en: string; zh: string };
+  description: string | { en: string; zh: string };
+  store?: string;
+  github?: string;
+  homepage: string;
+}
 
 const products = [
   {
@@ -58,11 +68,11 @@ const products = [
   }
 ];
 
-const getLocalizedProduct = (product) => {
+const getLocalizedProduct = (product: Product) => {
   return {
     ...product,
-    name: typeof product.name === 'object' ? product.name[props.lang] : product.name,
-    description: typeof product.description === 'object' ? product.description[props.lang] : product.description,
+    name: typeof product.name === 'object' ? product.name[props.lang as keyof typeof product.name] : product.name,
+    description: typeof product.description === 'object' ? product.description[props.lang as keyof typeof product.description] : product.description,
   };
 };
 </script>
