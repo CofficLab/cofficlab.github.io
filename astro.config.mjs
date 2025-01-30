@@ -8,6 +8,9 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://cofficlab.github.io',
+  redirects: {
+    '/zh/juiceEditor': '/juiceEditor',
+  },
   integrations: [
     starlight({
       customCss: ['./src/styles/custom.css'],
