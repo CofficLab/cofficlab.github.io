@@ -3,6 +3,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import FooterVue from '../components/Footer.vue';
 import CisumPage from '../components/Cisum/CisumPage.vue';
 import '../styles/hide_main.css';
+const lang = Astro.currentLocale ?? 'zh-cn';
 ---
 
 <StarlightPage
@@ -14,6 +15,6 @@ import '../styles/hide_main.css';
   headings={[]}
 />
 
-<CisumPage lang="zh" />
+<CisumPage lang={lang} />
 
-<FooterVue lang="en" />
+<FooterVue lang={lang} />

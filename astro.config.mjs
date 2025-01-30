@@ -12,6 +12,18 @@ export default defineConfig({
     starlight({
       customCss: ['./src/styles/custom.css'],
       title: 'Coffic',
+      defaultLocale: 'zh-cn',
+      locales: {
+        // 英文文档在 `src/content/docs/en/` 中。
+        en: {
+          label: 'English',
+        },
+        // 简体中文文档在 `src/content/docs/zh-cn/` 中。
+        'zh-cn': {
+          label: '简体中文',
+          lang: 'zh-CN',
+        },
+      },
       logo: {
         light: './src/assets/coffic/logo4.min.png',
         dark: './src/assets/coffic/logo4.min.png',

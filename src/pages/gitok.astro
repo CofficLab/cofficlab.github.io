@@ -3,6 +3,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import GitOKPage from '../components/GitOK/GitOKPage.vue';
 import FooterVue from '../components/Footer.vue';
 import '../styles/hide_main.css';
+const lang = Astro.currentLocale ?? 'zh-cn';
 ---
 
 <StarlightPage
@@ -15,6 +16,6 @@ import '../styles/hide_main.css';
   headings={[]}
 />
 
-<GitOKPage lang="zh" />
+<GitOKPage lang={lang} />
 
-<FooterVue lang="en" />
+<FooterVue lang={lang} />

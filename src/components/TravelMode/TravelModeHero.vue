@@ -13,13 +13,13 @@ const props = defineProps({
     lang: {
         type: String,
         default: 'zh',
-        validator: (value) => ['en', 'zh'].includes(value)
+        validator: (value) => ['en', 'zh', 'zh-cn'].includes(value)
     }
 })
 
 const title = 'TravelMode'
 
-const description = props.lang === 'zh'
+const description = props.lang.startsWith('zh')
     ? '控制 macOS APP 的联网权限'
     : 'Control the network permission of macOS APP'
 

@@ -3,6 +3,8 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import Products from '../components/Coffic/Products.vue';
 import Members from '../components/Coffic/Members.vue';
 import FooterVue from '../components/Footer.vue';
+
+const lang = Astro.currentLocale ?? 'zh-cn';
 ---
 
 <StarlightPage
@@ -35,7 +37,7 @@ import FooterVue from '../components/Footer.vue';
   headings={[]}
 />
 
-<Products />
-<Members />
+<Products lang={lang} />
+<Members lang={lang} />
 
-<FooterVue lang="en" />
+<FooterVue lang={lang} />
