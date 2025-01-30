@@ -1,5 +1,6 @@
 <template>
-    <footer class="bg-gradient-to-br from-gray-400/20 to-gray-400/10 dark:from-slate-800 dark:to-gray-800/80 z-50">
+    <footer
+        class="mt-24 bg-gradient-to-br from-gray-400/20 to-gray-400/10 dark:from-slate-800 dark:to-gray-800/80 z-50">
         <div class="flex flex-col justify-center">
             <a href="/" class="flex items-center self-center w-auto text-lg font-bold smart-link my-6">
                 <div class="flex flex-row justify-center w-full">
