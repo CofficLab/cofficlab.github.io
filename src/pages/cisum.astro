@@ -1,0 +1,18 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import FooterVue from '../components/Footer.vue';
+import CisumPage from '../components/Cisum/CisumPage.vue';
+---
+
+<StarlightPage
+  frontmatter={{
+    title: 'Cisum',
+    template: 'splash',
+  }}
+  hasSidebar={false}
+  headings={[]}
+/>
+
+<CisumPage lang="zh" />
+
+<FooterVue lang="en" />
