@@ -7,6 +7,13 @@
     </div>
 </template>
 
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
+    name: 'Members'
+})
+</script>
+
 <script setup lang="ts">
 import Member from '../Common/Member.vue';
 
