@@ -10,6 +10,10 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'My Docs',
+      logo: {
+        light: './src/assets/coffic/logo3.min.png',
+        dark: './src/assets/coffic/logo3.min.png',
+      },
       social: {
         github: 'https://github.com/withastro/starlight',
       },
