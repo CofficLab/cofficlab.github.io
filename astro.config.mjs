@@ -18,7 +18,7 @@ export default defineConfig({
         Header: './src/components/Header.astro',
       },
       social: {
-        github: 'https://github.com/withastro/starlight',
+        github: 'https://github.com/cofficlab',
       },
       sidebar: [
         {
