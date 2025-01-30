@@ -3,11 +3,11 @@
     <Features :lang="lang" />
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Features from './Features.vue'
 import CisumHero from './CisumHero.vue'
 
-const props = defineProps({
+defineProps({
     lang: {
         type: String,
         default: 'en'

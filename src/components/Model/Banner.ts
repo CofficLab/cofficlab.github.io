@@ -1,5 +1,5 @@
 import Feature from './Feature';
-import { Component } from 'vue';
+import type { Component } from 'vue';
 
 class Banner {
     private translations: Map<string, {
