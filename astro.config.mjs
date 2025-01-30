@@ -9,10 +9,13 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [
     starlight({
-      title: 'My Docs',
+      title: 'Coffic',
       logo: {
         light: './src/assets/coffic/logo3.min.png',
         dark: './src/assets/coffic/logo3.min.png',
+      },
+      components: {
+        Header: './src/components/Header.astro',
       },
       social: {
         github: 'https://github.com/withastro/starlight',
