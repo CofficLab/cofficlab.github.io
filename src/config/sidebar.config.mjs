@@ -1,7 +1,7 @@
 export default [
   {
     label: 'JuiceEditorDocs',
-    autogenerate: { directory: 'juice_editor' },
+    autogenerate: { directory: 'juice_editor_docs' },
   },
   {
     label: 'leadingNavLinks',

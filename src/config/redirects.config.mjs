@@ -8,8 +8,6 @@ export default {
   '/en/travelmode': '/travelmode',
   '/en/juiceNote': '/juice_note',
   '/en/juiceEditor': '/juice_editor',
-  '/en/juiceEditor/guide/introduce': '/juice_editor/guide/introduce',
-
-  '/zh/juiceEditor': '/zh/juice_editor',
-  '/zh/juiceEditor/guide/introduce': '/zh/juice_editor/guide/introduce',
+  '/en/juiceEditor/guide/introduce': '/juice_editor_docs/guide/introduce',
+  '/en/juice_editor_docs/guide/introduce': '/juice_editor_docs/guide/introduce',
 };
