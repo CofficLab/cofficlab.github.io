@@ -1,6 +1,11 @@
 ---
 title: Laravel 入门完全指南
 date: 2025-04-15
+excerpt: Laravel 是当前最流行的 PHP 全栈开发框架，具有优雅的语法、MVC 架构、内置工具和活跃的社区。本文介绍了 Laravel 的核心特性、环境准备、路由系统、控制器、模型与数据库、快速构建示例应用、特色功能、学习路径建议、常见问题和资源推荐。
+authors:
+  - name: Nookery
+    picture: https://avatars.githubusercontent.com/u/5194193?s=200
+    url: https://github.com/nookery
 tags:
   - Laravel
 ---

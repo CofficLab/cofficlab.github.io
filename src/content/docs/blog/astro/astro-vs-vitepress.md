@@ -1,6 +1,11 @@
 ---
 title: Astro 与 VitePress 技术选型指南
 date: 2025-01-30
+excerpt: 本文对比了 Astro 和 VitePress 在核心架构、性能表现、功能特性、生态系统等方面的差异，并提供了使用场景建议和迁移成本分析。
+authors:
+  - name: Nookery
+    picture: https://avatars.githubusercontent.com/u/5194193?s=200
+    url: https://github.com/nookery
 tags:
   - Astro
   - VitePress

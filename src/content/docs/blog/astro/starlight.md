@@ -1,6 +1,11 @@
 ---
 title: 使用 Starlight 构建文档站点
 date: 2025-01-31
+excerpt: Starlight 是 Astro 生态中的文档主题工具，专为构建现代化、高性能的文档网站而设计。它基于 Astro 构建，继承了其快速、灵活的特性，同时提供了开箱即用的文档功能。
+authors:
+  - name: Nookery
+    picture: https://avatars.githubusercontent.com/u/5194193?s=200
+    url: https://github.com/nookery
 tags:
   - Starlight
 ---

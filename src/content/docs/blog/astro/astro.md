@@ -1,6 +1,11 @@
 ---
 title: 认识 Astro
 date: 2025-01-30
+excerpt: Astro 是一个现代的静态网站生成器，专注于构建快速、内容丰富的网站。它的设计目标是通过减少 JavaScript 的使用来提高网站的性能，同时提供灵活的开发体验。
+authors:
+  - name: Nookery
+    picture: https://avatars.githubusercontent.com/u/5194193?s=200
+    url: https://github.com/nookery
 tags:
   - Astro
 ---

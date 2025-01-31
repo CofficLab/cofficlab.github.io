@@ -1,6 +1,11 @@
 ---
 title: Starlight 插件扩展指南
 date: 2025-01-31
+excerpt: Starlight 的插件系统基于 Astro 集成开发，允许通过模块化方式扩展文档站点的功能。所有插件都通过 npm 包分发，支持官方和社区插件。
+authors:
+  - name: Nookery
+    picture: https://avatars.githubusercontent.com/u/5194193?s=200
+    url: https://github.com/nookery
 tags:
   - Starlight
 ---

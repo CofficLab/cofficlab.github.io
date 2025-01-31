@@ -1,6 +1,11 @@
 ---
 title: Astro 与 Nuxt.js 全栈框架对比指南
 date: 2025-03-20
+excerpt: 本文对比了 Astro 和 Nuxt.js 在核心架构、性能表现、功能特性、生态系统等方面的差异，并提供了使用场景建议和迁移成本分析。
+authors:
+  - name: Nookery
+    picture: https://avatars.githubusercontent.com/u/5194193?s=200
+    url: https://github.com/nookery
 tags:
   - Astro
   - Nuxt.js
