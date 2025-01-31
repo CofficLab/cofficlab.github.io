@@ -14,4 +14,6 @@ const props = defineProps({
         default: 'en'
     }
 })
+
+const lang = ['zh-cn', 'zh-CN'].includes(props.lang) ? 'zh' : props.lang
 </script>

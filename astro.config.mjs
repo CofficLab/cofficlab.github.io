@@ -2,67 +2,26 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import vue from '@astrojs/vue';
-import starlightUtils from '@lorenzo_lewis/starlight-utils';
 import tailwind from '@astrojs/tailwind';
+import starlightConfig from './src/config/starlight.config.mjs';
+import redirectsConfig from './src/config/redirects.config.mjs';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://cofficlab.github.io',
-  redirects: {
-    '/zh/juiceEditor': '/juiceEditor',
+  vite: {
+    server: {
+      watch: {
+        // 监听配置文件目录变化
+        ignored: ['!**/src/config/**'],
+      },
+    },
   },
+  redirects: redirectsConfig,
   integrations: [
-    starlight({
-      plugins: [
-        starlightUtils({
-          navLinks: {
-            leading: { useSidebarLabelled: 'leadingNavLinks' },
-          },
-        }),
-      ],
-      customCss: ['./src/styles/custom.css'],
-      title: 'Coffic',
-      defaultLocale: 'root',
-      locales: {
-        root: {
-          label: 'English',
-          lang: 'en', // lang 是 root 语言必须的
-        },
-        'zh-cn': {
-          label: '简体中文',
-          lang: 'zh-CN',
-        },
-      },
-      logo: {
-        light: './src/assets/coffic/logo4.min.png',
-        dark: './src/assets/coffic/logo4.min.png',
-      },
-      components: {
-        PageFrame: './src/custom/PageFrame.astro',
-        ContentPanel: './src/custom/ContentPanel.astro',
-      },
-      social: {
-        github: 'https://github.com/cofficlab',
-      },
-      sidebar: [
-        {
-          label: 'JuiceEditorDocs',
-          autogenerate: { directory: 'juiceEditor' },
-        },
-        {
-          label: 'leadingNavLinks',
-          items: [
-            { label: 'Cisum', link: '/cisum' },
-            { label: 'Gitok', link: '/gitok' },
-            { label: 'TravelMode', link: '/travelmode' },
-            { label: 'JuiceNote', link: '/juice_note' },
-            { label: 'JuiceEditor', link: '/juice_editor' },
-          ],
-        },
-      ],
-    }),
+    starlight(starlightConfig),
     vue({
-      include: ['**/*.vue'], // 明确包含Vue组件
+      include: ['**/*.vue'],
     }),
     tailwind(),
   ],
