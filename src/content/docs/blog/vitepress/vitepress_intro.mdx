@@ -1,0 +1,213 @@
+---
+title: "Vitepress完全入门指南：从零搭建现代化文档站点"
+date: 2024-02-20
+excerpt: Vitepress 是基于 Vite 和 Vue 3 的静态站点生成器，专为构建快速、内容优先的网站而设计。主要特性包括：基于 Vite 的极速开发体验、支持 Markdown 和 Vue 组件混写、默认主题包含完善的文档功能、高度可定制的配置系统、自动生成路由和预渲染。
+authors:
+  - name: Nookery
+    picture: https://avatars.githubusercontent.com/u/5194193?s=200
+    url: https://github.com/nookery
+tags:
+  - Vitepress
+  - 文档站点
+---
+
+# Vitepress 完全入门指南
+
+## 什么是 Vitepress？
+Vitepress 是基于 Vite 和 Vue 3 的静态站点生成器，专为构建快速、内容优先的网站而设计。主要特性包括：
+- ⚡ 基于 Vite 的极速开发体验
+- 🖋️ 支持 Markdown 和 Vue 组件混写
+- 🎨 默认主题包含完善的文档功能
+- 🔧 高度可定制的配置系统
+- 📦 自动生成路由和预渲染
+
+## 环境准备
+1. 确保已安装 Node.js 16+ 版本
+2. 推荐使用 npm 7+ 或 yarn 1.x 包管理器
+
+## 快速开始
+### 1. 创建项目
+```bash
+mkdir vitepress-demo && cd vitepress-demo
+npm init -y
+npm install -D vitepress vue
+```
+
+### 2. 初始化文档结构
+```bash
+mkdir docs && echo '# Hello VitePress' > docs/index.md
+```
+
+### 3. 添加基础配置
+创建 `docs/.vitepress/config.js`：
+```javascript
+import { defineConfig } from 'vitepress'
+
+export default defineConfig({
+  title: 'My Docs',
+  description: 'VitePress 演示文档',
+  themeConfig: {
+    nav: [
+      { text: '指南', link: '/guide/' },
+      { text: '配置', link: '/config/' }
+    ],
+    sidebar: {
+      '/guide/': [
+        {
+          text: '指南',
+          items: [
+            { text: '快速开始', link: '/guide/' },
+            { text: '部署指南', link: '/guide/deployment' }
+          ]
+        }
+      ]
+    }
+  }
+})
+```
+
+### 4. 配置脚本
+修改 package.json：
+```json
+{
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  }
+}
+```
+
+## 核心功能详解
+### Markdown 扩展功能
+```markdown
+---
+// Frontmatter 配置
+title: 自定义标题
+---
+
+# 标准标题
+
+- 自动生成锚点链接
+- 支持 GitHub 风格的表格
+
+| 功能     | 状态   |
+|----------|--------|
+| 代码高亮 | ✅ 支持 |
+| 数学公式 | ⚡ 扩展 |
+
+```ts
+// 代码块支持行高亮
+const message: string = 'Hello World' // [!code hl]
+```
+
+:: tip
+自定义容器提示框
+::
+```
+
+### 主题定制
+创建 `.vitepress/theme/index.js`：
+```javascript
+import DefaultTheme from 'vitepress/theme'
+
+export default {
+  ...DefaultTheme,
+  enhanceApp({ app }) {
+    // 注册全局组件
+    app.component('MyComponent', {
+      template: '<div>自定义组件</div>'
+    })
+  }
+}
+```
+
+## 部署指南
+### GitHub Pages 部署
+1. 创建 `deploy.sh`：
+```bash
+#!/usr/bin/env sh
+set -e
+
+npm run docs:build
+cd docs/.vitepress/dist
+
+git init
+git add -A
+git commit -m 'deploy'
+
+git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
+cd -
+```
+
+### Netlify 部署
+1. 新建 `netlify.toml`：
+```toml
+[build]
+  command = "npm run docs:build"
+  publish = "docs/.vitepress/dist"
+```
+
+## 进阶功能
+### 国际化支持
+```javascript
+// config.js
+export default defineConfig({
+  locales: {
+    '/': {
+      lang: 'zh-CN',
+      title: '文档',
+      description: '中文文档'
+    },
+    '/en/': {
+      lang: 'en-US',
+      title: 'Docs',
+      description: 'English Documentation'
+    }
+  }
+})
+```
+
+### 自定义布局
+创建 `.vitepress/theme/Layout.vue`：
+```vue
+<template>
+  <Layout>
+    <template #aside-outline-before>
+      <CustomComponent />
+    </template>
+  </Layout>
+</template>
+```
+
+## 常见问题
+### 1. 如何添加 Google Analytics？
+```javascript
+// config.js
+export default defineConfig({
+  head: [
+    ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y' }],
+    ['script', {}, `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-XXXXX-Y');
+    `]
+  ]
+})
+```
+
+### 2. 如何实现暗黑模式？
+```javascript
+export default defineConfig({
+  appearance: 'dark' // 强制模式 | 或设为 true 启用自动切换
+})
+```
+
+## 总结
+本指南介绍了：
+✅ 项目初始化与基础配置  
+✅ 文档结构与导航配置  
+✅ Markdown 扩展功能使用  
+✅ 主题定制与组件扩展  
+✅ 主流部署方案实现 

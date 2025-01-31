@@ -1,0 +1,233 @@
+---
+title: "Vitepress国际化全方案解析"
+date: 2024-02-24
+excerpt: "构建多语言文档站点的完整实践指南"
+authors:
+  - name: Nookery
+    picture: https://avatars.githubusercontent.com/u/5194193?s=200
+tags:
+  - Vitepress
+  - 国际化
+---
+
+# 多语言解决方案深度实践
+
+## 基础配置架构
+```javascript:docs/.vitepress/config.js
+export default defineConfig({
+  locales: {
+    '/zh/': {
+      lang: 'zh-CN',
+      title: '文档',
+      description: '中文文档',
+      label: '简体中文'
+    },
+    '/en/': {
+      lang: 'en-US',
+      title: 'Documentation',
+      description: 'English Docs',
+      label: 'English'
+    }
+  },
+  themeConfig: {
+    // 需要国际化的主题配置项
+  }
+})
+```
+
+## 1. 路由与目录结构
+### 文件结构
+```bash
+docs/
+├─ zh/
+│  ├─ guide/
+│  │  └─ index.md
+│  └─ config.md
+├─ en/
+│  ├─ guide/
+│  │  └─ index.md
+│  └─ config.md
+└─ .vitepress/
+```
+
+### 智能路由配置
+```javascript
+function getSidebar() {
+  return {
+    '/zh/': getZhSidebar(),
+    '/en/': getEnSidebar()
+  }
+}
+
+function getZhSidebar() {
+  return [
+    {
+      text: '指南',
+      items: [
+        { text: '快速开始', link: '/zh/guide/' },
+        { text: '配置', link: '/zh/config' }
+      ]
+    }
+  ]
+}
+```
+
+## 2. UI组件国际化
+### 语言切换组件
+```vue:components/LangSwitch.vue
+<script setup>
+import { useData } from 'vitepress'
+
+const { site, localePath } = useData()
+</script>
+
+<template>
+  <div class="lang-switch">
+    <a 
+      v-for="lang in site.locales"
+      :href="localePath(lang.path)"
+      :class="{ active: lang.path === site.lang }"
+    >
+      {{ lang.label }}
+    </a>
+  </div>
+</template>
+```
+
+### 本地化文案管理
+```javascript:locales/en.js
+export default {
+  ui: {
+    search: 'Search',
+    toc: 'On This Page',
+    editLink: 'Edit this page'
+  }
+}
+```
+
+## 3. 内容翻译策略
+### Frontmatter管理
+```markdown
+---
+title: 
+  zh: 快速开始
+  en: Quick Start
+---
+```
+
+### 动态内容翻译
+```vue
+<script setup>
+import { useData } from 'vitepress'
+import enText from '../locales/en'
+import zhText from '../locales/zh'
+
+const { lang } = useData()
+const t = lang.value === 'zh' ? zhText : enText
+</script>
+
+<template>
+  <button>{{ t.ui.editLink }}</button>
+</template>
+```
+
+## 4. 高级优化方案
+### 按需加载语言包
+```javascript
+const loadLocaleMessages = async (lang) => {
+  const messages = await import(`../locales/${lang}.js`)
+  return messages.default
+}
+```
+
+### SEO增强配置
+```javascript
+head: [
+  ['link', { 
+    rel: 'alternate',
+    hreflang: 'zh',
+    href: 'https://yoursite.com/zh/'
+  }],
+  ['link', { 
+    rel: 'alternate', 
+    hreflang: 'en',
+    href: 'https://yoursite.com/en/' 
+  }]
+]
+```
+
+## 最佳实践
+1. **统一翻译管理**：使用i18n库（如vue-i18n）
+```javascript
+import { createI18n } from 'vue-i18n'
+
+const i18n = createI18n({
+  legacy: false,
+  locale: 'en',
+  messages: {
+    en: { /* 英文翻译 */ },
+    zh: { /* 中文翻译 */ }
+  }
+})
+
+app.use(i18n)
+```
+
+2. **自动化检测**：根据浏览器语言重定向
+```javascript
+// .vitepress/theme/index.js
+export default {
+  enhanceApp({ app, router }) {
+    router.onBeforeRouteChange = (to) => {
+      const preferLang = navigator.language.startsWith('zh') ? 'zh' : 'en'
+      if (to === '/') return `/${preferLang}/`
+    }
+  }
+}
+```
+
+3. **翻译质量保障**：
+   - 使用Lokalise等翻译管理平台
+   - 添加Markdownlint多语言规则
+   - 实施翻译覆盖率检测
+
+## 常见问题
+### 如何保持多语言内容同步？
+```bash
+# 使用diff工具对比文件
+git diff HEAD --color-words -- zh/ en/
+
+# 自动化同步脚本示例
+find zh/ -name "*.md" | while read file; do
+  en_file=${file/zh/en}
+  if [ ! -f "$en_file" ]; then
+    cp "$file" "$en_file"
+  fi
+done
+```
+
+### 如何处理未翻译页面？
+```javascript
+// 中间件示例
+export default defineConfig({
+  async transformPageData(pageData) {
+    if (pageData.params?.lang === 'en' && !pageData.translated) {
+      return { 
+        frontmatter: { 
+          layout: 'untranslated',
+          title: '[Draft] ' + pageData.title 
+        }
+      }
+    }
+  }
+})
+```
+
+## 总结
+通过本方案可实现：
+✅ 自动语言检测与切换  
+✅ 内容与UI分离翻译  
+✅ SEO友好型多语言结构  
+✅ 翻译流程自动化管理  
+
+完整示例参考[官方i18n示例](https://github.com/vuejs/vitepress/tree/main/examples/docs/i18n)，建议结合CI/CD实现自动化翻译流程。 
