@@ -22,13 +22,12 @@ export default defineConfig({
       ],
       customCss: ['./src/styles/custom.css'],
       title: 'Coffic',
-      defaultLocale: 'en',
+      defaultLocale: 'root',
       locales: {
-        // 英文文档在 `src/content/docs/en/` 中。
-        en: {
+        root: {
           label: 'English',
+          lang: 'en', // lang 是 root 语言必须的
         },
-        // 简体中文文档在 `src/content/docs/zh-cn/` 中。
         'zh-cn': {
           label: '简体中文',
           lang: 'zh-CN',
@@ -47,7 +46,7 @@ export default defineConfig({
       },
       sidebar: [
         {
-          label: 'JuiceEditor',
+          label: 'JuiceEditorDocs',
           autogenerate: { directory: 'juiceEditor' },
         },
         {
