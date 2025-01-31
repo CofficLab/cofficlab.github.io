@@ -1,6 +1,11 @@
 ---
 title: Astro 路由系统完全指南
 date: 2025-05-10
+excerpt: Astro 的路由系统通过文件系统约定提供了直观的开发体验，同时支持从静态生成到服务端渲染的多种模式。
+authors:
+  - name: Nookery
+    picture: https://avatars.githubusercontent.com/u/5194193?s=200
+    url: https://github.com/nookery
 tags:
   - Astro
 ---
