@@ -1,8 +1,10 @@
 import starlightUtils from '@lorenzo_lewis/starlight-utils';
 import sidebarConfig from './sidebar.config.mjs';
+import starlightBlog from 'starlight-blog';
 
 export default {
   plugins: [
+    starlightBlog(),
     starlightUtils({
       navLinks: {
         leading: { useSidebarLabelled: 'leadingNavLinks' },
