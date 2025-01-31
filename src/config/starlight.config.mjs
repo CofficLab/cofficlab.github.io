@@ -1,9 +1,11 @@
 import starlightUtils from '@lorenzo_lewis/starlight-utils';
 import sidebarConfig from './sidebar.config.mjs';
 import starlightBlog from 'starlight-blog';
+import starlightLinksValidator from 'starlight-links-validator';
 
 export default {
   plugins: [
+    starlightLinksValidator(),
     starlightBlog(),
     starlightUtils({
       navLinks: {
