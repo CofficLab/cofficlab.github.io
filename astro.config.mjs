@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import vue from '@astrojs/vue';
-
+import starlightUtils from '@lorenzo_lewis/starlight-utils';
 import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
@@ -13,6 +13,13 @@ export default defineConfig({
   },
   integrations: [
     starlight({
+      plugins: [
+        starlightUtils({
+          navLinks: {
+            leading: { useSidebarLabelled: 'leadingNavLinks' },
+          },
+        }),
+      ],
       customCss: ['./src/styles/custom.css'],
       title: 'Coffic',
       defaultLocale: 'en',
@@ -32,7 +39,6 @@ export default defineConfig({
         dark: './src/assets/coffic/logo4.min.png',
       },
       components: {
-        Header: './src/custom/Header.astro',
         PageFrame: './src/custom/PageFrame.astro',
         ContentPanel: './src/custom/ContentPanel.astro',
       },
@@ -43,6 +49,16 @@ export default defineConfig({
         {
           label: 'JuiceEditor',
           autogenerate: { directory: 'juiceEditor' },
+        },
+        {
+          label: 'leadingNavLinks',
+          items: [
+            { label: 'Cisum', link: '/cisum' },
+            { label: 'Gitok', link: '/gitok' },
+            { label: 'TravelMode', link: '/travelmode' },
+            { label: 'JuiceNote', link: '/juice_note' },
+            { label: 'JuiceEditor', link: '/juice_editor' },
+          ],
         },
       ],
     }),

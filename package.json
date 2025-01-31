@@ -13,6 +13,7 @@
     "@astrojs/starlight": "^0.31.1",
     "@astrojs/tailwind": "^5.1.5",
     "@astrojs/vue": "^5.0.6",
+    "@lorenzo_lewis/starlight-utils": "^0.2.0",
     "@remixicon/vue": "^4.6.0",
     "astro": "^5.1.5",
     "html-to-image": "^1.11.11",
