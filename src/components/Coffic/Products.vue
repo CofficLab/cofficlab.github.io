@@ -22,9 +22,11 @@ const props = defineProps({
   lang: {
     type: String,
     default: 'en',
-    validator: (value: string) => ['en', 'zh'].includes(value)
+    validator: (value: string) => ['en', 'zh', 'zh-cn', 'zh-CN'].includes(value)
   }
 });
+
+const lang = ['zh-cn', 'zh-CN'].includes(props.lang) ? 'zh' : props.lang
 
 interface Product {
   avatar: string;
@@ -78,8 +80,8 @@ const products = [
 const getLocalizedProduct = (product: Product) => {
   return {
     ...product,
-    name: typeof product.name === 'object' ? product.name[props.lang as keyof typeof product.name] : product.name,
-    description: typeof product.description === 'object' ? product.description[props.lang as keyof typeof product.description] : product.description,
+    name: typeof product.name === 'object' ? product.name[lang as keyof typeof product.name] : product.name,
+    description: typeof product.description === 'object' ? product.description[lang as keyof typeof product.description] : product.description,
   };
 };
 </script>

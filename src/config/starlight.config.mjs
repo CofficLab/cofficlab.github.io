@@ -17,7 +17,7 @@ export default {
       label: 'English',
       lang: 'en',
     },
-    'zh-cn': {
+    zh: {
       label: '简体中文',
       lang: 'zh-CN',
     },

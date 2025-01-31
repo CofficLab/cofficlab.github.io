@@ -21,7 +21,7 @@ const props = defineProps({
     lang: {
         type: String,
         default: 'en',
-        validator: (value: string) => ['en', 'zh', 'zh-cn'].includes(value)
+        validator: (value: string) => ['en', 'zh', 'zh-cn', 'zh-CN'].includes(value)
     }
 });
 
@@ -63,8 +63,8 @@ const members = [
 const getLocalizedMember = (member: Member) => {
     return {
         ...member,
-        name: typeof member.name === 'object' ? member.name[props.lang as keyof typeof member.name] : member.name,
-        description: typeof member.description === 'object' ? member.description[props.lang as keyof typeof member.description] : member.description,
+        name: typeof member.name === 'object' ? member.name[lang as keyof typeof member.name] : member.name,
+        description: typeof member.description === 'object' ? member.description[lang as keyof typeof member.description] : member.description,
     };
 };
 </script>
