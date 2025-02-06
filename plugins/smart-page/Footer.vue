@@ -64,3 +64,13 @@ defineProps({
     },
 });
 </script>
+
+<style>
+footer li {
+    @apply list-none;
+}
+
+footer a {
+    @apply no-underline;
+}
+</style>

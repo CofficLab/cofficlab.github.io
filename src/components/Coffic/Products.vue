@@ -46,13 +46,13 @@ const products = [
     github: 'https://github.com/yueyinet/cisum',
     homepage: '/' + props.lang + '/cisum',
   },
-  {
-    avatar: '/images/juiceNote/logo.min.png',
-    name: { en: 'JuiceNote', zh: '快易知' },
-    description: { en: 'A note application', zh: 'macOS 的笔记应用' },
-    store: 'https://apps.apple.com/cn/app/%E5%BF%AB%E6%98%93%E7%9F%A5/id6457892799',
-    homepage: '/' + props.lang + '/juiceNote',
-  },
+  // {
+  //   avatar: '/images/juiceNote/logo.min.png',
+  //   name: { en: 'JuiceNote', zh: '快易知' },
+  //   description: { en: 'A note application', zh: 'macOS 的笔记应用' },
+  //   store: 'https://apps.apple.com/cn/app/%E5%BF%AB%E6%98%93%E7%9F%A5/id6457892799',
+  //   homepage: '/' + props.lang + '/juiceNote',
+  // },
   {
     avatar: '/images/travelmode/logo.min.png',
     name: 'TravelMode',
