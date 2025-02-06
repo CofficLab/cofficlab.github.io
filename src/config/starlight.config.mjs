@@ -2,9 +2,17 @@ import starlightUtils from '@lorenzo_lewis/starlight-utils';
 import sidebarConfig from './sidebar.config.mjs';
 import starlightBlog from 'starlight-blog';
 import starlightLinksValidator from 'starlight-links-validator';
+import smartHeaderPlugin from '../../plugins/smart-header';
+import smartStylePlugin from '../../plugins/smart-style';
+import smartSearchPlugin from '../../plugins/smart-search';
+import smartPagePlugin from '../../plugins/smart-page';
 
 export default {
   plugins: [
+    smartStylePlugin(),
+    smartSearchPlugin(),
+    smartHeaderPlugin(),
+    smartPagePlugin(),
     starlightLinksValidator(),
     starlightBlog(),
     starlightUtils({
@@ -13,7 +21,6 @@ export default {
       },
     }),
   ],
-  customCss: ['./src/styles/custom.css'],
   title: 'Coffic',
   defaultLocale: 'root',
   locales: {

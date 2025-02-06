@@ -1,8 +1,6 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import FooterVue from '../components/Footer.vue';
 import CisumPage from '../components/Cisum/CisumPage.vue';
-import '../styles/hide_main.css';
 const lang = Astro.currentLocale ?? 'en';
 ---
 
@@ -12,9 +10,8 @@ const lang = Astro.currentLocale ?? 'en';
     template: 'splash',
   }}
   hasSidebar={false}
-  headings={[]}
-/>
-
-<CisumPage lang={lang} />
-
-<FooterVue lang={lang} />
+  headings={[]}>
+  <div class="not-content">
+    <CisumPage lang={lang} />
+  </div>
+</StarlightPage>
