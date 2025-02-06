@@ -2,7 +2,6 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import Products from '../components/Coffic/Products.vue';
 import Members from '../components/Coffic/Members.vue';
-import FooterVue from '../components/Footer.vue';
 
 const lang = Astro.currentLocale ?? 'en';
 ---
@@ -34,10 +33,9 @@ const lang = Astro.currentLocale ?? 'en';
     },
   }}
   hasSidebar={false}
-  headings={[]}
-/>
-
-<Products lang={lang} />
-<Members lang={lang} />
-
-<FooterVue lang={lang} />
+  headings={[]}>
+  <div class="not-content">
+    <Products lang={lang} />
+    <Members lang={lang} />
+  </div>
+</StarlightPage>

@@ -1,0 +1,11 @@
+header.header {
+  @apply bg-transparent border-0;
+}
+
+header img {
+  @apply hover:scale-110 transition-all duration-300;
+}
+
+header .site-title span {
+  @apply hover:scale-110 transition-all duration-300;
+}
