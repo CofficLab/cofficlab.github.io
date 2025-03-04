@@ -12,14 +12,14 @@ import CisumApp from './CisumApp.vue';
 const props = defineProps({
     lang: {
         type: String,
-        default: 'zh',
-        validator: (value: string) => ['en', 'zh'].includes(value)
+        default: 'zh-cn',
+        validator: (value: string) => ['en', 'zh-cn'].includes(value)
     }
 })
 
 const title = 'Cisum'
 
-const description = props.lang === 'zh' ? '播放音乐，本该如此简单' : 'Play music, it should be so simple'
+const description = props.lang === 'zh-cn' ? '播放音乐，本该如此简单' : 'Play music, it should be so simple'
 
 const links = [
     { text: 'GitHub', href: 'https://github.com/Cofficlab/Cisum_SwiftUI' },

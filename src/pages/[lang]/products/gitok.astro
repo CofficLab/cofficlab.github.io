@@ -1,0 +1,23 @@
+---
+import GitOKPage from '@/components/GitOK/GitOKPage.vue';
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props as Props;
+
+export const prerender = true;
+export const getStaticPaths = () => {
+  return [
+    {
+      params: { lang: 'en' },
+    },
+    {
+      params: { lang: 'zh' },
+    },
+  ];
+};
+---
+
+<GitOKPage lang={lang} />

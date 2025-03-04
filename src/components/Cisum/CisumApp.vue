@@ -87,7 +87,7 @@ const props = defineProps({
     lang: {
         type: String,
         default: 'zh',
-        validator: (value) => ['zh', 'en'].includes(value)
+        validator: (value) => ['zh-cn', 'en'].includes(value)
     },
     songIndex: {
         type: Number,

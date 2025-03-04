@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col gap-4 container mx-auto items-center my-10">
-    <h2>{{ lang === 'en' ? 'Our Products' : '我们的产品' }}</h2>
+    <h2 class="text-4xl mb-4">{{ lang === 'en' ? 'Our Products' : '我们的产品' }}</h2>
     <div data-type="products" class="flex flex-row gap-4 container mx-auto justify-center">
       <Product v-for="product in products" :key="typeof product.name === 'string' ? product.name : product.name.en"
         :product="getLocalizedProduct(product)" />
@@ -16,7 +16,7 @@ export default defineComponent({
 </script>
 
 <script setup lang="ts">
-import Product from '../Common/Product.vue';
+import Product from '@/components/Common/Product.vue';
 
 const props = defineProps({
   lang: {

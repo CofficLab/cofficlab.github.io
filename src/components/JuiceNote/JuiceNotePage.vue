@@ -4,16 +4,17 @@
     <Features :lang="lang" />
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Features from './Features.vue'
 import JuiceNoteHero from './JuiceNoteHero.vue'
-
+import { normalizeLang } from '@/utils/lang'
 const props = defineProps({
     lang: {
         type: String,
-        default: 'en'
+        default: 'en',
+        validator: (value: string) => ['en', 'zh-cn'].includes(value)
     }
 })
 
-const lang = ['zh-cn', 'zh-CN'].includes(props.lang) ? 'zh' : props.lang
+const lang = normalizeLang(props.lang)
 </script>

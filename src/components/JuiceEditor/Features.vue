@@ -14,7 +14,7 @@ const props = defineProps({
     lang: {
         type: String,
         default: 'en',
-        validator: (value: string) => ['en', 'zh'].includes(value)
+        validator: (value: string) => ['en', 'zh-cn'].includes(value)
     }
 })
 

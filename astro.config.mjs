@@ -1,28 +1,70 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
+import path from 'path';
+import pagefind from 'astro-pagefind';
+import tailwindcss from '@tailwindcss/vite';
 import vue from '@astrojs/vue';
-import tailwind from '@astrojs/tailwind';
-import starlightConfig from './src/config/starlight.config.mjs';
-import redirectsConfig from './src/config/redirects.config.mjs';
+
+import markdoc from '@astrojs/markdoc';
+
+import mdx from '@astrojs/mdx';
+
+import sitemap from '@astrojs/sitemap';
+
+import robotsTxt from 'astro-robots-txt';
+
+import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://cofficlab.github.io',
+
+  prefetch: {
+    prefetchAll: true,
+  },
+
   vite: {
     server: {
-      watch: {
-        // 监听配置文件目录变化
-        ignored: ['!**/src/config/**'],
+      hmr: {
+        overlay: false,
       },
     },
+
+    resolve: {
+      alias: {
+        '@': path.resolve('./src'),
+        '@components': path.resolve('./src/components'),
+        '@utils': path.resolve('./src/utils'),
+        '@paths': path.resolve('./src/paths'),
+        '@database': path.resolve('./src/database'),
+        '@models': path.resolve('./src/models'),
+        '@layouts': path.resolve('./src/layouts'),
+        '@interface': path.resolve('./src/interface'),
+        '@assets': path.resolve('./src/assets'),
+      },
+    },
+
+    plugins: [tailwindcss()],
   },
-  redirects: redirectsConfig,
+
   integrations: [
-    starlight(starlightConfig),
-    vue({
-      include: ['**/*.vue'],
+    pagefind(),
+    vue(),
+    markdoc(),
+    mdx(),
+    sitemap({
+      filter: (page) => page !== 'https://kuaiyizhi.cn/auth/login',
     }),
-    tailwind(),
+    robotsTxt({
+      policy: [
+        {
+          userAgent: '*',
+          allow: '/',
+          disallow: ['/auth/login'],
+        },
+      ],
+    }),
   ],
+
+  adapter: cloudflare(),
 });

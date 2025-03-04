@@ -3,6 +3,10 @@
         "astrojs",
         "Cisum",
         "coffic",
-        "frontmatter"
+        "frontmatter",
+        "markdoc",
+        "pagefind",
+        "remixicon",
+        "travelmode"
     ]
 }

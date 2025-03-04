@@ -16,7 +16,7 @@ class Banner {
         this.component = null;
         this.componentProps = {};
         // Initialize empty entries for both languages
-        this.translations.set('zh', { title: '', description: '' });
+        this.translations.set('zh-cn', { title: '', description: '' });
         this.translations.set('en', { title: '', description: '' });
     }
 
@@ -25,8 +25,8 @@ class Banner {
     }
 
     public setZhTitle(title: string): Banner {
-        const current = this.translations.get('zh') || { title: '', description: '' };
-        this.translations.set('zh', { ...current, title });
+        const current = this.translations.get('zh-cn') || { title: '', description: '' };
+        this.translations.set('zh-cn', { ...current, title });
         return this;
     }
 
@@ -37,8 +37,8 @@ class Banner {
     }
 
     public setZhDescription(description: string): Banner {
-        const current = this.translations.get('zh') || { title: '', description: '' };
-        this.translations.set('zh', { ...current, description });
+        const current = this.translations.get('zh-cn') || { title: '', description: '' };
+        this.translations.set('zh-cn', { ...current, description });
         return this;
     }
 

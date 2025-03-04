@@ -13,14 +13,14 @@ import JuiceEditorApp from './JuiceEditorApp.vue';
 const props = defineProps({
     lang: {
         type: String,
-        default: 'zh',
-        validator: (value: string) => ['en', 'zh'].includes(value)
+        default: 'zh-cn',
+        validator: (value: string) => ['en', 'zh-cn'].includes(value)
     }
 })
 
 const title = 'Juice Editor'
 
-const description = props.lang === 'zh' ? '仅需一个标签，嵌入到任何项目中' : 'A powerful and flexible rich text editor'
+const description = props.lang === 'zh-cn' ? '仅需一个标签，嵌入到任何项目中' : 'A powerful and flexible rich text editor'
 
 const image = {
     src: '/images/juiceEditor/logo-512x512.png',

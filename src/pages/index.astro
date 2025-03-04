@@ -1,41 +1,13 @@
 ---
-import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import Products from '../components/Coffic/Products.vue';
-import Members from '../components/Coffic/Members.vue';
+import { getLang } from '@utils/lang';
 
-const lang = Astro.currentLocale ?? 'en';
+// 不要预渲染，因为这是一个动态页面（动态获取当前语言）
+export const prerender = false;
+
+const langCode = getLang(
+  Astro.preferredLocale ?? '',
+  Astro.currentLocale ?? ''
+);
+
+return Astro.redirect(`/${langCode}`);
 ---
-
-<StarlightPage
-  frontmatter={{
-    title: 'CofficLab',
-    description: 'build wonderful softwares with love',
-    template: 'splash',
-    draft: true,
-    hero: {
-      actions: [
-        {
-          text: 'GitHub',
-          link: 'https://github.com/cofficlab',
-          icon: 'right-arrow',
-        },
-      ],
-      tagline: 'with coffee and music',
-      title: 'CofficLab',
-      image: {
-        file: {
-          src: '/images/coffic/logo4.png',
-          width: 100,
-          height: 100,
-          format: 'png',
-        },
-      },
-    },
-  }}
-  hasSidebar={false}
-  headings={[]}>
-  <div class="not-content">
-    <Products lang={lang} />
-    <Members lang={lang} />
-  </div>
-</StarlightPage>

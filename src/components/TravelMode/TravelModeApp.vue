@@ -15,7 +15,7 @@
                                 <div class="flex items-center justify-between">
                                     <div class="flex flex-col">
                                         <div class="font-medium text-gray-900 dark:text-gray-100 text-start">{{ app.name
-                                            }}
+                                        }}
                                         </div>
                                         <div class="flex flex-row gap-2">
                                             <div class="text-sm text-gray-500">{{ app.pid }}</div>
@@ -87,11 +87,11 @@
                                 <td class="px-4 py-2">
                                     <span class="text-gray-600 dark:text-gray-300">{{ log.direction === '出' ? '出站' :
                                         '入站'
-                                        }}</span>
+                                    }}</span>
                                 </td>
                                 <td class="px-4 py-2">
                                     <span :class="log.status === '允许' ? 'text-green-500' : 'text-red-500'">{{ log.status
-                                        }}</span>
+                                    }}</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -174,7 +174,7 @@ const toolbarButtons = props.showToolbarIcons ? [
     }
 ] : []
 
-const handleBlockNetwork = (app) => {
+const handleBlockNetwork = (app: any) => {
     confirmDialogTitle.value = '确认禁止联网'
     confirmDialogMessage.value = `确定要禁止 ${app.name} 联网吗？（演示）`
     pendingAction.value = () => {
@@ -185,7 +185,7 @@ const handleBlockNetwork = (app) => {
     showConfirmDialog.value = true
 }
 
-const handleAllowNetwork = (app) => {
+const handleAllowNetwork = (app: any) => {
     confirmDialogTitle.value = '确认允许联网'
     confirmDialogMessage.value = `确定要允许 ${app.name} 联网吗？（这是演示）`
     pendingAction.value = () => {

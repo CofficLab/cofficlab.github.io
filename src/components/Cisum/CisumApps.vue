@@ -18,8 +18,8 @@ import CisumApp from './CisumApp.vue'
 defineProps({
     lang: {
         type: String,
-        default: 'zh',
-        validator: (value) => ['zh', 'en'].includes(value)
+        default: 'zh-cn',
+        validator: (value) => ['zh-cn', 'en'].includes(value)
     }
 })
 </script>

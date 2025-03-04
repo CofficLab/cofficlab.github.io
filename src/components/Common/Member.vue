@@ -1,18 +1,12 @@
 <template>
     <article>
-        <div class="shadow-lg flex flex-col gap-2 w-48 h-64 p-4 text-center rounded-lg bg-gray-400/20 
+        <div class="shadow-lg flex flex-col justify-between gap-2 w-48 h-72 p-4 text-center rounded-lg bg-gray-400/20 
       transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-gray-400/30
       group relative">
             <!-- 产品头像 -->
             <figure class="avatar relative">
                 <img :src="member.avatar" alt="Member Avatar" class="w-20 h-20 mx-auto rounded-full transition-transform duration-300
           group-hover:scale-110 group-hover:rotate-6" />
-                <!-- 悬停时显示的对话框 -->
-                <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white 
-          px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity
-          duration-300 text-sm whitespace-nowrap">
-                    👋 Hi, I'm {{ member.name }}!
-                </div>
             </figure>
 
             <div class="product-link group-hover:text-blue-600 transition-colors duration-200">

@@ -7,7 +7,7 @@
 <script setup>
 import Features from './Features.vue'
 import TravelModeHero from './TravelModeHero.vue'
-
+import { normalizeLang } from '@/utils/lang'
 const props = defineProps({
     lang: {
         type: String,
@@ -15,5 +15,5 @@ const props = defineProps({
     }
 })
 
-const lang = ['zh-cn', 'zh-CN'].includes(props.lang) ? 'zh' : props.lang
+const lang = normalizeLang(props.lang)
 </script>

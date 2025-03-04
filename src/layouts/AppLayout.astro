@@ -1,17 +1,50 @@
 ---
-import FooterVue from '../components/Footer.vue';
+import Footer from '@/components/footer/Footer.astro';
+import '../app.css';
+import SmartHeader from './SmartHeader.astro';
+import type { SidebarItem } from '@/models/SidebarItem';
+import type { Heading } from '@/models/Heading';
+import { ClientRouter } from 'astro:transitions';
+import { getLangFromPathname } from '@/utils/lang';
+import { isHome } from '@/utils/links';
+
+interface Props {
+  title: string;
+  description: string;
+  headings?: Heading[];
+  sidebar?: SidebarItem | null | undefined;
+  hidePageTitle?: boolean;
+  isDocContent?: boolean;
+}
+
+const props = Astro.props as Props;
+const { title, description, isDocContent } = props;
+
+const locale = isHome(Astro.url.pathname)
+  ? Astro.preferredLocale
+  : getLangFromPathname(Astro.url.pathname);
 ---
 
-<html lang="en">
+<!doctype html>
+<html lang={locale} class="scroll-smooth">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-  <body>
-    <main>
-      <slot />
-    </main>
+  <body
+    class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50 min-h-screen">
+    <SmartHeader />
 
-    <FooterVue lang="en" />
+    <div
+      class:list={['py-24 min-h-screen', isDocContent ? 'bg-base-100/95' : '']}>
+      <slot />
+    </div>
+
+    <Footer transition:persist />
+    <ClientRouter />
   </body>
 </html>

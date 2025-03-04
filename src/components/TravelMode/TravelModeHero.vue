@@ -12,8 +12,8 @@ import TravelModeApp from './TravelModeApp.vue';
 const props = defineProps({
     lang: {
         type: String,
-        default: 'zh',
-        validator: (value) => ['en', 'zh', 'zh-cn'].includes(value)
+        default: 'zh-cn',
+        validator: (value) => ['en', 'zh-cn'].includes(value)
     }
 })
 

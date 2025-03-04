@@ -5,7 +5,7 @@ class Feature {
 
     private constructor() {
         this.translations = new Map();
-        this.translations.set('zh', '');
+        this.translations.set('zh-cn', '');
         this.translations.set('en', '');
     }
 
@@ -26,7 +26,7 @@ class Feature {
     }
 
     public setZh(title: string): Feature {
-        return this.setTitle(title, 'zh');
+        return this.setTitle(title, 'zh-cn');
     }
 
     public setEn(title: string): Feature {

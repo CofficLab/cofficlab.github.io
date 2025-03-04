@@ -1,0 +1,20 @@
+---
+import JuiceNotePage from '@/components/JuiceNote/JuiceNotePage.vue';
+import AppLayout from '@/layouts/AppLayout.astro';
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.params as Props;
+
+export const prerender = true;
+export const getStaticPaths = async () => {
+  return [{ params: { lang: 'zh-cn' } }, { params: { lang: 'en' } }];
+};
+---
+
+<AppLayout
+  title="Juice Note"
+  description="Juice Note is a tool for creating and managing content for your website.">
+  <JuiceNotePage lang={lang} />
+</AppLayout>

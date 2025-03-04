@@ -1,0 +1,65 @@
+---
+import LinkDB from '@/database/LinkDB';
+import { getLangFromPathname } from '@/utils/lang';
+
+const currentPath = Astro.url.pathname;
+const normalizedLocale = getLangFromPathname(Astro.url.pathname);
+
+const navItems = [
+  {
+    href: LinkDB.makeHomeLink(normalizedLocale),
+    label: normalizedLocale === 'zh-cn' ? '首页' : 'Home',
+    match: (path: string) => LinkDB.isHomeLink(path, normalizedLocale),
+  },
+  {
+    href: LinkDB.makeProductLink(normalizedLocale, 'cisum'),
+    label: normalizedLocale === 'zh-cn' ? 'Cisum' : 'Cisum',
+    match: (path: string) =>
+      LinkDB.isProductLink(path, normalizedLocale, 'cisum'),
+  },
+  {
+    href: LinkDB.makeProductLink(normalizedLocale, 'juice_editor'),
+    label: 'Juice Editor',
+    match: (path: string) =>
+      LinkDB.isProductLink(path, normalizedLocale, 'juice_editor'),
+  },
+  {
+    href: LinkDB.makeProductLink(normalizedLocale, 'juice_note'),
+    label: 'Juice Note',
+    match: (path: string) =>
+      LinkDB.isProductLink(path, normalizedLocale, 'juice_note'),
+  },
+  {
+    href: LinkDB.makeProductLink(normalizedLocale, 'travelmode'),
+    label: 'TravelMode',
+    match: (path: string) =>
+      LinkDB.isProductLink(path, normalizedLocale, 'travelmode'),
+  },
+  {
+    href: LinkDB.makeBlogsLink(normalizedLocale),
+    label: normalizedLocale === 'zh-cn' ? '博客' : 'Blogs',
+    match: (path: string) => LinkDB.isBlogsLink(path, normalizedLocale),
+  },
+];
+---
+
+<div class="flex flex-row gap-4 items-center">
+  {
+    navItems.map((item) => (
+      <a
+        class:list={[
+          'btn btn-sm no-underline',
+          'hover:text-primary-content hover:bg-primary/20',
+          'transition-all duration-300',
+          {
+            'btn-ghost': !item.match(currentPath),
+            'btn-active': item.match(currentPath),
+            'btn-accent': item.match(currentPath),
+          },
+        ]}
+        href={item.href}>
+        {item.label}
+      </a>
+    ))
+  }
+</div>

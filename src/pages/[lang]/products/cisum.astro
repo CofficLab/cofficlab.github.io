@@ -1,0 +1,28 @@
+---
+import CisumPage from '@/components/Cisum/CisumPage.vue';
+import AppLayout from '@/layouts/AppLayout.astro';
+
+interface Props {
+  lang: string;
+}
+
+export const prerender = true;
+export const getStaticPaths = async () => {
+  return [
+    {
+      params: { lang: 'zh-cn' },
+    },
+    {
+      params: { lang: 'en' },
+    },
+  ];
+};
+
+const { lang } = Astro.params as Props;
+---
+
+<AppLayout
+  title="Cisum"
+  description="Cisum is a tool for creating and managing content for your website.">
+  <CisumPage lang={lang} client:load />
+</AppLayout>

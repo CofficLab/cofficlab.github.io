@@ -1,0 +1,32 @@
+---
+import Lang from '@/models/Lang';
+export interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const name: Record<string, string> = {
+  'zh-cn': 'Coffic 工作室',
+  en: 'Coffic Lab',
+};
+
+const heroText: Record<string, string> = {
+  'zh-cn': '精彩软件，有爱创造',
+  en: 'Wonderful Software, Built with Love',
+};
+---
+
+<div class="hero min-h-[20vh] bg-base-200/0">
+  <div class="hero-content flex-col flex gap-8">
+    <div class="text-center lg:text-left flex flex-col gap-4 items-center">
+      <h1 class="text-7xl text-base-content/70 pb-6">{name[lang.code]}</h1>
+    </div>
+
+    <div class="text-center lg:text-left flex flex-col gap-4 items-center">
+      <h2 class="text-3xl text-base-content/70 pb-6">
+        {heroText[lang.code]}
+      </h2>
+    </div>
+  </div>
+</div>

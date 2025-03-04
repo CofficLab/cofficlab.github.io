@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col gap-4 container mx-auto items-center my-10">
-        <h2>{{ lang === 'en' ? 'Our Team' : '我们的团队' }}</h2>
+        <h2 class="text-4xl mb-4">{{ lang === 'en' ? 'Our Team' : '我们的团队' }}</h2>
         <div data-type="members" class="flex flex-row gap-4 justify-center">
             <Member v-for="member in members" :key="member.name" :member="getLocalizedMember(member)" />
         </div>
