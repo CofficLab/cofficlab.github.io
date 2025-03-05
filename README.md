@@ -1,3 +1,3 @@
 # CofficLab
 
-点击这个链接了解更多：<https://cofficlab.pages.dev>
+Click this link to learn more: <https://cofficlab.pages.dev>
