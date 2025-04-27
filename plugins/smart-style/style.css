@@ -1,7 +1,0 @@
-/* body {
-  @apply bg-cyan-200/10 dark:bg-slate-800;
-} */
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
