@@ -2,4 +2,4 @@
 
 Build wonderful things with love.
 
-Click this link to learn more: <https://coffic.zone.id>
+Click this link to learn more: <https://coffic.cn>
